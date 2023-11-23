@@ -11,4 +11,5 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/PUIG (MAIN LOBBY).unity
     guid: 2f67dcf43f842be4b8cf0993a561ea5b
-  m_configObjects: {}
+  m_configObjects:
+    com.unity.input.settings: {fileID: 11400000, guid: 242f6ee7c6132284e925ae7e2d94bae3, type: 2}
