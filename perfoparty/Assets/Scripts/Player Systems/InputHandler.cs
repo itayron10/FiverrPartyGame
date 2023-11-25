@@ -21,8 +21,7 @@ public class InputHandler : MonoBehaviour
     public void InitializePlayer(PlayerConfiguration config)
     {
         playerConfig = config;
-        myPlayerMovement.index = playerConfig.PlayerIndex;
-        GameObject playerMeshInstance = Instantiate(config.playerMeshObject, transform.position, transform.rotation, transform);
+        GameObject playerMeshInstance = Instantiate(playerConfig.playerMeshObject, transform.position, transform.rotation, transform);
         config.Input.onActionTriggered += Input_onActionTriggered;
     }
 

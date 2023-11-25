@@ -19,15 +19,17 @@ public class PlayerInitializer : MonoBehaviour
 
     public void InitializePlayers()
     {
-        var playerConfigs = PlayerConfigurationManager.Instance.GetPlayerConfigs().ToArray();
-        for (int i = 0; i < playerConfigs.Length; i++)
+        var playerConfigs = PlayerConfigurationManager.Instance.GetPlayerConfigs();
+        for (int i = 0; i < playerConfigs.Count; i++)
         {
-            if (initializedPlayers.Contains(playerConfigs[i])) { continue; }
-            initializedPlayers.Add(playerConfigs[i]);
+            if (initializedPlayers.Contains(playerConfigs[i]) || !playerConfigs[i].isReady) { continue; }
+            Debug.Log($"Player Index: {playerConfigs[i].PlayerIndex} Mesh: {playerConfigs[i].playerMeshObject}");
             int minPosition = Mathf.Min(i, playerSpawnPoints.Length - 1);
             GameObject player = Instantiate(playerPrefab, playerSpawnPoints[minPosition].position, playerSpawnPoints[minPosition].rotation, gameObject.transform);
             player.GetComponent<InputHandler>().InitializePlayer(playerConfigs[i]);
             player.GetComponent<PlayerMovement>().animator = player.GetComponentInChildren<Animator>();
+            
+            initializedPlayers.Add(playerConfigs[i]);
         }
     }
 }

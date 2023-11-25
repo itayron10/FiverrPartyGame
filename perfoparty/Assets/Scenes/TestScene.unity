@@ -621,6 +621,63 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1123475317}
   m_LocalEulerAnglesHint: {x: -90, y: 67.422, z: -65.124}
+--- !u!1001 &201269930
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 1402483506651543035, guid: cfd5fa2af373773468b460e78acfda2a, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1402483506651543035, guid: cfd5fa2af373773468b460e78acfda2a, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1402483506651543035, guid: cfd5fa2af373773468b460e78acfda2a, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1402483506651543035, guid: cfd5fa2af373773468b460e78acfda2a, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1402483506651543035, guid: cfd5fa2af373773468b460e78acfda2a, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1402483506651543035, guid: cfd5fa2af373773468b460e78acfda2a, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1402483506651543035, guid: cfd5fa2af373773468b460e78acfda2a, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1402483506651543035, guid: cfd5fa2af373773468b460e78acfda2a, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1402483506651543035, guid: cfd5fa2af373773468b460e78acfda2a, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1402483506651543035, guid: cfd5fa2af373773468b460e78acfda2a, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4731950065065891690, guid: cfd5fa2af373773468b460e78acfda2a, type: 3}
+      propertyPath: m_Name
+      value: Sound Manager
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: cfd5fa2af373773468b460e78acfda2a, type: 3}
 --- !u!1 &315170085
 GameObject:
   m_ObjectHideFlags: 0
@@ -2509,7 +2566,6 @@ GameObject:
   - component: {fileID: 958762781}
   - component: {fileID: 958762780}
   - component: {fileID: 958762779}
-  - component: {fileID: 958762778}
   m_Layer: 0
   m_Name: BezierCircle (1)
   m_TagString: Untagged
@@ -2517,28 +2573,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!64 &958762778
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 958762777}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 0
-  serializedVersion: 5
-  m_Convex: 0
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 7238664596135999558, guid: 53fcc55ed3d4031409fb47b8511ce1cf, type: 3}
 --- !u!23 &958762779
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -3122,7 +3156,8 @@ GameObject:
   - component: {fileID: 1066138511}
   - component: {fileID: 1066138510}
   - component: {fileID: 1066138509}
-  m_Layer: 0
+  - component: {fileID: 1066138512}
+  m_Layer: 6
   m_Name: Capsule
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3194,6 +3229,27 @@ Transform:
   m_Children: []
   m_Father: {fileID: 909121158}
   m_LocalEulerAnglesHint: {x: -180, y: -40.32599, z: 0}
+--- !u!65 &1066138512
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1066138508}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 1.0000002, y: 13, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &1103847064
 GameObject:
   m_ObjectHideFlags: 0
@@ -7166,7 +7222,6 @@ GameObject:
   - component: {fileID: 8656200110653413574}
   - component: {fileID: 8198238657378425396}
   - component: {fileID: 3677135008927125774}
-  - component: {fileID: 8656200110653413575}
   m_Layer: 0
   m_Name: BezierCircle
   m_TagString: Untagged
@@ -8688,28 +8743,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 909121158}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!64 &8656200110653413575
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4508589143411687804}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 5
-  m_Convex: 0
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 7238664596135999558, guid: 53fcc55ed3d4031409fb47b8511ce1cf, type: 3}
 --- !u!4 &8675027398938838804
 Transform:
   m_ObjectHideFlags: 0
@@ -8865,5 +8898,6 @@ SceneRoots:
   m_ObjectHideFlags: 0
   m_Roots:
   - {fileID: 909121158}
+  - {fileID: 201269930}
   - {fileID: 1236327394}
   - {fileID: 963194228}

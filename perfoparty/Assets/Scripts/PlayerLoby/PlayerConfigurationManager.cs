@@ -9,7 +9,6 @@ public class PlayerConfigurationManager : MonoBehaviour
 {
     [SerializeField] GameObject[] meshPrefabs;
     private List<PlayerConfiguration> playerConfigs;
-    private int minPlayersReadyForLoad = 2;
 
     public static PlayerConfigurationManager Instance { get; private set; }
 
@@ -45,11 +44,6 @@ public class PlayerConfigurationManager : MonoBehaviour
         return playerConfigs;
     }
 
-    public void SetPlayerColor(int index, Material color)
-    {
-        playerConfigs[index].playerMaterial = color;
-    }
-
     public void IncreaseMeshSelectIndex(int configIndex)
     {
         PlayerConfiguration playerConfig = playerConfigs[configIndex];
@@ -79,6 +73,7 @@ public class PlayerConfigurationManager : MonoBehaviour
         PlayerConfiguration playerConfig = playerConfigs[index];
         playerConfig.isReady = true;
         playerConfig.playerMeshObject = meshPrefabs[playerConfig.meshIndex];
+        Debug.Log(playerConfig.playerMeshObject);
 
         PlayerInitializer.instance.InitializePlayers();
         // if the min numbers of players connected and all of them ready load the next scene

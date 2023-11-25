@@ -111,7 +111,6 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 64
   animator: {fileID: 0}
-  index: 0
 --- !u!114 &2573673826815933925
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -142,6 +141,7 @@ MonoBehaviour:
   punchAnimatorTrigger: Punch
   punchRange: 0.73
   punchDamage: 100
+  punchKnockBack: 5.5
   punchLayer:
     serializedVersion: 2
     m_Bits: 128
@@ -158,11 +158,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0130a8d966c1d2143b0a20db27926525, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHealth: 100
+  maxHealth: 150
   hitSound: {fileID: 0}
   deathSound: {fileID: 0}
   deathEffectPrefab: {fileID: 8186209347690946063, guid: b9712379f62f007469be0500e5d417f0, type: 3}
-  hitEffectPrefab: {fileID: 0}
+  hitEffectPrefab: {fileID: 8186209347690946063, guid: b9712379f62f007469be0500e5d417f0, type: 3}
 --- !u!114 &87511094776267209
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -175,7 +175,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 73596b7469a81df4dbc727cb2bb51f6c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  interactionRange: 10
+  interactionRange: 2.3
   interactableLayer:
     serializedVersion: 2
     m_Bits: 256

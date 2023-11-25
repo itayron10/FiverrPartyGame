@@ -21,13 +21,19 @@ public class Interacter : MonoBehaviour
 
     public void TryInteract()
     {
-        Collider[] interactables = Physics.OverlapSphere(transform.position, interactableLayer, interactableLayer);
+        Collider[] interactables = Physics.OverlapSphere(transform.position, interactionRange, interactableLayer);
         foreach (var interactableCollider in interactables)
         {
             if (!interactableCollider.TryGetComponent<Interactable>(out Interactable interactable)) continue;
             Debug.Log("wwe");
-            interactable.Interacte();
+            interactable.Interacte(gameObject);
             break;
         }
+    }
+
+
+    private void OnDrawGizmosSelected()
+    {
+        Gizmos.DrawWireSphere(transform.position, interactionRange);
     }
 }

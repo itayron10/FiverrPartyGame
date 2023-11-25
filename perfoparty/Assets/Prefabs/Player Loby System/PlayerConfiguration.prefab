@@ -83,12 +83,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 77572fc80424b9648b653a52860e218a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  renderTextures:
-  - {fileID: 8400000, guid: 5ab87f59352ed1a418bf362e6077ad13, type: 2}
-  - {fileID: 8400000, guid: c014a87e72baacd43afa21606621d6ca, type: 2}
-  - {fileID: 8400000, guid: eab781cf04efac4419b09a8b68eb5661, type: 2}
-  - {fileID: 8400000, guid: 19411e4dab2f51244a57976f4ae225b5, type: 2}
-  - {fileID: 8400000, guid: 65e1a5c62ad11ec4d850ed618df36ab8, type: 2}
-  - {fileID: 8400000, guid: f024df64e8a63ef4a90d7f53d7651ee3, type: 2}
+  mainMenuCanvasTag: MainMenu
   playerSetupMenuPrefab: {fileID: 7666439747113261534, guid: 74a0b2ae4a0e2a94381bf03a58756ed4, type: 3}
   input: {fileID: 3698094019892413940}

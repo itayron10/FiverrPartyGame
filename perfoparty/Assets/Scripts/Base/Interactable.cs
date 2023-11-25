@@ -23,7 +23,7 @@ public class Interactable : MonoBehaviour
     /// <summary>
     /// can be ovveriden to find different kinds of private objects on the Start method
     /// </summary>
-    public virtual void FindPrivateObjects()
+    protected virtual void FindPrivateObjects()
     {
         // set/find private objects
         soundManager = FindObjectOfType<SoundManager>();
@@ -33,7 +33,7 @@ public class Interactable : MonoBehaviour
     /// <summary>
     /// can be ovveriden for different behaviours on interaction
     /// </summary>
-    public virtual void Interacte()
+    public virtual void Interacte(GameObject interacter)
     {
         if (!initialized) FindPrivateObjects();
         soundManager.PlaySound(onInteractionSound);

@@ -11,7 +11,6 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] string isGroundedAnimatorBool, jumpingAnimatorBool, danceAnimatorBool;
     [SerializeField] LayerMask groundLayer;
     public Animator animator;
-    public int index;
 
     private Rigidbody rb;
     private bool isGrounded = true;
