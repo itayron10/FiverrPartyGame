@@ -13,8 +13,10 @@ GameObject:
   - component: {fileID: 8590282494772588911}
   - component: {fileID: 7181979369827712775}
   - component: {fileID: 2573673826815933925}
-  - component: {fileID: 1774453252468027456}
-  m_Layer: 0
+  - component: {fileID: -6440140660975279183}
+  - component: {fileID: 9008007228405198074}
+  - component: {fileID: 87511094776267209}
+  m_Layer: 7
   m_Name: Player
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -33,8 +35,7 @@ Transform:
   m_LocalPosition: {x: 5.1241, y: 1.0876, z: 0.45618}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children:
-  - {fileID: 4554085062862518787}
+  m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!54 &8813149564817720835
@@ -99,10 +100,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6409632071a4a734fa901b9941aba0f2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  jumpStrength: 8
+  jumpStrength: 6
   movementSpeed: 6
   rotationVelocity: 12
-  animator: {fileID: 7625562739924590713}
+  groundCheckLength: 1.17
+  isGroundedAnimatorBool: IsGrounded
+  jumpingAnimatorBool: Jumping
+  danceAnimatorBool: Dancing
+  groundLayer:
+    serializedVersion: 2
+    m_Bits: 64
+  animator: {fileID: 0}
   index: 0
 --- !u!114 &2573673826815933925
 MonoBehaviour:
@@ -116,7 +124,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c0a87e2de903ca54aac518a31d1b5584, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &1774453252468027456
+  playerConfig:
+    playerMeshObject: {fileID: 0}
+    meshIndex: 0
+--- !u!114 &-6440140660975279183
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -125,127 +136,46 @@ MonoBehaviour:
   m_GameObject: {fileID: 1166317410833741800}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 62899f850307741f2a39c98a8b639597, type: 3}
+  m_Script: {fileID: 11500000, guid: 044b2d7994d756742885c0a9eee0f5d2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Actions: {fileID: -944628639613478452, guid: f07ea1e5eccd6e646a270595485de93a, type: 3}
-  m_NotificationBehavior: 2
-  m_UIInputModule: {fileID: 0}
-  m_DeviceLostEvent:
-    m_PersistentCalls:
-      m_Calls: []
-  m_DeviceRegainedEvent:
-    m_PersistentCalls:
-      m_Calls: []
-  m_ControlsChangedEvent:
-    m_PersistentCalls:
-      m_Calls: []
-  m_ActionEvents:
-  - m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 2573673826815933925}
-        m_TargetAssemblyTypeName: InputHandeler, Assembly-CSharp
-        m_MethodName: OnMove
-        m_Mode: 0
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-    m_ActionId: 6e1b8e3e-777e-4e85-a603-699222ba1e06
-    m_ActionName: Player/Movement[/Keyboard/w,/Keyboard/s,/Keyboard/a,/Keyboard/d,/DualShock4GamepadHID/leftStick]
-  - m_PersistentCalls:
-      m_Calls: []
-    m_ActionId: 6ae4e485-a47e-4720-b016-47ecdba6dc97
-    m_ActionName: Player/Dance[/Keyboard/b]
-  m_NeverAutoSwitchControlSchemes: 0
-  m_DefaultControlScheme: 
-  m_DefaultActionMap: Player
-  m_SplitScreenIndex: -1
-  m_Camera: {fileID: 0}
---- !u!1001 &4087550204392791528
-PrefabInstance:
+  punchAnimatorTrigger: Punch
+  punchRange: 0.73
+  punchDamage: 100
+  punchLayer:
+    serializedVersion: 2
+    m_Bits: 128
+  punchOriginOffset: {x: 0, y: 1.26, z: 0.59}
+--- !u!114 &9008007228405198074
+MonoBehaviour:
   m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    serializedVersion: 3
-    m_TransformParent: {fileID: 3580832700982986253}
-    m_Modifications:
-    - target: {fileID: -8679921383154817045, guid: d776375eff52707479a8a9d6deaac8de, type: 3}
-      propertyPath: m_LocalScale.x
-      value: 1.1276317
-      objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: d776375eff52707479a8a9d6deaac8de, type: 3}
-      propertyPath: m_LocalScale.y
-      value: 1.1276317
-      objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: d776375eff52707479a8a9d6deaac8de, type: 3}
-      propertyPath: m_LocalScale.z
-      value: 1.1276317
-      objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: d776375eff52707479a8a9d6deaac8de, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: d776375eff52707479a8a9d6deaac8de, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: d776375eff52707479a8a9d6deaac8de, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: d776375eff52707479a8a9d6deaac8de, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: d776375eff52707479a8a9d6deaac8de, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: d776375eff52707479a8a9d6deaac8de, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: d776375eff52707479a8a9d6deaac8de, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: d776375eff52707479a8a9d6deaac8de, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: d776375eff52707479a8a9d6deaac8de, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: d776375eff52707479a8a9d6deaac8de, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 919132149155446097, guid: d776375eff52707479a8a9d6deaac8de, type: 3}
-      propertyPath: m_Name
-      value: Osma
-      objectReference: {fileID: 0}
-    - target: {fileID: 5866666021909216657, guid: d776375eff52707479a8a9d6deaac8de, type: 3}
-      propertyPath: m_Controller
-      value: 
-      objectReference: {fileID: 9100000, guid: 52d39cd8d53bceb4d99154e539960236, type: 2}
-    m_RemovedComponents: []
-    m_RemovedGameObjects: []
-    m_AddedGameObjects: []
-    m_AddedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: d776375eff52707479a8a9d6deaac8de, type: 3}
---- !u!4 &4554085062862518787 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: d776375eff52707479a8a9d6deaac8de, type: 3}
-  m_PrefabInstance: {fileID: 4087550204392791528}
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
---- !u!95 &7625562739924590713 stripped
-Animator:
-  m_CorrespondingSourceObject: {fileID: 5866666021909216657, guid: d776375eff52707479a8a9d6deaac8de, type: 3}
-  m_PrefabInstance: {fileID: 4087550204392791528}
+  m_GameObject: {fileID: 1166317410833741800}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0130a8d966c1d2143b0a20db27926525, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxHealth: 100
+  hitSound: {fileID: 0}
+  deathSound: {fileID: 0}
+  deathEffectPrefab: {fileID: 8186209347690946063, guid: b9712379f62f007469be0500e5d417f0, type: 3}
+  hitEffectPrefab: {fileID: 0}
+--- !u!114 &87511094776267209
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1166317410833741800}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 73596b7469a81df4dbc727cb2bb51f6c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  interactionRange: 10
+  interactableLayer:
+    serializedVersion: 2
+    m_Bits: 256

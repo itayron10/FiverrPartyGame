@@ -1,0 +1,19 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!221 &22100000
+AnimatorOverrideController:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: Osma
+  m_Controller: {fileID: 9100000, guid: a5dce8bd8729bd7458c009cc09e6382f, type: 2}
+  m_Clips:
+  - m_OriginalClip: {fileID: 7400000, guid: cced916f510c3014d993e62bbf3d24a1, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: 8ef0f0b2b5d76e2498407230f680e294, type: 2}
+  - m_OriginalClip: {fileID: 7400000, guid: 7a90996a02e896a4bb5d577ac022b604, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: 68c7fcdf300c0834295cd6b8f853e450, type: 2}
+  - m_OriginalClip: {fileID: 7400000, guid: 4b9c04d509d35f0418c884e21aeb5659, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: f24244000d021ef49ad44646288f437b, type: 2}
+  - m_OriginalClip: {fileID: 7400000, guid: ee7f11e7b59bf984892b72eeb5dc38cc, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: 8a0fb68e108f41546af752bb866f79de, type: 2}

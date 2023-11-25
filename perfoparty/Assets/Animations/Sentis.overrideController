@@ -1,0 +1,15 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!221 &22100000
+AnimatorOverrideController:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: Sentis
+  m_Controller: {fileID: 9100000, guid: a5dce8bd8729bd7458c009cc09e6382f, type: 2}
+  m_Clips:
+  - m_OriginalClip: {fileID: 7400000, guid: cced916f510c3014d993e62bbf3d24a1, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: 44f3dd70a2b289a4c89c1b51aeaeca1c, type: 2}
+  - m_OriginalClip: {fileID: 7400000, guid: 7a90996a02e896a4bb5d577ac022b604, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: c7bcd3b31cb1de849b891da6d4f33b4c, type: 2}
