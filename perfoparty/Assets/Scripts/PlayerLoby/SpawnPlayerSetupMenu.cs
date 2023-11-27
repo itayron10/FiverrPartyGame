@@ -15,7 +15,9 @@ public class SpawnPlayerSetupMenu : MonoBehaviour
     {
         Canvas selectionMenuCanvas = GetMenuCnvas(); 
         GameObject selectMenuInstance = Instantiate(playerSetupMenuPrefab, selectionMenuCanvas.transform);
-        selectMenuInstance.GetComponent<PlayerSetupMenuController>().setPlayerIndex(input.playerIndex);
+        PlayerSetupMenuController playerSetupMenuController = selectMenuInstance.GetComponent<PlayerSetupMenuController>();
+        playerSetupMenuController.setPlayerIndex(input.playerIndex);
+
         input.uiInputModule = selectMenuInstance.GetComponentInChildren<InputSystemUIInputModule>();
 
         Debug.Log("Texture Number: " +input.playerIndex);

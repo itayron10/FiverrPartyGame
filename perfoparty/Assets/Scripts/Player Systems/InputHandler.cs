@@ -1,14 +1,23 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.EventSystems;
 using UnityEngine.InputSystem;
+using UnityEngine.InputSystem.UI;
 
 public class InputHandler : MonoBehaviour
 {
+    [SerializeField] InputSystemUIInputModule uiEventSystem;
+    [SerializeField] Inputs controls;
+    [SerializeField] EventSystem myEventSystem;
+    [SerializeField] Canvas playerPauseMenu;
+    public PlayerConfiguration playerConfig;
     private PlayerMovement myPlayerMovement;
     private PunchController myPunchController;
-    public PlayerConfiguration playerConfig;
-    public Inputs controls;
+
+    public Inputs GetControls => controls;
+    public Canvas GetPlayerPauseMenu => playerPauseMenu;
+    public EventSystem GetEventSystem => myEventSystem;
 
     private void Awake()
     {
@@ -17,12 +26,18 @@ public class InputHandler : MonoBehaviour
         myPunchController = GetComponent<PunchController>();
     }
 
+    private void OnLevelWasLoaded(int level)
+    {
+        playerConfig.Input.uiInputModule = uiEventSystem;
+    }
 
     public void InitializePlayer(PlayerConfiguration config)
     {
         playerConfig = config;
+        playerConfig.inputHandler = this;
         GameObject playerMeshInstance = Instantiate(playerConfig.playerMeshObject, transform.position, transform.rotation, transform);
         config.Input.onActionTriggered += Input_onActionTriggered;
+        config.Input.uiInputModule = uiEventSystem;
     }
 
 
@@ -35,6 +50,8 @@ public class InputHandler : MonoBehaviour
         if (IsThisAction(controls.Player.Dance.name, obj) && obj.performed) myPlayerMovement.Dance();
 
         if (IsThisAction(controls.Player.Punch.name, obj) && obj.performed) myPunchController.Punch();
+
+        if (IsThisAction(controls.Player.PauseGame.name, obj) && obj.performed) FindObjectOfType<PauseManager>()?.PreformTogglePause(playerConfig);
         
     }
 

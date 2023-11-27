@@ -13,12 +13,20 @@ public class Interactable : MonoBehaviour
     [Tooltip("This Sound will be played when the player interacts with this interactable")]
     // the sound which will be played when the player interacts with this interactable
     [SerializeField] SoundScriptableObject onInteractionSound;
+    [SerializeField] LayerMask interacterLayer;
+    [SerializeField] float interactionRadius;
     private SoundManager soundManager;
-    public bool isInteractable;
+    [HideInInspector] public bool isInteractable;
     private bool initialized;
 
     private void Start() => FindPrivateObjects();
 
+
+    private void FixedUpdate()
+    {
+        Collider[] colliders = Physics.OverlapSphere(transform.position, interactionRadius, interacterLayer);
+        isInteractable = colliders.Length > 0;
+    }
 
     /// <summary>
     /// can be ovveriden to find different kinds of private objects on the Start method

@@ -9,6 +9,8 @@ public class RotateToCamera : MonoBehaviour
     private Camera mainCam;
 
     private void OnEnable() => mainCam = Camera.main;
+    private void OnLevelWasLoaded(int level) => mainCam = Camera.main;
+
 
     void Update()
     {

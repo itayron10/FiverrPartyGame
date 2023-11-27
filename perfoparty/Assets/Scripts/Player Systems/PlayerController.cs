@@ -6,6 +6,7 @@ public class PlayerMovement : MonoBehaviour
 {
     [SerializeField] float jumpStrength = 8f;
     [SerializeField] float movementSpeed = 5.0f;
+    [SerializeField] float animationInterpelationSpeed;
     [SerializeField] float rotationVelocity = 0.0f; // Velocidad de rotación gradual
     [SerializeField] float groundCheckLength;
     [SerializeField] string isGroundedAnimatorBool, jumpingAnimatorBool, danceAnimatorBool;
@@ -28,6 +29,8 @@ public class PlayerMovement : MonoBehaviour
     {
         transform.Translate(moveDirection * movementSpeed * Time.deltaTime, Space.World);
         HandleRotation();
+        animator.SetFloat("VelX", Mathf.Lerp(animator.GetFloat("VelX"), moveDirection.x, Time.deltaTime * animationInterpelationSpeed));
+        animator.SetFloat("VelY", Mathf.Lerp(animator.GetFloat("VelY"), moveDirection.z, Time.deltaTime * animationInterpelationSpeed));
     }
 
     private void FixedUpdate()
@@ -45,7 +48,7 @@ public class PlayerMovement : MonoBehaviour
 
     public void Jump()
     {
-        if (isGrounded)
+        if (isGrounded && Time.timeScale > 0)
         {
             // can jump
             animator.SetBool(danceAnimatorBool, false);
@@ -72,9 +75,6 @@ public class PlayerMovement : MonoBehaviour
     public void UodateMovement(Vector2 movementVector)
     {
         moveDirection = new Vector3(movementVector.x, 0f, movementVector.y);
-
-        animator.SetFloat("VelX", movementVector.x);
-        animator.SetFloat("VelY", movementVector.y);
     }
 
 

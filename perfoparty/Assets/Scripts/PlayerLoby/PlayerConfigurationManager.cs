@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.InputSystem.UI;
 using UnityEngine.SceneManagement;
 
 public class PlayerConfigurationManager : MonoBehaviour
@@ -36,6 +37,21 @@ public class PlayerConfigurationManager : MonoBehaviour
         if(!playerConfigs.Any(p => p.PlayerIndex == playerInput.playerIndex))
         {
             playerConfigs.Add(new PlayerConfiguration(playerInput));
+        }
+    }
+
+    public void SetPlayerUiInputs(InputSystemUIInputModule inputSystemUIInputModule, PlayerConfiguration playerConfig)
+    {
+        playerConfig.Input.uiInputModule = inputSystemUIInputModule;
+    }
+
+    public void SetAllPlayersUiInput(InputSystemUIInputModule inputSystemUIInputModule)
+    {
+        foreach (var player in playerConfigs)
+        {
+            Debug.Log(player.Input.uiInputModule);
+            player.Input.uiInputModule = inputSystemUIInputModule;
+            Debug.Log(player.Input.uiInputModule);
         }
     }
 
@@ -101,6 +117,7 @@ public class PlayerConfiguration
     }
 
     public PlayerInput Input { get; private set; }
+    public InputHandler inputHandler { get; set; }
     public int PlayerIndex { get; private set; }
     public bool isReady { get; set; }
     public Material playerMaterial {get; set;}

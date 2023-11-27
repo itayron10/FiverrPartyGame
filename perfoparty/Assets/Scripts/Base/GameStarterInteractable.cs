@@ -6,11 +6,11 @@ using TMPro;
 
 public class GameStarterInteractable : Interactable
 {
-    [SerializeField] int playerVotes, votesToStartGame;
     [SerializeField] string LevelNameOnGameStart;
     [SerializeField] TextMeshProUGUI votesDisplay;
     private List<GameObject> interactedPlayers = new List<GameObject>();
     private PlayerConfigurationManager configurationManager;
+    private int playerVotes, votesToStartGame;
 
     protected override void FindPrivateObjects()
     {
