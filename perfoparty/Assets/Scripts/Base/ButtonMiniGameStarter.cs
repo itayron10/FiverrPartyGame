@@ -12,4 +12,10 @@ public class ButtonMiniGameStarter : GameStarterInteractable
         base.Interacte(interacter);
         animator.SetTrigger(pressAnimatorTrigger);
     }
+
+    public override void StartGame()
+    {
+        base.StartGame();
+        PlayerConfigurationManager.Instance.strikeMode = false;
+    }
 }

@@ -1,0 +1,63 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1001 &429307813802637339
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 4798926640185171330, guid: 436faa8f9fc35af4689a1eb8cbdb4082, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -2.8463352
+      objectReference: {fileID: 0}
+    - target: {fileID: 4798926640185171330, guid: 436faa8f9fc35af4689a1eb8cbdb4082, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -0.11204206
+      objectReference: {fileID: 0}
+    - target: {fileID: 4798926640185171330, guid: 436faa8f9fc35af4689a1eb8cbdb4082, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 9.836903
+      objectReference: {fileID: 0}
+    - target: {fileID: 4798926640185171330, guid: 436faa8f9fc35af4689a1eb8cbdb4082, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4798926640185171330, guid: 436faa8f9fc35af4689a1eb8cbdb4082, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4798926640185171330, guid: 436faa8f9fc35af4689a1eb8cbdb4082, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4798926640185171330, guid: 436faa8f9fc35af4689a1eb8cbdb4082, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4798926640185171330, guid: 436faa8f9fc35af4689a1eb8cbdb4082, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4798926640185171330, guid: 436faa8f9fc35af4689a1eb8cbdb4082, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4798926640185171330, guid: 436faa8f9fc35af4689a1eb8cbdb4082, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4893278598534270995, guid: 436faa8f9fc35af4689a1eb8cbdb4082, type: 3}
+      propertyPath: m_Name
+      value: Jorda Video (2) Variant
+      objectReference: {fileID: 0}
+    - target: {fileID: 8888469424019771433, guid: 436faa8f9fc35af4689a1eb8cbdb4082, type: 3}
+      propertyPath: m_VideoClip
+      value: 
+      objectReference: {fileID: 32900000, guid: 97f24deea93e51b49aa25ebd35d20ae7, type: 3}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 436faa8f9fc35af4689a1eb8cbdb4082, type: 3}

@@ -32,4 +32,14 @@ public class PlayerInitializer : MonoBehaviour
             initializedPlayers.Add(playerConfigs[i]);
         }
     }
+
+    public void SetPlayersToSpawnPoints()
+    {
+        var playerConfigs = PlayerConfigurationManager.Instance.GetPlayerConfigs();
+
+        for (int i = 0; i < playerConfigs.Count; i++)
+        {
+            playerConfigs[i].inputHandler.transform.position = playerSpawnPoints[i].position;
+        }
+    }
 }

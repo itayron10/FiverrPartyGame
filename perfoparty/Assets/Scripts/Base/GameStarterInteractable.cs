@@ -1,7 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.SceneManagement;
 using TMPro;
 
 public class GameStarterInteractable : Interactable
@@ -11,10 +10,12 @@ public class GameStarterInteractable : Interactable
     private List<GameObject> interactedPlayers = new List<GameObject>();
     private PlayerConfigurationManager configurationManager;
     private int playerVotes, votesToStartGame;
+    private LevelManager levelManager;
 
     protected override void FindPrivateObjects()
     {
         base.FindPrivateObjects();
+        levelManager = FindObjectOfType<LevelManager>();
         votesDisplay.text = $"{playerVotes}/{votesToStartGame}";
         configurationManager = PlayerConfigurationManager.Instance;
     }
@@ -36,6 +37,7 @@ public class GameStarterInteractable : Interactable
 
     public virtual void StartGame()
     {
-        SceneManager.LoadScene(LevelNameOnGameStart);
+        levelManager.LoadLevelByString(LevelNameOnGameStart);
+        PlayerConfigurationManager.Instance.strikeMode = true;
     }
 }

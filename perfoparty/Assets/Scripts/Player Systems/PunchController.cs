@@ -10,6 +10,7 @@ public class PunchController : MonoBehaviour
     [SerializeField] float punchKnockBack;
     [SerializeField] LayerMask punchLayer;
     [SerializeField] Vector3 punchOriginOffset;
+    [SerializeField] ScreenShakeSettingsSO punchShake;
     private PlayerMovement playerMovement;
     private Animator animator;
 
@@ -32,8 +33,12 @@ public class PunchController : MonoBehaviour
             if (collider.TryGetComponent<BasicHealth>(out BasicHealth health)) health.TakeDamage(punchDamage, hitPos);
             if (collider.TryGetComponent<Rigidbody>(out Rigidbody rb))
             {
-                rb.AddForceAtPosition(transform.forward * punchKnockBack, hitPos, ForceMode.VelocityChange);
-                rb.AddForceAtPosition(transform.up * punchKnockBack / 2f, hitPos, ForceMode.VelocityChange);
+                float punchForce = punchKnockBack / (1f - rb.drag * Time.fixedDeltaTime);
+                rb.AddForceAtPosition(transform.forward * punchForce, hitPos, ForceMode.VelocityChange);
+/*                rb.AddForce((rb.position - transform.position).normalized
+                    * punchKnockBack / (1f - rb.drag * Time.fixedDeltaTime), ForceMode.Impulse);*/
+                rb.AddForceAtPosition(transform.up * punchForce / 2f, hitPos, ForceMode.VelocityChange);
+                CinemachineShake.instance.Shake(punchShake);
             }
         }
     }

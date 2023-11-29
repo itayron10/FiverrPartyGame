@@ -13,6 +13,7 @@ public class MiniGameStarter : GameStarterInteractable
     {
         Destroy(strikeModeInteracter);
         Instantiate(miniGamePlayerSelectionPrefab, miniGameSelectionSpawnPos, Quaternion.identity);
+        PlayerConfigurationManager.Instance.strikeMode = false;
         Destroy(gameObject);
     }
 }

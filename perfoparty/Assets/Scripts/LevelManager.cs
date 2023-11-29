@@ -32,11 +32,14 @@ public class LevelManager : MonoBehaviour
     private IEnumerator LoadLevel(AsyncOperation loadingOperation)
     {
         loadingScreen.SetActive(true);
-        SetLoadingBarAmount(0);
-        while (!loadingOperation.isDone)
+        if (loadingBar !=null)
         {
-            SetLoadingBarAmount(Mathf.Lerp(loadingBar.fillAmount, loadingOperation.progress, Time.deltaTime * 10f));
-            yield return null;
+            SetLoadingBarAmount(0);
+            while (!loadingOperation.isDone)
+            {
+                SetLoadingBarAmount(Mathf.Lerp(loadingBar.fillAmount, loadingOperation.progress, Time.deltaTime * 10f));
+                yield return null;
+            }
         }
     }
 
@@ -68,6 +71,7 @@ public class LevelManager : MonoBehaviour
 
     public void SetLoadingBarAmount(float fillAmount)
     {
+        if (!loadingBar) return;
         loadingBar.fillAmount = fillAmount;
     }
 }

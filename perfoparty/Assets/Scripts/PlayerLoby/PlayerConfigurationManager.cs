@@ -4,12 +4,17 @@ using System.Linq;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.InputSystem.UI;
-using UnityEngine.SceneManagement;
+using TMPro;
+using UnityEngine.Video;
 
 public class PlayerConfigurationManager : MonoBehaviour
 {
+    public bool strikeMode;
     [SerializeField] GameObject[] meshPrefabs;
+    [SerializeField] GameObject[] winningVideos; // should be parallel to the meshPrefabs indexes
     private List<PlayerConfiguration> playerConfigs;
+    private PlayerInitializer playerInitializer;
+
 
     public static PlayerConfigurationManager Instance { get; private set; }
 
@@ -26,7 +31,34 @@ public class PlayerConfigurationManager : MonoBehaviour
             DontDestroyOnLoad(Instance);
             playerConfigs = new List<PlayerConfiguration>();
         }
-        
+    }
+
+    private void Start()
+    {
+        playerInitializer = GetComponent<PlayerInitializer>();
+    }
+
+    public void PlayWinnerVideo()
+    {
+        /// Make this function play the video of the character who won teh mini game
+        Instantiate(GetPlayerWithHighestScore().playerWinningVideo, Vector3.zero, Quaternion.identity);
+    }
+
+    private PlayerConfiguration GetPlayerWithHighestScore()
+    {
+        PlayerConfiguration playerWithHighestScore = new PlayerConfiguration(null);
+        int highestScore = 0;
+
+        foreach (var playerConfig in playerConfigs)
+        {
+            if (playerConfig.playerScore > highestScore)
+            {
+                highestScore = playerConfig.playerScore;
+                playerWithHighestScore = playerConfig;
+            }
+        }
+
+        return playerWithHighestScore;
     }
 
     public void HandlePlayerJoin(PlayerInput playerInput)
@@ -43,6 +75,12 @@ public class PlayerConfigurationManager : MonoBehaviour
     public void SetPlayerUiInputs(InputSystemUIInputModule inputSystemUIInputModule, PlayerConfiguration playerConfig)
     {
         playerConfig.Input.uiInputModule = inputSystemUIInputModule;
+    }
+
+
+    public void SetPlayersToPositions()
+    {
+        playerInitializer.SetPlayersToSpawnPoints();
     }
 
     public void SetAllPlayersUiInput(InputSystemUIInputModule inputSystemUIInputModule)
@@ -89,6 +127,7 @@ public class PlayerConfigurationManager : MonoBehaviour
         PlayerConfiguration playerConfig = playerConfigs[index];
         playerConfig.isReady = true;
         playerConfig.playerMeshObject = meshPrefabs[playerConfig.meshIndex];
+        playerConfig.playerWinningVideo = winningVideos[playerConfig.meshIndex];
         Debug.Log(playerConfig.playerMeshObject);
 
         PlayerInitializer.instance.InitializePlayers();
@@ -112,15 +151,34 @@ public class PlayerConfiguration
 {
     public PlayerConfiguration(PlayerInput pi)
     {
-        PlayerIndex = pi.playerIndex;
+        if (pi != null) PlayerIndex = pi.playerIndex;
         Input = pi;
+        playerColor = Random.ColorHSV();
+        playerScore = 0;
     }
+
+    public Color playerColor { get; set; }
 
     public PlayerInput Input { get; private set; }
     public InputHandler inputHandler { get; set; }
     public int PlayerIndex { get; private set; }
+    public int playerScore { get; private set; }
+    public TextMeshProUGUI playerScoreDisplayText { get; private set; }
+
+    public void SetPlayerScoreDisplayText(TextMeshProUGUI textMeshPro)
+    {
+        playerScoreDisplayText = textMeshPro;
+        playerScoreDisplayText.text = $": {playerScore}";
+    }
+
+    public void AddPlayerScore(int score)
+    {
+        playerScore += score;
+        if (playerScoreDisplayText != null) playerScoreDisplayText.text = $": {playerScore}";
+    }
     public bool isReady { get; set; }
     public Material playerMaterial {get; set;}
+    public GameObject playerWinningVideo;
     public GameObject playerMeshObject;
     public int meshIndex = 0;
 }

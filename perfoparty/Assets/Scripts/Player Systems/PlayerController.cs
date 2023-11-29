@@ -6,12 +6,21 @@ public class PlayerMovement : MonoBehaviour
 {
     [SerializeField] float jumpStrength = 8f;
     [SerializeField] float movementSpeed = 5.0f;
+    [SerializeField] float maxVelocity;
+    [SerializeField] float stoppingDrag;
     [SerializeField] float animationInterpelationSpeed;
     [SerializeField] float rotationVelocity = 0.0f; // Velocidad de rotación gradual
     [SerializeField] float groundCheckLength;
+    [SerializeField] float fallMultiplier = 2.5f, lowJumpMultiplier = 2f;
     [SerializeField] string isGroundedAnimatorBool, jumpingAnimatorBool, danceAnimatorBool;
     [SerializeField] LayerMask groundLayer;
-    public Animator animator;
+    [SerializeField] ParticleSystem puffParticleEffect;
+    [SerializeField] ScreenShakeSettingsSO landShake;
+    [SerializeField] SoundScriptableObject jumpSound, landSound;
+    private InputHandler inputHandler;
+    private SoundManager soundManager;
+    public Animator animator { get; set; }
+    private bool hasLanded;
 
     private Rigidbody rb;
     private bool isGrounded = true;
@@ -22,12 +31,19 @@ public class PlayerMovement : MonoBehaviour
     void Start()
     {
         rb = GetComponent<Rigidbody>();
+        inputHandler = GetComponent<InputHandler>();
+        soundManager = FindObjectOfType<SoundManager>();
     }
 
 
     void Update()
     {
-        transform.Translate(moveDirection * movementSpeed * Time.deltaTime, Space.World);
+
+        /*        if (rb.velocity.magnitude > maxVelocity)
+                    rb.AddForce(-movmentVector, ForceMode.Force);*//*
+                if (movmentVector.magnitude <= 0 && isGrounded) rb.drag = stoppingDrag;
+                else rb.drag = 1.5f;*/
+
         HandleRotation();
         animator.SetFloat("VelX", Mathf.Lerp(animator.GetFloat("VelX"), moveDirection.x, Time.deltaTime * animationInterpelationSpeed));
         animator.SetFloat("VelY", Mathf.Lerp(animator.GetFloat("VelY"), moveDirection.z, Time.deltaTime * animationInterpelationSpeed));
@@ -35,26 +51,38 @@ public class PlayerMovement : MonoBehaviour
 
     private void FixedUpdate()
     {
-        isGrounded = Physics.Raycast(transform.position + new Vector3(0f, 1f, 0f), Vector3.down, groundCheckLength, groundLayer);
-        animator.SetBool(isGroundedAnimatorBool, isGrounded);
+        Vector3 movementVector = moveDirection * movementSpeed;
+        rb.MovePosition(Vector3.Lerp(transform.position, transform.position + movementVector, Time.deltaTime * 2f));
 
         if (rb.velocity.y < 0f && !isGrounded)
         {
             // falling
             Fall();
         }
+
+        if (!isGrounded) hasLanded = false;
+        isGrounded = Physics.Raycast(transform.position + new Vector3(0f, 1f, 0f), Vector3.down, groundCheckLength, groundLayer);
+        animator.SetBool(isGroundedAnimatorBool, isGrounded);
+        if (isGrounded && !hasLanded)
+        {
+            //Land
+            ParticleManager.StartParticle(puffParticleEffect);
+            soundManager.PlaySound(landSound);
+            CinemachineShake.instance.Shake(landShake);
+            hasLanded = true;
+        }
     }
 
 
     public void Jump()
     {
-        if (isGrounded && Time.timeScale > 0)
-        {
-            // can jump
-            animator.SetBool(danceAnimatorBool, false);
-            animator.SetBool(jumpingAnimatorBool, true);
-            rb.AddForce(new Vector3(0, jumpStrength, 0), ForceMode.Impulse);
-        }
+        if (!isGrounded || Time.timeScale <= 0) return;
+
+        // can jump
+        soundManager.PlaySound(jumpSound);
+        animator.SetBool(danceAnimatorBool, false);
+        animator.SetBool(jumpingAnimatorBool, true);
+        rb.AddForce(new Vector3(0, jumpStrength, 0), ForceMode.Impulse);
     }
 
 
@@ -69,7 +97,8 @@ public class PlayerMovement : MonoBehaviour
 
         animator.SetBool(danceAnimatorBool, false);
         Quaternion rotationDirection = Quaternion.LookRotation(moveDirection);
-        transform.rotation = Quaternion.Lerp(transform.rotation, rotationDirection, Time.deltaTime * rotationVelocity);
+        animator.transform.localPosition = Vector3.zero;
+        animator.transform.rotation = Quaternion.Lerp(animator.transform.rotation, rotationDirection, Time.deltaTime * rotationVelocity);
     }
 
     public void UodateMovement(Vector2 movementVector)
@@ -81,6 +110,12 @@ public class PlayerMovement : MonoBehaviour
     public void Fall()
     {
         animator.SetBool(jumpingAnimatorBool, false);
+/*        float jumpPressingValue = inputHandler.GetControls.Player.Jump.ReadValue<float>();
+        float roundedYVelocity = Mathf.Round(rb.velocity.y);
+        if (roundedYVelocity < 0f)
+            rb.velocity += Vector3.up * Physics.gravity.y * (fallMultiplier - 1f) * Time.deltaTime;
+        else if (roundedYVelocity > 0f && jumpPressingValue <= 0f)
+            rb.velocity += Vector3.up * Physics.gravity.y * (lowJumpMultiplier - 1f) * Time.deltaTime;*/
     }
 
     private void OnDrawGizmosSelected()
