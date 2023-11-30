@@ -454,6 +454,7 @@ MonoBehaviour:
   myEventSystem: {fileID: 5350007698802698492}
   playerPauseMenu: {fileID: 1216892589529660597}
   playerConfig:
+    playerWinningVideo: {fileID: 0}
     playerMeshObject: {fileID: 0}
     meshIndex: 0
 --- !u!114 &-6440140660975279183
@@ -469,9 +470,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   punchAnimatorTrigger: Punch
-  punchRange: 0.73
+  punchRange: 1.29
   punchDamage: 0
-  punchKnockBack: 10.5
+  punchKnockBack: 5
   punchLayer:
     serializedVersion: 2
     m_Bits: 128

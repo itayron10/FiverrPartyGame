@@ -34,10 +34,10 @@ public class PunchController : MonoBehaviour
             if (collider.TryGetComponent<Rigidbody>(out Rigidbody rb))
             {
                 float punchForce = punchKnockBack / (1f - rb.drag * Time.fixedDeltaTime);
-                rb.AddForceAtPosition(transform.forward * punchForce, hitPos, ForceMode.VelocityChange);
+                rb.AddForceAtPosition(animator.transform.forward * punchForce, hitPos, ForceMode.VelocityChange);
 /*                rb.AddForce((rb.position - transform.position).normalized
                     * punchKnockBack / (1f - rb.drag * Time.fixedDeltaTime), ForceMode.Impulse);*/
-                rb.AddForceAtPosition(transform.up * punchForce / 2f, hitPos, ForceMode.VelocityChange);
+                rb.AddForceAtPosition(Vector3.up * punchForce / 2f, hitPos, ForceMode.VelocityChange);
                 CinemachineShake.instance.Shake(punchShake);
             }
         }
