@@ -20,20 +20,20 @@ public class PlayerSetupMenuController : MonoBehaviour
         playerIndex = pi;
         titleText.SetText("Player " + (pi + 1).ToString());
 
-        previewImage.texture = renderTextures[PlayerConfigurationManager.Instance.GetMeshIndex(playerIndex)];
+        previewImage.texture = renderTextures[PlayerConfigurationManager.Instance.GetPlayerCharacterIndex(playerIndex)];
     }
 
     public void IncreaseIndex()
     {
         PlayerConfigurationManager.Instance.IncreaseCharacterSelectIndex(playerIndex);
         Debug.Log($"Texture Number: {playerIndex}");
-        previewImage.texture = renderTextures[PlayerConfigurationManager.Instance.GetMeshIndex(playerIndex)];
+        previewImage.texture = renderTextures[PlayerConfigurationManager.Instance.GetPlayerCharacterIndex(playerIndex)];
     }
 
     public void DecreaseIndex()
     {
         PlayerConfigurationManager.Instance.DecreaseCharacterSelectIndex(playerIndex);
-        previewImage.texture = renderTextures[PlayerConfigurationManager.Instance.GetMeshIndex(playerIndex)];
+        previewImage.texture = renderTextures[PlayerConfigurationManager.Instance.GetPlayerCharacterIndex(playerIndex)];
     }
 
     public void ReadyPlayer()

@@ -89,8 +89,13 @@ public class GameModeManager : MonoBehaviour
 
     private IEnumerator ActiveNewRound()
     {
+        yield return new WaitForEndOfFrame();
+        PlayerConfigurationManager.Instance.SetPlayerInputs(false);
+        Debug.Log("Locking input");
         yield return new WaitForSeconds(timeToStartNewRound);
         roundRunning = true;
+        Debug.Log("Unlocking input");
+        PlayerConfigurationManager.Instance.SetPlayerInputs(true);
     }
 
     private IEnumerator EndMiniGame()

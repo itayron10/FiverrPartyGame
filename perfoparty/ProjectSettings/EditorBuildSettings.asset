@@ -9,11 +9,23 @@ EditorBuildSettings:
     path: Assets/Scenes/MainMenu.unity
     guid: 2f67dcf43f842be4b8cf0993a561ea5b
   - enabled: 1
-    path: Assets/Scenes/TestScene.unity
-    guid: d748b9bb4f497074fa1a84e89c56f91e
-  - enabled: 1
-    path: Assets/Scenes/TestScene 1.unity
+    path: Assets/Scenes/Punch Mini Game.unity
     guid: c662c7d44a8ea694f9f67a377ac88fdd
+  - enabled: 1
+    path: Assets/Scenes/Gun Mini Game.unity
+    guid: faf8dd750730c374ab57fa306fdd2a1c
+  - enabled: 1
+    path: Assets/Scenes/FFA Guns Mini Game.unity
+    guid: 8d24547e6fc0d4c4e8cdf78e748aa5f3
+  - enabled: 1
+    path: Assets/Scenes/Parkour Mini Game.unity
+    guid: b93125bfe0325d44bbe7b2177233a403
+  - enabled: 1
+    path: Assets/Scenes/TNT TAG Mini Game.unity
+    guid: f3e6a229acf6b8d4b82cf64b0dd6bcb8
+  - enabled: 1
+    path: Assets/Scenes/Final Boss Mini Game.unity
+    guid: a488c74cc4ea8324792fc23add8c53ad
   - enabled: 1
     path: Assets/Scenes/PodiumScene.unity
     guid: 88ea87512ac5d7243bb2c5afc89b2f6c

@@ -44,6 +44,19 @@ public class PlayerConfigurationManager : MonoBehaviour
         if (levelIndex == 0) SetPlayersToPositions();
     }
 
+    public void SetPlayerInputs(bool active)
+    {
+        foreach (var player in playerConfigs)
+        {
+            if (active) player.Input.ActivateInput();
+            else
+            {
+                player.Input.DeactivateInput();
+                Debug.Log("Desabling Input");
+            }
+        }
+    }
+
 
     public void PlayWinnerVideo()
     {
@@ -155,7 +168,7 @@ public class PlayerConfigurationManager : MonoBehaviour
             playerConfig.characterIndex++;
     }
 
-    public int GetMeshIndex(int configIndex)
+    public int GetPlayerCharacterIndex(int configIndex)
     {
         PlayerConfiguration playerConfig = playerConfigs[configIndex];
         return playerConfig.characterIndex;
