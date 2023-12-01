@@ -22,7 +22,7 @@ public class GameStarterInteractable : Interactable
 
     private void Update()
     {
-        if (configurationManager.GetPlayerConfigs().Count > 0) votesToStartGame = (configurationManager.GetPlayerConfigs().Count / 2) + 1;
+        if (configurationManager.GetPlayerConfigs().Count > 0) votesToStartGame = Mathf.Max(2, (configurationManager.GetPlayerConfigs().Count / 2) + 1);
         votesDisplay.text = $"{playerVotes}/{votesToStartGame}";
     }
 

@@ -13,9 +13,10 @@ public class GameModeManager : MonoBehaviour
     [SerializeField] GameObject reloadGameMenu;
     [SerializeField] bool lastGameMode;
     [SerializeField] int scoreAddedByWinningRound = 5;
+    [SerializeField] float timeToStartNewRound = 4f;
     private int roundCount = 0;
     private LevelManager levelManager;
-    private bool miniGameRunning;
+    private bool miniGameRunning, roundRunning;
 
 
     private void Start()
@@ -26,27 +27,30 @@ public class GameModeManager : MonoBehaviour
         {
             playersToEnterGameMode.Add(playerConfig);
             playersCurrentlyInGameMode.Add(playerConfig);
+            playerConfig.inputHandler.GetComponent<Rigidbody>().MovePosition(startPoints[playerConfig.PlayerIndex].position);
         }
         if (playersToEnterGameMode.Count > 1) StartNewRound();
     }
 
+
     private void Update()
     {
         if (miniGameRunning) UpdateMiniGame();
-
     }
+
 
     private void UpdateMiniGame()
     {
         for (int i = 0; i < playersCurrentlyInGameMode.Count; i++)
         {
             GameObject player = playersCurrentlyInGameMode[i].inputHandler.gameObject;
-            if (IsPlayerKickedOut(player))
+            if (IsPlayerKickedOut(player) && roundRunning)
             {
                 playersCurrentlyInGameMode.Remove(playersCurrentlyInGameMode[i]);
                 player.SetActive(false);
                 if (playersCurrentlyInGameMode.Count <= 1)
                 {
+                    roundRunning = false;
                     playersCurrentlyInGameMode[0].AddPlayerScore(scoreAddedByWinningRound);
                     StartNewRound();
                 }
@@ -73,12 +77,20 @@ public class GameModeManager : MonoBehaviour
         {
             GameObject player = playersToEnterGameMode[i].inputHandler.gameObject;
             player.SetActive(true);
-            player.transform.position = startPoints[i].position;
+            player.GetComponent<Rigidbody>().MovePosition(startPoints[playersToEnterGameMode[i].PlayerIndex].position);
             playersCurrentlyInGameMode.Clear();
             foreach (var playerConfig in playersToEnterGameMode) playersCurrentlyInGameMode.Add(playerConfig);
         }
         
-        ParticleManager.InstanciateParticleEffect(countingCanvas, transform.position, Quaternion.identity, 4f);
+        ParticleManager.InstanciateParticleEffect(countingCanvas, transform.position, Quaternion.identity, timeToStartNewRound);
+        StopCoroutine(nameof(ActiveNewRound));
+        StartCoroutine(ActiveNewRound());
+    }
+
+    private IEnumerator ActiveNewRound()
+    {
+        yield return new WaitForSeconds(timeToStartNewRound);
+        roundRunning = true;
     }
 
     private IEnumerator EndMiniGame()
@@ -102,7 +114,6 @@ public class GameModeManager : MonoBehaviour
         {
             Debug.Log("Sending to the menu");
             SetActiveAllPlayers(true);
-            PlayerConfigurationManager.Instance.SetPlayersToPositions();
             levelManager.LoadLevelByIndex(0);
         }
     }

@@ -11,7 +11,7 @@ public class NameDisplay : MonoBehaviour
     private void Start()
     {
         displayText.text = $"Player {inputHandler.playerConfig.PlayerIndex}";
-        displayText.color = inputHandler.playerConfig.playerColor;
+        displayText.color = inputHandler.playerConfig.playerCharacter.playerColor;
     }
 
 }

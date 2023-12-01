@@ -15,7 +15,12 @@ public class LevelLoadButton : EventButton
     {
         base.FindPrivateObjects();
         pauseManager = FindObjectOfType<PauseManager>();
+    }
+
+    private void OnEnable()
+    {
         levelManager = FindObjectOfType<LevelManager>();
+        Debug.Log(levelManager.name);
     }
 
     public override void OnClick()

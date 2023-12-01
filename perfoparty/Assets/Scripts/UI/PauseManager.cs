@@ -10,8 +10,12 @@ public class PauseManager : MonoBehaviour
     private bool isGamePaused = false;
     private SoundManager soundManager;
 
-    private void Awake() => FindPrivateObjects();        
 
+    private void Awake() => FindPrivateObjects();
+    private void Start()
+    {
+        UnpauseGame();
+    }
 
     private void FindPrivateObjects()
     {
@@ -40,16 +44,27 @@ public class PauseManager : MonoBehaviour
     private void HandlePauseSettings(bool isGamePaused, PlayerConfiguration playerConfig)
     {
         if (playerConfig != null) playerConfig.inputHandler.GetPlayerPauseMenu.gameObject.SetActive(isGamePaused ? true : false);
+
         soundManager.PlaySound(isGamePaused ? pauseSound : unpauseSound);
         Time.timeScale = isGamePaused ? 0f : 1f;
 
         foreach (var player in PlayerConfigurationManager.Instance.GetPlayerConfigs())
         {
-            if (!player.Equals(playerConfig))
+            if (playerConfig == null)
             {
-                if (isGamePaused) player.Input.DeactivateInput();
-                else player.Input.ActivateInput();
+                player.inputHandler.GetPlayerPauseMenu.gameObject.SetActive(isGamePaused ? true : false);
+                HandlePlayerInput(isGamePaused, player);
+            }
+            else if (!player.Equals(playerConfig))
+            {
+                HandlePlayerInput(isGamePaused, player);
             }
         }
+    }
+
+    private static void HandlePlayerInput(bool isGamePaused, PlayerConfiguration player)
+    {
+        if (isGamePaused) player.Input.DeactivateInput();
+        else player.Input.ActivateInput();
     }
 }

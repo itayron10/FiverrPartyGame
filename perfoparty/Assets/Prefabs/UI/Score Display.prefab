@@ -143,6 +143,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5625269371294933900}
+  - component: {fileID: 5957248894321368662}
   m_Layer: 0
   m_Name: Score Display
   m_TagString: Untagged
@@ -166,11 +167,25 @@ RectTransform:
   - {fileID: 7359799221085098441}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
+  m_SizeDelta: {x: 300, y: 77.3459}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &5957248894321368662
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5465952772418614724}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c435d42b52195bf46a98f9aaeafe033b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  displayText: {fileID: 3354097847313063225}
+  displayIcon: {fileID: 6903591134968825093}
 --- !u!1 &7896297652190669827
 GameObject:
   m_ObjectHideFlags: 0

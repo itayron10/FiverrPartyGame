@@ -35,7 +35,7 @@ public class InputHandler : MonoBehaviour
     {
         playerConfig = config;
         playerConfig.inputHandler = this;
-        GameObject playerMeshInstance = Instantiate(playerConfig.playerMeshObject, transform.position, transform.rotation, transform);
+        GameObject playerMeshInstance = Instantiate(playerConfig.playerCharacter.meshPrefab, transform.position, transform.rotation, transform);
         config.Input.onActionTriggered += Input_onActionTriggered;
         config.Input.uiInputModule = uiEventSystem;
     }

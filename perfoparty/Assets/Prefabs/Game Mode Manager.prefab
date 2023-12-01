@@ -63,7 +63,7 @@ MonoBehaviour:
   playersCurrentlyInGameMode: []
   minYPositionForPlayers: -2
   countingCanvas: {fileID: 5331982604329340332, guid: 7748a25a612514042aae80918e684478, type: 3}
-  podiumSceneName: MainMenu
+  podiumSceneName: PodiumScene
   reloadGameMenu: {fileID: 0}
   lastGameMode: 0
   scoreAddedByWinningRound: 5
@@ -80,8 +80,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   scoreBoardParant: {fileID: 1976279033016299948}
-  scoreDisplayPrefab: {fileID: 5465952772418614724, guid: a8757e9b9658173458d09a3cb7b4f046, type: 3}
-  scoreDisplays: []
+  scoreDisplayPrefab: {fileID: 5957248894321368662, guid: a8757e9b9658173458d09a3cb7b4f046, type: 3}
 --- !u!1 &2349488790253682322
 GameObject:
   m_ObjectHideFlags: 0

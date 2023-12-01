@@ -25,14 +25,14 @@ public class PlayerSetupMenuController : MonoBehaviour
 
     public void IncreaseIndex()
     {
-        PlayerConfigurationManager.Instance.IncreaseMeshSelectIndex(playerIndex);
+        PlayerConfigurationManager.Instance.IncreaseCharacterSelectIndex(playerIndex);
         Debug.Log($"Texture Number: {playerIndex}");
         previewImage.texture = renderTextures[PlayerConfigurationManager.Instance.GetMeshIndex(playerIndex)];
     }
 
     public void DecreaseIndex()
     {
-        PlayerConfigurationManager.Instance.DecreaseMeshSelectIndex(playerIndex);
+        PlayerConfigurationManager.Instance.DecreaseCharacterSelectIndex(playerIndex);
         previewImage.texture = renderTextures[PlayerConfigurationManager.Instance.GetMeshIndex(playerIndex)];
     }
 

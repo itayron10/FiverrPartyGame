@@ -821,6 +821,10 @@ PrefabInstance:
       value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 6741938426324961643, guid: dc6e6b4c8bfb8784092f816829281f70, type: 3}
+      propertyPath: playerCharacters.Array.size
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 6741938426324961643, guid: dc6e6b4c8bfb8784092f816829281f70, type: 3}
       propertyPath: winningVideos.Array.data[0]
       value: 
       objectReference: {fileID: 7825210921193006690, guid: 8c8a304c70ae9604aac43b909ab71617, type: 3}
@@ -844,6 +848,30 @@ PrefabInstance:
       propertyPath: winningVideos.Array.data[5]
       value: 
       objectReference: {fileID: 1761907271144995184, guid: f179ce6e591914348b6842c9cb078d0d, type: 3}
+    - target: {fileID: 6741938426324961643, guid: dc6e6b4c8bfb8784092f816829281f70, type: 3}
+      propertyPath: playerCharacters.Array.data[0]
+      value: 
+      objectReference: {fileID: 11400000, guid: 4ea1883719942ff4bb0a302d82be9ea4, type: 2}
+    - target: {fileID: 6741938426324961643, guid: dc6e6b4c8bfb8784092f816829281f70, type: 3}
+      propertyPath: playerCharacters.Array.data[1]
+      value: 
+      objectReference: {fileID: 11400000, guid: 0b0da8df84a599240b4a0779feecace3, type: 2}
+    - target: {fileID: 6741938426324961643, guid: dc6e6b4c8bfb8784092f816829281f70, type: 3}
+      propertyPath: playerCharacters.Array.data[2]
+      value: 
+      objectReference: {fileID: 11400000, guid: d1482d533b3faf445a54b3a50b0cccc0, type: 2}
+    - target: {fileID: 6741938426324961643, guid: dc6e6b4c8bfb8784092f816829281f70, type: 3}
+      propertyPath: playerCharacters.Array.data[3]
+      value: 
+      objectReference: {fileID: 11400000, guid: 928afb19cb7399442b3fbf9a20bf8b9d, type: 2}
+    - target: {fileID: 6741938426324961643, guid: dc6e6b4c8bfb8784092f816829281f70, type: 3}
+      propertyPath: playerCharacters.Array.data[4]
+      value: 
+      objectReference: {fileID: 11400000, guid: f79837b54a922284f903adcffce88586, type: 2}
+    - target: {fileID: 6741938426324961643, guid: dc6e6b4c8bfb8784092f816829281f70, type: 3}
+      propertyPath: playerCharacters.Array.data[5]
+      value: 
+      objectReference: {fileID: 11400000, guid: af7c221cad0b51740b8755591dd6992a, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []

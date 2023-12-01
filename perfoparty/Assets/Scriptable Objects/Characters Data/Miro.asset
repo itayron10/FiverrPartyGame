@@ -1,0 +1,18 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e207746a62b876e428884ceca66f2d6b, type: 3}
+  m_Name: Miro
+  m_EditorClassIdentifier: 
+  meshPrefab: {fileID: 4982433275324562186, guid: e88008485ad7b6f4f85fcdf8667d6233, type: 3}
+  playerColor: {r: 0.5570202, g: 0, b: 1, a: 1}
+  playerWinningVideo: {fileID: 897960085617549393, guid: d138205fe0aaa49478d65c19fc0d5d77, type: 3}
+  playerIcon: {fileID: 10913, guid: 0000000000000000f000000000000000, type: 0}
