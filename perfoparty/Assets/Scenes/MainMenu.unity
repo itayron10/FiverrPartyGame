@@ -26,7 +26,7 @@ RenderSettings:
   m_AmbientIntensity: 1
   m_AmbientMode: 0
   m_SubtractiveShadowColor: {r: 0.42, g: 0.478, b: 0.627, a: 1}
-  m_SkyboxMaterial: {fileID: 2100000, guid: 2d796ced94d61438fbab81b194038162, type: 2}
+  m_SkyboxMaterial: {fileID: 2100000, guid: c56e28e54cac24b04ae3dd957d214534, type: 2}
   m_HaloStrength: 0.5
   m_FlareStrength: 1
   m_FlareFadeSpeed: 3
@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 705507994}
-  m_IndirectSpecularColor: {r: 0.19591501, g: 0.23728395, b: 0.31093928, a: 1}
+  m_IndirectSpecularColor: {r: 0.11504342, g: 0.33144477, b: 0.71690416, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -1298,8 +1298,8 @@ Light:
   serializedVersion: 10
   m_Type: 1
   m_Shape: 0
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_Intensity: 1.5
+  m_Color: {r: 1, g: 0.98707545, b: 0.8726415, a: 1}
+  m_Intensity: 1.2
   m_Range: 10
   m_SpotAngle: 30
   m_InnerSpotAngle: 21.80208
@@ -3112,7 +3112,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 2230832294920570770, guid: b06f2e79520749843aad5d59892e51fd, type: 3}
       propertyPath: LevelNameOnGameStart
-      value: Punch Mini Game
+      value: FFA Guns Mini Game
       objectReference: {fileID: 0}
     - target: {fileID: 2746823993204176368, guid: b06f2e79520749843aad5d59892e51fd, type: 3}
       propertyPath: m_Name
@@ -5361,10 +5361,6 @@ PrefabInstance:
     - target: {fileID: 2541796421414520466, guid: 91a5a606ca7f5f0439350cf7b30d9e65, type: 3}
       propertyPath: m_Name
       value: PP
-      objectReference: {fileID: 0}
-    - target: {fileID: 2541796421414520466, guid: 91a5a606ca7f5f0439350cf7b30d9e65, type: 3}
-      propertyPath: m_IsActive
-      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6172006329779496025, guid: 91a5a606ca7f5f0439350cf7b30d9e65, type: 3}
       propertyPath: m_LocalPosition.x

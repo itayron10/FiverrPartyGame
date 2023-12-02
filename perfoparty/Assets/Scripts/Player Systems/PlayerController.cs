@@ -93,12 +93,13 @@ public class PlayerMovement : MonoBehaviour
 
     private void HandleRotation()
     {
+        rb.angularVelocity = Vector3.zero;
         if (moveDirection.magnitude <= 0f) { return; }
 
         animator.SetBool(danceAnimatorBool, false);
         Quaternion rotationDirection = Quaternion.LookRotation(moveDirection);
-        animator.transform.localPosition = Vector3.zero;
-        animator.transform.rotation = Quaternion.Lerp(animator.transform.rotation, rotationDirection, Time.deltaTime * rotationVelocity);
+        //transform.localPosition = Vector3.zero;
+        transform.rotation = Quaternion.Lerp(transform.rotation, rotationDirection, Time.deltaTime * rotationVelocity);
     }
 
     public void UodateMovement(Vector2 movementVector)

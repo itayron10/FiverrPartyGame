@@ -89,6 +89,24 @@ public partial class @Inputs: IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""Shoot"",
+                    ""type"": ""Button"",
+                    ""id"": ""16168968-62a1-4ebe-972b-035618d9be78"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""Unequip"",
+                    ""type"": ""Button"",
+                    ""id"": ""fe96aec5-f399-470e-b900-8594028f67a4"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
                 }
             ],
             ""bindings"": [
@@ -289,6 +307,50 @@ public partial class @Inputs: IInputActionCollection2, IDisposable
                     ""action"": ""Pause Game"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""c3e12c9a-f9d1-42fd-8dee-383884d0c921"",
+                    ""path"": ""<Keyboard>/leftCtrl"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Shoot"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""9eee83cd-cd4e-4a93-8c66-68175cc0d35e"",
+                    ""path"": ""<Gamepad>/rightTrigger"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Shoot"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""ca3654a8-3a59-49f9-8af6-13f884a1ea82"",
+                    ""path"": ""<Keyboard>/shift"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Unequip"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""53ec1395-68ea-49a0-92ea-28a4bfe9ab31"",
+                    ""path"": ""<Gamepad>/buttonNorth"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Unequip"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 }
             ]
         }
@@ -304,6 +366,8 @@ public partial class @Inputs: IInputActionCollection2, IDisposable
         m_Player_Punch = m_Player.FindAction("Punch", throwIfNotFound: true);
         m_Player_Interact = m_Player.FindAction("Interact", throwIfNotFound: true);
         m_Player_PauseGame = m_Player.FindAction("Pause Game", throwIfNotFound: true);
+        m_Player_Shoot = m_Player.FindAction("Shoot", throwIfNotFound: true);
+        m_Player_Unequip = m_Player.FindAction("Unequip", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -372,6 +436,8 @@ public partial class @Inputs: IInputActionCollection2, IDisposable
     private readonly InputAction m_Player_Punch;
     private readonly InputAction m_Player_Interact;
     private readonly InputAction m_Player_PauseGame;
+    private readonly InputAction m_Player_Shoot;
+    private readonly InputAction m_Player_Unequip;
     public struct PlayerActions
     {
         private @Inputs m_Wrapper;
@@ -383,6 +449,8 @@ public partial class @Inputs: IInputActionCollection2, IDisposable
         public InputAction @Punch => m_Wrapper.m_Player_Punch;
         public InputAction @Interact => m_Wrapper.m_Player_Interact;
         public InputAction @PauseGame => m_Wrapper.m_Player_PauseGame;
+        public InputAction @Shoot => m_Wrapper.m_Player_Shoot;
+        public InputAction @Unequip => m_Wrapper.m_Player_Unequip;
         public InputActionMap Get() { return m_Wrapper.m_Player; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -413,6 +481,12 @@ public partial class @Inputs: IInputActionCollection2, IDisposable
             @PauseGame.started += instance.OnPauseGame;
             @PauseGame.performed += instance.OnPauseGame;
             @PauseGame.canceled += instance.OnPauseGame;
+            @Shoot.started += instance.OnShoot;
+            @Shoot.performed += instance.OnShoot;
+            @Shoot.canceled += instance.OnShoot;
+            @Unequip.started += instance.OnUnequip;
+            @Unequip.performed += instance.OnUnequip;
+            @Unequip.canceled += instance.OnUnequip;
         }
 
         private void UnregisterCallbacks(IPlayerActions instance)
@@ -438,6 +512,12 @@ public partial class @Inputs: IInputActionCollection2, IDisposable
             @PauseGame.started -= instance.OnPauseGame;
             @PauseGame.performed -= instance.OnPauseGame;
             @PauseGame.canceled -= instance.OnPauseGame;
+            @Shoot.started -= instance.OnShoot;
+            @Shoot.performed -= instance.OnShoot;
+            @Shoot.canceled -= instance.OnShoot;
+            @Unequip.started -= instance.OnUnequip;
+            @Unequip.performed -= instance.OnUnequip;
+            @Unequip.canceled -= instance.OnUnequip;
         }
 
         public void RemoveCallbacks(IPlayerActions instance)
@@ -464,5 +544,7 @@ public partial class @Inputs: IInputActionCollection2, IDisposable
         void OnPunch(InputAction.CallbackContext context);
         void OnInteract(InputAction.CallbackContext context);
         void OnPauseGame(InputAction.CallbackContext context);
+        void OnShoot(InputAction.CallbackContext context);
+        void OnUnequip(InputAction.CallbackContext context);
     }
 }

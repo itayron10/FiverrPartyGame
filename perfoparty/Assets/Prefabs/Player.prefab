@@ -466,6 +466,8 @@ GameObject:
   - component: {fileID: 9008007228405198074}
   - component: {fileID: 87511094776267209}
   - component: {fileID: 1436159346837162968}
+  - component: {fileID: 6395867572866406220}
+  - component: {fileID: -5101406053275135453}
   m_Layer: 7
   m_Name: Player
   m_TagString: Untagged
@@ -489,6 +491,8 @@ Transform:
   - {fileID: 6696979472179937798}
   - {fileID: 3649587039808102675}
   - {fileID: 7646140753550626399}
+  - {fileID: 8449241873846323832}
+  - {fileID: 9190817997621484704}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!54 &8813149564817720835
@@ -516,7 +520,7 @@ Rigidbody:
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 1
-  m_Constraints: 112
+  m_Constraints: 80
   m_CollisionDetection: 0
 --- !u!136 &8590282494772588911
 CapsuleCollider:
@@ -537,10 +541,10 @@ CapsuleCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 0.2948093
-  m_Height: 1.8189812
+  m_Radius: 0.5
+  m_Height: 2.5
   m_Direction: 1
-  m_Center: {x: 0.008549482, y: 0.92346406, z: 0}
+  m_Center: {x: 0, y: 1.2, z: 0}
 --- !u!114 &7181979369827712775
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -603,13 +607,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   punchAnimatorTrigger: Punch
-  punchRange: 1.29
+  punchRange: 0.95
   punchDamage: 0
   punchKnockBack: 5
   punchLayer:
     serializedVersion: 2
     m_Bits: 128
-  punchOriginOffset: {x: 0, y: 1.26, z: 0.59}
+  punchOriginOffset: {x: 0, y: 1.26, z: 1.13}
   punchShake: {fileID: 11400000, guid: 25775e8e63ddf0c44b1fbb04277e2c65, type: 2}
 --- !u!114 &9008007228405198074
 MonoBehaviour:
@@ -658,6 +662,37 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   inputHandler: {fileID: 2573673826815933925}
   displayText: {fileID: 5371219522368240219}
+--- !u!114 &6395867572866406220
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1166317410833741800}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8d35e90982579934a91f9f7d7648531f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  hasWeaponAnimatorBool: HasWeapon
+  shootAnimatorBool: Shooting
+  weaponHoldingPoint: {fileID: 8449241873846323832}
+  weaponHoldingLocalPos: {x: -0.028, y: 0.111, z: 0.053}
+  weaponHoldingLocalEuler: {x: 333.0472, y: 58.44067, z: 56.56739}
+  weaponHoldingShootingLocalEuler: {x: 296.91208, y: 183.49681, z: 286.6966}
+--- !u!114 &-5101406053275135453
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1166317410833741800}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 97740b311d7facc4ea3eecefc86af690, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  tntHoldPoint: {fileID: 9190817997621484704}
 --- !u!1 &3124592054193850472
 GameObject:
   m_ObjectHideFlags: 0
@@ -1037,6 +1072,37 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   rotateSmoothly: 0
   rotateSpeed: 1
+--- !u!1 &3748991561077292253
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 9190817997621484704}
+  m_Layer: 7
+  m_Name: Tnt Holding Point
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &9190817997621484704
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3748991561077292253}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 2.5, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 3580832700982986253}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &4234821999189272739
 GameObject:
   m_ObjectHideFlags: 0
@@ -1511,6 +1577,37 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!1 &6819405128520584352
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 8449241873846323832}
+  m_Layer: 7
+  m_Name: Weapon Holding Point
+  m_TagString: Untagged
+  m_Icon: {fileID: 6519382022992737161, guid: 0000000000000000d000000000000000, type: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &8449241873846323832
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6819405128520584352}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0.0047706827, y: 0.49470058, z: 0.48543915, w: 0.72083104}
+  m_LocalPosition: {x: -0.028, y: 0.111, z: 0.053}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 3580832700982986253}
+  m_LocalEulerAnglesHint: {x: -28.256, y: 54.581, z: 53.118}
 --- !u!1 &7534619345830958453
 GameObject:
   m_ObjectHideFlags: 0

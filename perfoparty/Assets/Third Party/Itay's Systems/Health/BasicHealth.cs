@@ -29,6 +29,7 @@ public class BasicHealth : MonoBehaviour
     public event OnHit OnTakingDamage;
 
     public float GetCurrentHealth => currentHealth;
+    public void SetCurrentHealth(float health) => currentHealth = health;
     public float GetMaxHealth => maxHealth;
 
 
@@ -45,6 +46,7 @@ public class BasicHealth : MonoBehaviour
         healthAudioSource = GetComponent<AudioSource>();
         initialized = true;
     }
+
 
 
 
@@ -84,7 +86,7 @@ public class BasicHealth : MonoBehaviour
         // plays the death effects
         PlayDeathEffects();
         // destroyes the gameobject
-        Destroy(gameObject);
+        //Destroy(gameObject);
     }
 
     protected void PlayDeathEffects()

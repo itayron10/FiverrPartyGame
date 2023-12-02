@@ -13,10 +13,12 @@ public class PunchController : MonoBehaviour
     [SerializeField] ScreenShakeSettingsSO punchShake;
     private PlayerMovement playerMovement;
     private Animator animator;
+    private TntHolder tntHolder;
 
     private void Start()
     {
         playerMovement = GetComponent<PlayerMovement>();
+        tntHolder = GetComponent<TntHolder>();
         animator = playerMovement.animator;
     }
 
@@ -31,14 +33,24 @@ public class PunchController : MonoBehaviour
             Vector3 hitPos = collider.ClosestPoint(transform.position + punchOriginOffset);
 
             if (collider.TryGetComponent<BasicHealth>(out BasicHealth health)) health.TakeDamage(punchDamage, hitPos);
+            
             if (collider.TryGetComponent<Rigidbody>(out Rigidbody rb))
             {
                 float punchForce = punchKnockBack / (1f - rb.drag * Time.fixedDeltaTime);
-                rb.AddForceAtPosition(animator.transform.forward * punchForce, hitPos, ForceMode.VelocityChange);
+                rb.AddForceAtPosition(transform.forward * punchForce, hitPos, ForceMode.VelocityChange);
 /*                rb.AddForce((rb.position - transform.position).normalized
                     * punchKnockBack / (1f - rb.drag * Time.fixedDeltaTime), ForceMode.Impulse);*/
                 rb.AddForceAtPosition(Vector3.up * punchForce / 2f, hitPos, ForceMode.VelocityChange);
                 CinemachineShake.instance.Shake(punchShake);
+            }
+
+            if (collider.TryGetComponent<TntHolder>(out TntHolder tntHolder))
+            {
+                if (this.tntHolder.GetTnt != null)
+                {
+                    tntHolder.EquipTnt(this.tntHolder.GetTnt);
+                    this.tntHolder.UnequipTnt();
+                }
             }
         }
     }

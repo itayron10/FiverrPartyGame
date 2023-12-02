@@ -14,6 +14,8 @@ public class InputHandler : MonoBehaviour
     public PlayerConfiguration playerConfig;
     private PlayerMovement myPlayerMovement;
     private PunchController myPunchController;
+    private WeaponManager weaponManager;
+    private PauseManager pauseManager;
 
     public Inputs GetControls => controls;
     public Canvas GetPlayerPauseMenu => playerPauseMenu;
@@ -24,6 +26,8 @@ public class InputHandler : MonoBehaviour
         controls = new Inputs();
         myPlayerMovement = GetComponent<PlayerMovement>();
         myPunchController = GetComponent<PunchController>();
+        weaponManager = GetComponent<WeaponManager>();
+        pauseManager = FindObjectOfType<PauseManager>();
     }
 
     private void OnLevelWasLoaded(int level)
@@ -45,13 +49,18 @@ public class InputHandler : MonoBehaviour
     {
         if (IsThisAction(controls.Player.Movement.name, obj)) OnMove(obj);
 
-        if (IsThisAction(controls.Player.Jump.name, obj) && obj.performed) myPlayerMovement.Jump();
+        if (IsThisAction(controls.Player.Jump.name, obj) && obj.performed) myPlayerMovement?.Jump();
 
-        if (IsThisAction(controls.Player.Dance.name, obj) && obj.performed) myPlayerMovement.Dance();
+        if (IsThisAction(controls.Player.Dance.name, obj) && obj.performed) myPlayerMovement?.Dance();
 
-        if (IsThisAction(controls.Player.Punch.name, obj) && obj.performed) myPunchController.Punch();
+        if (IsThisAction(controls.Player.Punch.name, obj) && obj.performed) myPunchController?.Punch();
 
-        if (IsThisAction(controls.Player.PauseGame.name, obj) && obj.performed) FindObjectOfType<PauseManager>()?.PreformTogglePause(playerConfig);
+        if (IsThisAction(controls.Player.PauseGame.name, obj) && obj.performed) pauseManager?.PreformTogglePause(playerConfig);
+
+        if (IsThisAction(controls.Player.Shoot.name, obj) && obj.performed) weaponManager?.StartShootWeapon();
+        if (IsThisAction(controls.Player.Shoot.name, obj) && obj.canceled) weaponManager?.StopShootingWeapon();
+
+        if (IsThisAction(controls.Player.Unequip.name, obj) && obj.performed) weaponManager?.UnequipWeapon();
         
     }
 
