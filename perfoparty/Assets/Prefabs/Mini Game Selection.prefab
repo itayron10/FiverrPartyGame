@@ -48,7 +48,7 @@ PrefabInstance:
     - target: {fileID: 539890373013676634, guid: 7251bad4c998ee9408f81681e10819cf, type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 21300000, guid: eb63119140ab64f4fa4643efb76ddcf8, type: 3}
+      objectReference: {fileID: 21300000, guid: 4cfdef3b4021ab84f991c7f13036f88a, type: 3}
     - target: {fileID: 4493510623259830757, guid: 7251bad4c998ee9408f81681e10819cf, type: 3}
       propertyPath: m_LocalPosition.x
       value: -2
@@ -101,9 +101,53 @@ PrefabInstance:
       propertyPath: m_fontSize
       value: 0.75
       objectReference: {fileID: 0}
+    - target: {fileID: 7759230529826273838, guid: 7251bad4c998ee9408f81681e10819cf, type: 3}
+      propertyPath: m_fontAsset
+      value: 
+      objectReference: {fileID: 11400000, guid: a66aeab1ef86d224a94433de0a5e0326, type: 2}
+    - target: {fileID: 7759230529826273838, guid: 7251bad4c998ee9408f81681e10819cf, type: 3}
+      propertyPath: m_fontSizeBase
+      value: 0.42
+      objectReference: {fileID: 0}
+    - target: {fileID: 7759230529826273838, guid: 7251bad4c998ee9408f81681e10819cf, type: 3}
+      propertyPath: m_sharedMaterial
+      value: 
+      objectReference: {fileID: 8198314020699498870, guid: a66aeab1ef86d224a94433de0a5e0326, type: 2}
+    - target: {fileID: 7759230529826273838, guid: 7251bad4c998ee9408f81681e10819cf, type: 3}
+      propertyPath: m_enableAutoSizing
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7759230529826273838, guid: 7251bad4c998ee9408f81681e10819cf, type: 3}
+      propertyPath: m_hasFontAssetChanged
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8675361107449135442, guid: 7251bad4c998ee9408f81681e10819cf, type: 3}
       propertyPath: LevelNameOnGameStart
       value: FFA Guns Mini Game
+      objectReference: {fileID: 0}
+    - target: {fileID: 8714020377717718156, guid: 7251bad4c998ee9408f81681e10819cf, type: 3}
+      propertyPath: m_fontSize
+      value: 0.75
+      objectReference: {fileID: 0}
+    - target: {fileID: 8714020377717718156, guid: 7251bad4c998ee9408f81681e10819cf, type: 3}
+      propertyPath: m_fontAsset
+      value: 
+      objectReference: {fileID: 11400000, guid: a66aeab1ef86d224a94433de0a5e0326, type: 2}
+    - target: {fileID: 8714020377717718156, guid: 7251bad4c998ee9408f81681e10819cf, type: 3}
+      propertyPath: m_fontSizeBase
+      value: 0.42
+      objectReference: {fileID: 0}
+    - target: {fileID: 8714020377717718156, guid: 7251bad4c998ee9408f81681e10819cf, type: 3}
+      propertyPath: m_sharedMaterial
+      value: 
+      objectReference: {fileID: 8198314020699498870, guid: a66aeab1ef86d224a94433de0a5e0326, type: 2}
+    - target: {fileID: 8714020377717718156, guid: 7251bad4c998ee9408f81681e10819cf, type: 3}
+      propertyPath: m_enableAutoSizing
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8714020377717718156, guid: 7251bad4c998ee9408f81681e10819cf, type: 3}
+      propertyPath: m_hasFontAssetChanged
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -126,7 +170,7 @@ PrefabInstance:
     - target: {fileID: 539890373013676634, guid: 7251bad4c998ee9408f81681e10819cf, type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 21300000, guid: 4156520f307b40846b5507e51a2418ba, type: 3}
+      objectReference: {fileID: 21300000, guid: 5e85e65ee72f2f5489af3bc24145e6d0, type: 3}
     - target: {fileID: 4493510623259830757, guid: 7251bad4c998ee9408f81681e10819cf, type: 3}
       propertyPath: m_LocalPosition.x
       value: 2
@@ -177,11 +221,55 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7759230529826273838, guid: 7251bad4c998ee9408f81681e10819cf, type: 3}
       propertyPath: m_fontSize
-      value: 0.85
+      value: 0.8
+      objectReference: {fileID: 0}
+    - target: {fileID: 7759230529826273838, guid: 7251bad4c998ee9408f81681e10819cf, type: 3}
+      propertyPath: m_fontAsset
+      value: 
+      objectReference: {fileID: 11400000, guid: a66aeab1ef86d224a94433de0a5e0326, type: 2}
+    - target: {fileID: 7759230529826273838, guid: 7251bad4c998ee9408f81681e10819cf, type: 3}
+      propertyPath: m_fontSizeBase
+      value: 0.42
+      objectReference: {fileID: 0}
+    - target: {fileID: 7759230529826273838, guid: 7251bad4c998ee9408f81681e10819cf, type: 3}
+      propertyPath: m_sharedMaterial
+      value: 
+      objectReference: {fileID: 8198314020699498870, guid: a66aeab1ef86d224a94433de0a5e0326, type: 2}
+    - target: {fileID: 7759230529826273838, guid: 7251bad4c998ee9408f81681e10819cf, type: 3}
+      propertyPath: m_enableAutoSizing
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7759230529826273838, guid: 7251bad4c998ee9408f81681e10819cf, type: 3}
+      propertyPath: m_hasFontAssetChanged
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8675361107449135442, guid: 7251bad4c998ee9408f81681e10819cf, type: 3}
       propertyPath: LevelNameOnGameStart
       value: TNT TAG Mini Game
+      objectReference: {fileID: 0}
+    - target: {fileID: 8714020377717718156, guid: 7251bad4c998ee9408f81681e10819cf, type: 3}
+      propertyPath: m_fontSize
+      value: 0.75
+      objectReference: {fileID: 0}
+    - target: {fileID: 8714020377717718156, guid: 7251bad4c998ee9408f81681e10819cf, type: 3}
+      propertyPath: m_fontAsset
+      value: 
+      objectReference: {fileID: 11400000, guid: a66aeab1ef86d224a94433de0a5e0326, type: 2}
+    - target: {fileID: 8714020377717718156, guid: 7251bad4c998ee9408f81681e10819cf, type: 3}
+      propertyPath: m_fontSizeBase
+      value: 0.42
+      objectReference: {fileID: 0}
+    - target: {fileID: 8714020377717718156, guid: 7251bad4c998ee9408f81681e10819cf, type: 3}
+      propertyPath: m_sharedMaterial
+      value: 
+      objectReference: {fileID: 8198314020699498870, guid: a66aeab1ef86d224a94433de0a5e0326, type: 2}
+    - target: {fileID: 8714020377717718156, guid: 7251bad4c998ee9408f81681e10819cf, type: 3}
+      propertyPath: m_enableAutoSizing
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8714020377717718156, guid: 7251bad4c998ee9408f81681e10819cf, type: 3}
+      propertyPath: m_hasFontAssetChanged
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -204,7 +292,7 @@ PrefabInstance:
     - target: {fileID: 539890373013676634, guid: 7251bad4c998ee9408f81681e10819cf, type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 21300000, guid: 4ef06213e9e7f724d8d108901937cba1, type: 3}
+      objectReference: {fileID: 21300000, guid: 2e3ec8e354cf11d4e8a9535de4e86811, type: 3}
     - target: {fileID: 4493510623259830757, guid: 7251bad4c998ee9408f81681e10819cf, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -255,11 +343,55 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7759230529826273838, guid: 7251bad4c998ee9408f81681e10819cf, type: 3}
       propertyPath: m_fontSize
-      value: 0.5
+      value: 0.4
+      objectReference: {fileID: 0}
+    - target: {fileID: 7759230529826273838, guid: 7251bad4c998ee9408f81681e10819cf, type: 3}
+      propertyPath: m_fontAsset
+      value: 
+      objectReference: {fileID: 11400000, guid: a66aeab1ef86d224a94433de0a5e0326, type: 2}
+    - target: {fileID: 7759230529826273838, guid: 7251bad4c998ee9408f81681e10819cf, type: 3}
+      propertyPath: m_fontSizeBase
+      value: 0.42
+      objectReference: {fileID: 0}
+    - target: {fileID: 7759230529826273838, guid: 7251bad4c998ee9408f81681e10819cf, type: 3}
+      propertyPath: m_sharedMaterial
+      value: 
+      objectReference: {fileID: 8198314020699498870, guid: a66aeab1ef86d224a94433de0a5e0326, type: 2}
+    - target: {fileID: 7759230529826273838, guid: 7251bad4c998ee9408f81681e10819cf, type: 3}
+      propertyPath: m_enableAutoSizing
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7759230529826273838, guid: 7251bad4c998ee9408f81681e10819cf, type: 3}
+      propertyPath: m_hasFontAssetChanged
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8675361107449135442, guid: 7251bad4c998ee9408f81681e10819cf, type: 3}
       propertyPath: LevelNameOnGameStart
       value: Parkour Mini Game
+      objectReference: {fileID: 0}
+    - target: {fileID: 8714020377717718156, guid: 7251bad4c998ee9408f81681e10819cf, type: 3}
+      propertyPath: m_fontSize
+      value: 0.75
+      objectReference: {fileID: 0}
+    - target: {fileID: 8714020377717718156, guid: 7251bad4c998ee9408f81681e10819cf, type: 3}
+      propertyPath: m_fontAsset
+      value: 
+      objectReference: {fileID: 11400000, guid: a66aeab1ef86d224a94433de0a5e0326, type: 2}
+    - target: {fileID: 8714020377717718156, guid: 7251bad4c998ee9408f81681e10819cf, type: 3}
+      propertyPath: m_fontSizeBase
+      value: 0.42
+      objectReference: {fileID: 0}
+    - target: {fileID: 8714020377717718156, guid: 7251bad4c998ee9408f81681e10819cf, type: 3}
+      propertyPath: m_sharedMaterial
+      value: 
+      objectReference: {fileID: 8198314020699498870, guid: a66aeab1ef86d224a94433de0a5e0326, type: 2}
+    - target: {fileID: 8714020377717718156, guid: 7251bad4c998ee9408f81681e10819cf, type: 3}
+      propertyPath: m_enableAutoSizing
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8714020377717718156, guid: 7251bad4c998ee9408f81681e10819cf, type: 3}
+      propertyPath: m_hasFontAssetChanged
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -282,7 +414,7 @@ PrefabInstance:
     - target: {fileID: 539890373013676634, guid: 7251bad4c998ee9408f81681e10819cf, type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 21300000, guid: eb63119140ab64f4fa4643efb76ddcf8, type: 3}
+      objectReference: {fileID: 21300000, guid: 4cfdef3b4021ab84f991c7f13036f88a, type: 3}
     - target: {fileID: 4493510623259830757, guid: 7251bad4c998ee9408f81681e10819cf, type: 3}
       propertyPath: m_LocalPosition.x
       value: 4
@@ -333,11 +465,55 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7759230529826273838, guid: 7251bad4c998ee9408f81681e10819cf, type: 3}
       propertyPath: m_fontSize
-      value: 0.8
+      value: 0.65
+      objectReference: {fileID: 0}
+    - target: {fileID: 7759230529826273838, guid: 7251bad4c998ee9408f81681e10819cf, type: 3}
+      propertyPath: m_fontAsset
+      value: 
+      objectReference: {fileID: 11400000, guid: a66aeab1ef86d224a94433de0a5e0326, type: 2}
+    - target: {fileID: 7759230529826273838, guid: 7251bad4c998ee9408f81681e10819cf, type: 3}
+      propertyPath: m_fontSizeBase
+      value: 0.42
+      objectReference: {fileID: 0}
+    - target: {fileID: 7759230529826273838, guid: 7251bad4c998ee9408f81681e10819cf, type: 3}
+      propertyPath: m_sharedMaterial
+      value: 
+      objectReference: {fileID: 8198314020699498870, guid: a66aeab1ef86d224a94433de0a5e0326, type: 2}
+    - target: {fileID: 7759230529826273838, guid: 7251bad4c998ee9408f81681e10819cf, type: 3}
+      propertyPath: m_enableAutoSizing
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7759230529826273838, guid: 7251bad4c998ee9408f81681e10819cf, type: 3}
+      propertyPath: m_hasFontAssetChanged
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8675361107449135442, guid: 7251bad4c998ee9408f81681e10819cf, type: 3}
       propertyPath: LevelNameOnGameStart
       value: Final Boss Mini Game
+      objectReference: {fileID: 0}
+    - target: {fileID: 8714020377717718156, guid: 7251bad4c998ee9408f81681e10819cf, type: 3}
+      propertyPath: m_fontSize
+      value: 0.75
+      objectReference: {fileID: 0}
+    - target: {fileID: 8714020377717718156, guid: 7251bad4c998ee9408f81681e10819cf, type: 3}
+      propertyPath: m_fontAsset
+      value: 
+      objectReference: {fileID: 11400000, guid: a66aeab1ef86d224a94433de0a5e0326, type: 2}
+    - target: {fileID: 8714020377717718156, guid: 7251bad4c998ee9408f81681e10819cf, type: 3}
+      propertyPath: m_fontSizeBase
+      value: 0.42
+      objectReference: {fileID: 0}
+    - target: {fileID: 8714020377717718156, guid: 7251bad4c998ee9408f81681e10819cf, type: 3}
+      propertyPath: m_sharedMaterial
+      value: 
+      objectReference: {fileID: 8198314020699498870, guid: a66aeab1ef86d224a94433de0a5e0326, type: 2}
+    - target: {fileID: 8714020377717718156, guid: 7251bad4c998ee9408f81681e10819cf, type: 3}
+      propertyPath: m_enableAutoSizing
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8714020377717718156, guid: 7251bad4c998ee9408f81681e10819cf, type: 3}
+      propertyPath: m_hasFontAssetChanged
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -360,7 +536,7 @@ PrefabInstance:
     - target: {fileID: 539890373013676634, guid: 7251bad4c998ee9408f81681e10819cf, type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 21300000, guid: 4ef06213e9e7f724d8d108901937cba1, type: 3}
+      objectReference: {fileID: 21300000, guid: 2e3ec8e354cf11d4e8a9535de4e86811, type: 3}
     - target: {fileID: 4493510623259830757, guid: 7251bad4c998ee9408f81681e10819cf, type: 3}
       propertyPath: m_LocalPosition.x
       value: -6
@@ -407,17 +583,59 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7759230529826273838, guid: 7251bad4c998ee9408f81681e10819cf, type: 3}
       propertyPath: m_text
-      value: 'Punch
-
-        A Bunch'
+      value: Punching To Death
       objectReference: {fileID: 0}
     - target: {fileID: 7759230529826273838, guid: 7251bad4c998ee9408f81681e10819cf, type: 3}
       propertyPath: m_fontSize
-      value: 0.55
+      value: 0.35
+      objectReference: {fileID: 0}
+    - target: {fileID: 7759230529826273838, guid: 7251bad4c998ee9408f81681e10819cf, type: 3}
+      propertyPath: m_fontAsset
+      value: 
+      objectReference: {fileID: 11400000, guid: a66aeab1ef86d224a94433de0a5e0326, type: 2}
+    - target: {fileID: 7759230529826273838, guid: 7251bad4c998ee9408f81681e10819cf, type: 3}
+      propertyPath: m_fontSizeBase
+      value: 0.42
+      objectReference: {fileID: 0}
+    - target: {fileID: 7759230529826273838, guid: 7251bad4c998ee9408f81681e10819cf, type: 3}
+      propertyPath: m_sharedMaterial
+      value: 
+      objectReference: {fileID: 8198314020699498870, guid: a66aeab1ef86d224a94433de0a5e0326, type: 2}
+    - target: {fileID: 7759230529826273838, guid: 7251bad4c998ee9408f81681e10819cf, type: 3}
+      propertyPath: m_enableAutoSizing
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7759230529826273838, guid: 7251bad4c998ee9408f81681e10819cf, type: 3}
+      propertyPath: m_hasFontAssetChanged
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8675361107449135442, guid: 7251bad4c998ee9408f81681e10819cf, type: 3}
       propertyPath: LevelNameOnGameStart
       value: Punch Mini Game
+      objectReference: {fileID: 0}
+    - target: {fileID: 8714020377717718156, guid: 7251bad4c998ee9408f81681e10819cf, type: 3}
+      propertyPath: m_fontSize
+      value: 0.75
+      objectReference: {fileID: 0}
+    - target: {fileID: 8714020377717718156, guid: 7251bad4c998ee9408f81681e10819cf, type: 3}
+      propertyPath: m_fontAsset
+      value: 
+      objectReference: {fileID: 11400000, guid: a66aeab1ef86d224a94433de0a5e0326, type: 2}
+    - target: {fileID: 8714020377717718156, guid: 7251bad4c998ee9408f81681e10819cf, type: 3}
+      propertyPath: m_fontSizeBase
+      value: 0.42
+      objectReference: {fileID: 0}
+    - target: {fileID: 8714020377717718156, guid: 7251bad4c998ee9408f81681e10819cf, type: 3}
+      propertyPath: m_sharedMaterial
+      value: 
+      objectReference: {fileID: 8198314020699498870, guid: a66aeab1ef86d224a94433de0a5e0326, type: 2}
+    - target: {fileID: 8714020377717718156, guid: 7251bad4c998ee9408f81681e10819cf, type: 3}
+      propertyPath: m_enableAutoSizing
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8714020377717718156, guid: 7251bad4c998ee9408f81681e10819cf, type: 3}
+      propertyPath: m_hasFontAssetChanged
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -440,7 +658,7 @@ PrefabInstance:
     - target: {fileID: 539890373013676634, guid: 7251bad4c998ee9408f81681e10819cf, type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 21300000, guid: eb63119140ab64f4fa4643efb76ddcf8, type: 3}
+      objectReference: {fileID: 21300000, guid: 4cfdef3b4021ab84f991c7f13036f88a, type: 3}
     - target: {fileID: 4493510623259830757, guid: 7251bad4c998ee9408f81681e10819cf, type: 3}
       propertyPath: m_LocalPosition.x
       value: -4
@@ -491,11 +709,55 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7759230529826273838, guid: 7251bad4c998ee9408f81681e10819cf, type: 3}
       propertyPath: m_fontSize
-      value: 0.55
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 7759230529826273838, guid: 7251bad4c998ee9408f81681e10819cf, type: 3}
+      propertyPath: m_fontAsset
+      value: 
+      objectReference: {fileID: 11400000, guid: a66aeab1ef86d224a94433de0a5e0326, type: 2}
+    - target: {fileID: 7759230529826273838, guid: 7251bad4c998ee9408f81681e10819cf, type: 3}
+      propertyPath: m_fontSizeBase
+      value: 0.42
+      objectReference: {fileID: 0}
+    - target: {fileID: 7759230529826273838, guid: 7251bad4c998ee9408f81681e10819cf, type: 3}
+      propertyPath: m_sharedMaterial
+      value: 
+      objectReference: {fileID: 8198314020699498870, guid: a66aeab1ef86d224a94433de0a5e0326, type: 2}
+    - target: {fileID: 7759230529826273838, guid: 7251bad4c998ee9408f81681e10819cf, type: 3}
+      propertyPath: m_enableAutoSizing
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7759230529826273838, guid: 7251bad4c998ee9408f81681e10819cf, type: 3}
+      propertyPath: m_hasFontAssetChanged
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8675361107449135442, guid: 7251bad4c998ee9408f81681e10819cf, type: 3}
       propertyPath: LevelNameOnGameStart
       value: Gun Mini Game
+      objectReference: {fileID: 0}
+    - target: {fileID: 8714020377717718156, guid: 7251bad4c998ee9408f81681e10819cf, type: 3}
+      propertyPath: m_fontSize
+      value: 0.75
+      objectReference: {fileID: 0}
+    - target: {fileID: 8714020377717718156, guid: 7251bad4c998ee9408f81681e10819cf, type: 3}
+      propertyPath: m_fontAsset
+      value: 
+      objectReference: {fileID: 11400000, guid: a66aeab1ef86d224a94433de0a5e0326, type: 2}
+    - target: {fileID: 8714020377717718156, guid: 7251bad4c998ee9408f81681e10819cf, type: 3}
+      propertyPath: m_fontSizeBase
+      value: 0.42
+      objectReference: {fileID: 0}
+    - target: {fileID: 8714020377717718156, guid: 7251bad4c998ee9408f81681e10819cf, type: 3}
+      propertyPath: m_sharedMaterial
+      value: 
+      objectReference: {fileID: 8198314020699498870, guid: a66aeab1ef86d224a94433de0a5e0326, type: 2}
+    - target: {fileID: 8714020377717718156, guid: 7251bad4c998ee9408f81681e10819cf, type: 3}
+      propertyPath: m_enableAutoSizing
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8714020377717718156, guid: 7251bad4c998ee9408f81681e10819cf, type: 3}
+      propertyPath: m_hasFontAssetChanged
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

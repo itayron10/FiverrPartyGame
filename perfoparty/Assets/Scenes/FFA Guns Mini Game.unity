@@ -15302,7 +15302,6 @@ MonoBehaviour:
   weaponPrefabsToSpawn:
   - {fileID: 8203378043347836487, guid: d7a23763040b0dc4c9cd83756ca278ab, type: 3}
   - {fileID: 2230544647713041142, guid: 5ae5200759cc8f242915672494891357, type: 3}
-  - {fileID: 2716755405919680021, guid: cba504502e4bc8947b1c7ade7cfcbf3b, type: 3}
   - {fileID: 2847623534513110429, guid: 80ffe5bd9f27f9d4aa87d82903d95ebe, type: 3}
   - {fileID: 4340789650257965158, guid: b13f0d1d8cf4f5b40aebc2616173db83, type: 3}
   - {fileID: 4316480551750253086, guid: c00bb5eab6c24f1438bb4b9994187e72, type: 3}

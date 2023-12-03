@@ -15,6 +15,7 @@ public class ScoreDisplay : MonoBehaviour
     {
         displayIcon.sprite = playerConfig.playerCharacter.playerIcon;
         displayText.color = playerConfig.playerCharacter.playerColor;
+        displayIcon.SetNativeSize();
     }
 
     private void Update()

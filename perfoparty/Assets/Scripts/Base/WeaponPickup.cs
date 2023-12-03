@@ -6,8 +6,7 @@ public class WeaponPickup : MonoBehaviour
 {
     [SerializeField] Weapon weapon;
 
-
-    private void OnTriggerEnter(Collider other)
+    private void OnTriggerStay(Collider other)
     {
         if (!weapon.IsEquiped)
         {
@@ -15,5 +14,6 @@ public class WeaponPickup : MonoBehaviour
                 weaponManager.EquipWeapon(weapon);
         }
     }
+
 
 }

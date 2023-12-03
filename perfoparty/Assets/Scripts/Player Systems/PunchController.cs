@@ -14,16 +14,19 @@ public class PunchController : MonoBehaviour
     private PlayerMovement playerMovement;
     private Animator animator;
     private TntHolder tntHolder;
+    private WeaponManager weaponManager;
 
     private void Start()
     {
         playerMovement = GetComponent<PlayerMovement>();
         tntHolder = GetComponent<TntHolder>();
+        weaponManager = GetComponent<WeaponManager>();
         animator = playerMovement.animator;
     }
 
     public void Punch()
     {
+        if (weaponManager.GetCurrentWeapon != null) return;
         animator.SetTrigger(punchAnimatorTrigger);
         Collider[] colliders = Physics.OverlapSphere(transform.position + transform.TransformVector(punchOriginOffset), punchRange, punchLayer);
         foreach (Collider collider in colliders)
@@ -36,11 +39,7 @@ public class PunchController : MonoBehaviour
             
             if (collider.TryGetComponent<Rigidbody>(out Rigidbody rb))
             {
-                float punchForce = punchKnockBack / (1f - rb.drag * Time.fixedDeltaTime);
-                rb.AddForceAtPosition(transform.forward * punchForce, hitPos, ForceMode.VelocityChange);
-/*                rb.AddForce((rb.position - transform.position).normalized
-                    * punchKnockBack / (1f - rb.drag * Time.fixedDeltaTime), ForceMode.Impulse);*/
-                rb.AddForceAtPosition(Vector3.up * punchForce / 2f, hitPos, ForceMode.VelocityChange);
+                ApplyPunchKnockback(hitPos, rb, punchKnockBack, transform.forward);
                 CinemachineShake.instance.Shake(punchShake);
             }
 
@@ -53,6 +52,15 @@ public class PunchController : MonoBehaviour
                 }
             }
         }
+    }
+
+    public static void ApplyPunchKnockback(Vector3 hitPos, Rigidbody rb, float punchKnockbackForce, Vector3 direction)
+    {
+        float punchForce = punchKnockbackForce / (1f - rb.drag * Time.fixedDeltaTime);
+        rb.AddForceAtPosition(direction * punchForce, hitPos, ForceMode.VelocityChange);
+        /*                rb.AddForce((rb.position - transform.position).normalized
+                            * punchKnockBack / (1f - rb.drag * Time.fixedDeltaTime), ForceMode.Impulse);*/
+        rb.AddForceAtPosition(Vector3.up * punchForce / 2f, hitPos, ForceMode.VelocityChange);
     }
 
     private void OnDrawGizmosSelected()

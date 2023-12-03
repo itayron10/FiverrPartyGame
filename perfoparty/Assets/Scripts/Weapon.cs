@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Weapon : MonoBehaviour
 {
-    [SerializeField] int clipCapacity;
+    [SerializeField] protected int clipCapacity;
     [SerializeField] float reloadDuration;
     [SerializeField] float shootingCooldown;
     [SerializeField] Projectile projectile;
@@ -12,16 +12,18 @@ public class Weapon : MonoBehaviour
     [SerializeField] GameObject shootingEffect;
     [SerializeField] bool automatic;
     [SerializeField] SoundScriptableObject shootingSound, reloadingSound;
+    [SerializeField] ScreenShakeSettingsSO shootingShake;
     [SerializeField] Collider rbCollider;
-    private int currentClipAmount;
+    protected int currentClipAmount;
     private bool canShoot = true;
     private SoundManager soundManager;
-    private Coroutine shootingCoroutine;
+    private CinemachineShake cinemachineShake;
     private Rigidbody rb;
     private WeaponManager weaponManager;
-    public WeaponManager GetWeaponManager => weaponManager;
+    private Coroutine shootingCoroutine;
     private bool equiped;
 
+    public WeaponManager GetWeaponManager => weaponManager;
     public bool CanShoot => canShoot;
     public bool IsAutomatic => automatic;
     public bool IsEquiped => equiped;
@@ -33,13 +35,14 @@ public class Weapon : MonoBehaviour
         soundManager = FindObjectOfType<SoundManager>();
         rb = GetComponent<Rigidbody>();
         currentClipAmount = clipCapacity;
+        cinemachineShake = CinemachineShake.instance;
     }
 
 
     public void Equip(Transform holdingPoint, WeaponManager weaponManager)
     {
         this.weaponManager = weaponManager;
-        transform.parent = holdingPoint;
+        transform.SetParent(holdingPoint);
         transform.localPosition = Vector3.zero;
         transform.localRotation = Quaternion.identity;
         rb.isKinematic = equiped = true;
@@ -65,7 +68,7 @@ public class Weapon : MonoBehaviour
 
     public void StopShoot()
     {
-        StopCoroutine(shootingCoroutine);
+        if (shootingCoroutine != null) StopCoroutine(shootingCoroutine);
     }
 
     private IEnumerator ShootingCoroutine()
@@ -76,7 +79,7 @@ public class Weapon : MonoBehaviour
         Instantiate(projectile, shootingPoint.position, shootingPoint.rotation);
         ParticleManager.InstanciateParticleEffect(shootingEffect, shootingPoint.position, shootingPoint.rotation);
         if (soundManager) soundManager.PlaySound(shootingSound);
-
+        cinemachineShake.Shake(shootingShake);
         if (!automatic)
         {
             StopCoroutine(nameof(ActiveShootCooldown));
@@ -90,19 +93,11 @@ public class Weapon : MonoBehaviour
     }
 
 
-    private void Reload()
+    protected virtual void Reload()
     {
         StopAllCoroutines();
         StartCoroutine(ReloadWeapon());
     }
-
-    private IEnumerator ActiveShootCooldown()
-    {
-        canShoot = false;
-        yield return new WaitForSeconds(shootingCooldown);
-        canShoot = true;
-    }
-
     private IEnumerator ReloadWeapon()
     {
         canShoot = false;
@@ -111,5 +106,13 @@ public class Weapon : MonoBehaviour
         soundManager.PlaySound(shootingSound);  
         canShoot = true;
     }    
+
+    private IEnumerator ActiveShootCooldown()
+    {
+        canShoot = false;
+        yield return new WaitForSeconds(shootingCooldown);
+        canShoot = true;
+    }
+
 
 }

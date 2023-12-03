@@ -17,7 +17,6 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] ParticleSystem puffParticleEffect;
     [SerializeField] ScreenShakeSettingsSO landShake;
     [SerializeField] SoundScriptableObject jumpSound, landSound;
-    private InputHandler inputHandler;
     private SoundManager soundManager;
     public Animator animator { get; set; }
     private bool hasLanded;
@@ -31,7 +30,13 @@ public class PlayerMovement : MonoBehaviour
     void Start()
     {
         rb = GetComponent<Rigidbody>();
-        inputHandler = GetComponent<InputHandler>();
+        soundManager = FindObjectOfType<SoundManager>();
+    }
+
+
+
+    private void OnLevelWasLoaded(int level)
+    {
         soundManager = FindObjectOfType<SoundManager>();
     }
 
@@ -67,7 +72,8 @@ public class PlayerMovement : MonoBehaviour
         {
             //Land
             ParticleManager.StartParticle(puffParticleEffect);
-            soundManager.PlaySound(landSound);
+            soundManager?.PlaySound(landSound);
+            Debug.Log("Playing Land sound " + soundManager);
             CinemachineShake.instance.Shake(landShake);
             hasLanded = true;
         }
@@ -81,6 +87,7 @@ public class PlayerMovement : MonoBehaviour
         // can jump
         soundManager.PlaySound(jumpSound);
         animator.SetBool(danceAnimatorBool, false);
+        ResetAnimatorTransform();
         animator.SetBool(jumpingAnimatorBool, true);
         rb.AddForce(new Vector3(0, jumpStrength, 0), ForceMode.Impulse);
     }
@@ -91,12 +98,19 @@ public class PlayerMovement : MonoBehaviour
         animator.SetBool(danceAnimatorBool, true);
     }
 
+    private void ResetAnimatorTransform()
+    {
+        animator.transform.localRotation = Quaternion.identity;
+        animator.transform.localPosition = Vector3.zero;
+    }
+
     private void HandleRotation()
     {
         rb.angularVelocity = Vector3.zero;
         if (moveDirection.magnitude <= 0f) { return; }
 
         animator.SetBool(danceAnimatorBool, false);
+        ResetAnimatorTransform();
         Quaternion rotationDirection = Quaternion.LookRotation(moveDirection);
         //transform.localPosition = Vector3.zero;
         transform.rotation = Quaternion.Lerp(transform.rotation, rotationDirection, Time.deltaTime * rotationVelocity);

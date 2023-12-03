@@ -30,9 +30,9 @@ public class TNTMiniGameManager : GameModeManager
         tntManager.StartCoroutine(tntManager.DelayTntActive(4));
     }
 
-    protected override void EndMiniGame()
+    public override void StartEndMiniGame()
     {
-        base.EndMiniGame();
+        base.StartEndMiniGame();
         tntManager.DestroyCurrentTnt();
     }
 

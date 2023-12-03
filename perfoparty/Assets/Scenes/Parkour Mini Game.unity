@@ -246,7 +246,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: cdcd2e9a841dd22488513a0999230a94, type: 3}
       propertyPath: m_Name
-      value: 20265_Hexagonal_prism_v1 (8)
+      value: Choosing Parkour Display
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: cdcd2e9a841dd22488513a0999230a94, type: 3}
       propertyPath: m_Layer
@@ -421,6 +421,14 @@ PrefabInstance:
     - target: {fileID: 1243704286340513802, guid: 8c1052529004e2f4e92b2dc848532e02, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1674885527406828731, guid: 8c1052529004e2f4e92b2dc848532e02, type: 3}
+      propertyPath: m_Lens.FieldOfView
+      value: 42
+      objectReference: {fileID: 0}
+    - target: {fileID: 3041151928201063546, guid: 8c1052529004e2f4e92b2dc848532e02, type: 3}
+      propertyPath: field of view
+      value: 42
       objectReference: {fileID: 0}
     - target: {fileID: 7909193872821632828, guid: 8c1052529004e2f4e92b2dc848532e02, type: 3}
       propertyPath: m_Name
@@ -653,7 +661,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: cdcd2e9a841dd22488513a0999230a94, type: 3}
       propertyPath: m_Name
-      value: 20265_Hexagonal_prism_v1 (1)
+      value: Parkour Blue
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: cdcd2e9a841dd22488513a0999230a94, type: 3}
       propertyPath: m_Layer
@@ -673,8 +681,16 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: -8679921383154817045, guid: cdcd2e9a841dd22488513a0999230a94, type: 3}
       insertIndex: -1
       addedObject: {fileID: 657771116}
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: cdcd2e9a841dd22488513a0999230a94, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1807935818}
   m_SourcePrefab: {fileID: 100100000, guid: cdcd2e9a841dd22488513a0999230a94, type: 3}
+--- !u!1 &421192404 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: cdcd2e9a841dd22488513a0999230a94, type: 3}
+  m_PrefabInstance: {fileID: 421192403}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &583059892
 GameObject:
   m_ObjectHideFlags: 0
@@ -1187,11 +1203,50 @@ PrefabInstance:
       propertyPath: m_LocalPosition.z
       value: 1.22
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 3586052788654485354, guid: 2a5fa4a088f85a3458fe84bde5fc2d0a, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 532804219382687197, guid: 2a5fa4a088f85a3458fe84bde5fc2d0a, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1468006071}
   m_SourcePrefab: {fileID: 100100000, guid: 2a5fa4a088f85a3458fe84bde5fc2d0a, type: 3}
+--- !u!1 &746497392 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 532804219382687197, guid: 2a5fa4a088f85a3458fe84bde5fc2d0a, type: 3}
+  m_PrefabInstance: {fileID: 746497391}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &746497393 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 6834453925833173010, guid: 2a5fa4a088f85a3458fe84bde5fc2d0a, type: 3}
+  m_PrefabInstance: {fileID: 746497391}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &746497394 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 3553298028373277273, guid: 2a5fa4a088f85a3458fe84bde5fc2d0a, type: 3}
+  m_PrefabInstance: {fileID: 746497391}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &746497395 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 585028129986615618, guid: 2a5fa4a088f85a3458fe84bde5fc2d0a, type: 3}
+  m_PrefabInstance: {fileID: 746497391}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &746497396 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 8727744834438082597, guid: 2a5fa4a088f85a3458fe84bde5fc2d0a, type: 3}
+  m_PrefabInstance: {fileID: 746497391}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &746497397 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 6156741117874827345, guid: 2a5fa4a088f85a3458fe84bde5fc2d0a, type: 3}
+  m_PrefabInstance: {fileID: 746497391}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &746497398 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 6203975942574847327, guid: 2a5fa4a088f85a3458fe84bde5fc2d0a, type: 3}
+  m_PrefabInstance: {fileID: 746497391}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &843191683
 GameObject:
   m_ObjectHideFlags: 0
@@ -1364,7 +1419,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: cdcd2e9a841dd22488513a0999230a94, type: 3}
       propertyPath: m_Name
-      value: 20265_Hexagonal_prism_v1 (2)
+      value: Parkour Dark Yellow
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: cdcd2e9a841dd22488513a0999230a94, type: 3}
       propertyPath: m_Layer
@@ -1384,8 +1439,32 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: -8679921383154817045, guid: cdcd2e9a841dd22488513a0999230a94, type: 3}
       insertIndex: -1
       addedObject: {fileID: 843191684}
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: cdcd2e9a841dd22488513a0999230a94, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 920650847}
   m_SourcePrefab: {fileID: 100100000, guid: cdcd2e9a841dd22488513a0999230a94, type: 3}
+--- !u!1 &920650846 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: cdcd2e9a841dd22488513a0999230a94, type: 3}
+  m_PrefabInstance: {fileID: 920650845}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &920650847
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 920650846}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 616da96b380a0ca43b5966bd19ec1729, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  platformColor: {r: 0.6603774, g: 0.6549469, b: 0.021804927, a: 1}
+  fallingPos: {x: -0.3166995, y: -5.2, z: -5.75}
+  platformFallingShake: {fileID: 11400000, guid: 0b7c0bf9d8c1df24785fd520e95b2fe2, type: 2}
+  speed: 6
 --- !u!4 &960293725 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: cdcd2e9a841dd22488513a0999230a94, type: 3}
@@ -1536,7 +1615,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: cdcd2e9a841dd22488513a0999230a94, type: 3}
       propertyPath: m_Name
-      value: 20265_Hexagonal_prism_v1 (6)
+      value: Parkour Light Green
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: cdcd2e9a841dd22488513a0999230a94, type: 3}
       propertyPath: m_Layer
@@ -1556,8 +1635,37 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: -8679921383154817045, guid: cdcd2e9a841dd22488513a0999230a94, type: 3}
       insertIndex: -1
       addedObject: {fileID: 177780904}
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: cdcd2e9a841dd22488513a0999230a94, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1281922326}
   m_SourcePrefab: {fileID: 100100000, guid: cdcd2e9a841dd22488513a0999230a94, type: 3}
+--- !u!1 &1281922325 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: cdcd2e9a841dd22488513a0999230a94, type: 3}
+  m_PrefabInstance: {fileID: 1281922324}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1281922326
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1281922325}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 616da96b380a0ca43b5966bd19ec1729, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  platformColor: {r: 0, g: 1, b: 0.52612114, a: 1}
+  fallingPos: {x: -4.3299994, y: -5.2, z: 1.1999002}
+  platformFallingShake: {fileID: 11400000, guid: 0b7c0bf9d8c1df24785fd520e95b2fe2, type: 2}
+  speed: 6
+--- !u!23 &1337258036 stripped
+MeshRenderer:
+  m_CorrespondingSourceObject: {fileID: 7648973668265453872, guid: cdcd2e9a841dd22488513a0999230a94, type: 3}
+  m_PrefabInstance: {fileID: 66780549}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1437742450
 GameObject:
   m_ObjectHideFlags: 0
@@ -1664,6 +1772,43 @@ MeshCollider:
   m_Convex: 1
   m_CookingOptions: 30
   m_Mesh: {fileID: -6730188882212674202, guid: cdcd2e9a841dd22488513a0999230a94, type: 3}
+--- !u!114 &1468006071
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 746497392}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cc26d2c4ae54c154cabb0a2cadf6f0eb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  startPoints:
+  - {fileID: 746497398}
+  - {fileID: 746497397}
+  - {fileID: 746497396}
+  - {fileID: 746497395}
+  - {fileID: 746497394}
+  - {fileID: 746497393}
+  minYPositionForPlayers: -2
+  countingCanvas: {fileID: 5331982604329340332, guid: 7748a25a612514042aae80918e684478, type: 3}
+  podiumSceneName: PodiumScene
+  reloadGameMenu: {fileID: 0}
+  lastGameMode: 0
+  scoreAddedByWinningRound: 5
+  timeToStartNewRound: 4
+  parkourPlatforms:
+  - {fileID: 1807935818}
+  - {fileID: 920650847}
+  - {fileID: 2088282990}
+  - {fileID: 1281922326}
+  - {fileID: 2142903801}
+  - {fileID: 1963177678}
+  - {fileID: 1694418752}
+  platformFallingCooldown: 5
+  pickingRaisingCooldown: 3
+  selectedPlatformDisplay: {fileID: 1337258036}
 --- !u!1001 &1472607396
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1898,7 +2043,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: cdcd2e9a841dd22488513a0999230a94, type: 3}
       propertyPath: m_Name
-      value: 20265_Hexagonal_prism_v1 (4)
+      value: Parkour Dark Green
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: cdcd2e9a841dd22488513a0999230a94, type: 3}
       propertyPath: m_Layer
@@ -1918,8 +2063,16 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: -8679921383154817045, guid: cdcd2e9a841dd22488513a0999230a94, type: 3}
       insertIndex: -1
       addedObject: {fileID: 583059893}
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: cdcd2e9a841dd22488513a0999230a94, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 2088282990}
   m_SourcePrefab: {fileID: 100100000, guid: cdcd2e9a841dd22488513a0999230a94, type: 3}
+--- !u!1 &1589472401 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: cdcd2e9a841dd22488513a0999230a94, type: 3}
+  m_PrefabInstance: {fileID: 1589472400}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1694418750
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1986,7 +2139,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: cdcd2e9a841dd22488513a0999230a94, type: 3}
       propertyPath: m_Name
-      value: 20265_Hexagonal_prism_v1 (5)
+      value: Parkour Pink
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: cdcd2e9a841dd22488513a0999230a94, type: 3}
       propertyPath: m_Layer
@@ -2006,13 +2159,53 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: -8679921383154817045, guid: cdcd2e9a841dd22488513a0999230a94, type: 3}
       insertIndex: -1
       addedObject: {fileID: 616440728}
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: cdcd2e9a841dd22488513a0999230a94, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1694418752}
   m_SourcePrefab: {fileID: 100100000, guid: cdcd2e9a841dd22488513a0999230a94, type: 3}
+--- !u!1 &1694418751 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: cdcd2e9a841dd22488513a0999230a94, type: 3}
+  m_PrefabInstance: {fileID: 1694418750}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1694418752
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1694418751}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 616da96b380a0ca43b5966bd19ec1729, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  platformColor: {r: 1, g: 0, b: 0.9770231, a: 1}
+  fallingPos: {x: 3.7600002, y: -5.2, z: -3.4816}
+  platformFallingShake: {fileID: 11400000, guid: 0b7c0bf9d8c1df24785fd520e95b2fe2, type: 2}
+  speed: 6
 --- !u!4 &1807935817 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: cdcd2e9a841dd22488513a0999230a94, type: 3}
   m_PrefabInstance: {fileID: 421192403}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1807935818
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 421192404}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 616da96b380a0ca43b5966bd19ec1729, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  platformColor: {r: 0, g: 0.6125839, b: 1, a: 1}
+  fallingPos: {x: -4.3299994, y: -5.2, z: -3.49}
+  platformFallingShake: {fileID: 11400000, guid: 0b7c0bf9d8c1df24785fd520e95b2fe2, type: 2}
+  speed: 6
 --- !u!1001 &1963177676
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2079,7 +2272,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: cdcd2e9a841dd22488513a0999230a94, type: 3}
       propertyPath: m_Name
-      value: 20265_Hexagonal_prism_v1 (3)
+      value: Parkour Red
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: cdcd2e9a841dd22488513a0999230a94, type: 3}
       propertyPath: m_Layer
@@ -2103,8 +2296,32 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: -8679921383154817045, guid: cdcd2e9a841dd22488513a0999230a94, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1576902286}
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: cdcd2e9a841dd22488513a0999230a94, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1963177678}
   m_SourcePrefab: {fileID: 100100000, guid: cdcd2e9a841dd22488513a0999230a94, type: 3}
+--- !u!1 &1963177677 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: cdcd2e9a841dd22488513a0999230a94, type: 3}
+  m_PrefabInstance: {fileID: 1963177676}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1963177678
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1963177677}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 616da96b380a0ca43b5966bd19ec1729, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  platformColor: {r: 1, g: 0, b: 0, a: 1}
+  fallingPos: {x: -0.3166995, y: -5.2, z: -1.1185699}
+  platformFallingShake: {fileID: 11400000, guid: 0b7c0bf9d8c1df24785fd520e95b2fe2, type: 2}
+  speed: 6
 --- !u!4 &2057648096 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: cdcd2e9a841dd22488513a0999230a94, type: 3}
@@ -2115,6 +2332,22 @@ Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: cdcd2e9a841dd22488513a0999230a94, type: 3}
   m_PrefabInstance: {fileID: 1589472400}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &2088282990
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1589472401}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 616da96b380a0ca43b5966bd19ec1729, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  platformColor: {r: 0.078640826, g: 0.6132076, b: 0.06074226, a: 1}
+  fallingPos: {x: 3.7600002, y: -5.2, z: 1.1799002}
+  platformFallingShake: {fileID: 11400000, guid: 0b7c0bf9d8c1df24785fd520e95b2fe2, type: 2}
+  speed: 6
 --- !u!1001 &2142903799
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2181,7 +2414,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: cdcd2e9a841dd22488513a0999230a94, type: 3}
       propertyPath: m_Name
-      value: 20265_Hexagonal_prism_v1 (7)
+      value: Parkour Light Yellow
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: cdcd2e9a841dd22488513a0999230a94, type: 3}
       propertyPath: m_Layer
@@ -2201,8 +2434,32 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: -8679921383154817045, guid: cdcd2e9a841dd22488513a0999230a94, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1437742451}
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: cdcd2e9a841dd22488513a0999230a94, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 2142903801}
   m_SourcePrefab: {fileID: 100100000, guid: cdcd2e9a841dd22488513a0999230a94, type: 3}
+--- !u!1 &2142903800 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: cdcd2e9a841dd22488513a0999230a94, type: 3}
+  m_PrefabInstance: {fileID: 2142903799}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &2142903801
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2142903800}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 616da96b380a0ca43b5966bd19ec1729, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  platformColor: {r: 0.8394886, g: 1, b: 0, a: 1}
+  fallingPos: {x: -0.3099996, y: -5.2, z: 3.6500003}
+  platformFallingShake: {fileID: 11400000, guid: 0b7c0bf9d8c1df24785fd520e95b2fe2, type: 2}
+  speed: 6
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0

@@ -45,9 +45,9 @@ public class FFAMiniGameManager : GameModeManager
         }
     }
 
-    protected override void EndMiniGame()
+    public override void StartEndMiniGame()
     {
-        base.EndMiniGame();
+        base.StartEndMiniGame();
         DeleteGuns();
     }
 

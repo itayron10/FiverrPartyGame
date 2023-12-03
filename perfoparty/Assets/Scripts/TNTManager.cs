@@ -29,6 +29,7 @@ public class TNTManager : MonoBehaviour
         if (!currentTntInMap) return;
         currentTntInMap.GetTntHolder.GetComponent<TntHolder>().UnequipTnt();
         Destroy(currentTntInMap.gameObject);
+        Debug.Log("Destroying");
     }
 
     public IEnumerator DelayTntActive(float duration)

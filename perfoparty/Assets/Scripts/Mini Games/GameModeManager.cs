@@ -17,7 +17,7 @@ public class GameModeManager : MonoBehaviour
     public List<PlayerConfiguration> GetPlayersCurrentlyInGameMode => playersCurrentlyInGameMode;
     private int roundCount = 0;
     private LevelManager levelManager;
-    private bool miniGameRunning, roundRunning;
+    protected bool miniGameRunning, roundRunning;
     public bool IsGameRunning => miniGameRunning;
 
 
@@ -25,7 +25,6 @@ public class GameModeManager : MonoBehaviour
     {
         InitializeManager();
     }
-
 
     private void Update()
     {
@@ -50,7 +49,7 @@ public class GameModeManager : MonoBehaviour
 
     }
 
-    private void UpdateMiniGame()
+    protected virtual void UpdateMiniGame()
     {
         for (int i = 0; i < playersCurrentlyInGameMode.Count; i++)
         {
@@ -119,9 +118,15 @@ public class GameModeManager : MonoBehaviour
     }
 
 
-    protected virtual void EndMiniGame()
+    public virtual void EndMiniGame()
     {
         StartCoroutine(EndingMiniGame());
+        StartEndMiniGame();
+    }
+
+    public virtual void StartEndMiniGame()
+    {
+        /// for deleting stuff when mini game is over
     }
 
     private IEnumerator EndingMiniGame()

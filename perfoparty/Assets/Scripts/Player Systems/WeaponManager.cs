@@ -8,6 +8,7 @@ public class WeaponManager : MonoBehaviour
     [SerializeField] Vector3 weaponHoldingLocalPos, weaponHoldingLocalEuler;
     [SerializeField] Vector3 weaponHoldingShootingLocalEuler;
     private Weapon currentWeapon;
+    public Weapon GetCurrentWeapon => currentWeapon;
     private PlayerMovement playerMovement;
     private Animator animator;
     private bool canEquip = true;
@@ -47,6 +48,7 @@ public class WeaponManager : MonoBehaviour
 
     public void HandleUnequipAnimator()
     {
+        SetWeaponToDefault();
         currentWeapon = null;
         if (shootingCoroutine != null) StopCoroutine(shootingCoroutine);
         if (gameObject.activeInHierarchy) StartCoroutine(EquipingCooldown());

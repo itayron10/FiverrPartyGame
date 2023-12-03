@@ -19,7 +19,7 @@ public class TntHolder : MonoBehaviour
 
     public void UnequipTnt()
     {
-        if (currentHoldTnt.transform.parent == tntHoldPoint) currentHoldTnt.transform.parent = null;
+        if (currentHoldTnt != null) if (currentHoldTnt.transform.parent == tntHoldPoint) currentHoldTnt.transform.parent = null;
         currentHoldTnt = null;
     }
 

@@ -35,9 +35,10 @@ public class GunMiniGame : GameModeManager
         Destroy(gunInstance.gameObject);
     }
 
-    protected override void EndMiniGame()
+   
+    public override void StartEndMiniGame()
     {
-        base.EndMiniGame();
+        base.StartEndMiniGame();
         DeleteGun();
     }
 

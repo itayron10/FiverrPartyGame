@@ -2662,8 +2662,6 @@ MonoBehaviour:
   - {fileID: 1946683617}
   - {fileID: 1946683616}
   - {fileID: 1946683615}
-  playersToEnterGameMode: []
-  playersCurrentlyInGameMode: []
   minYPositionForPlayers: -2
   countingCanvas: {fileID: 5331982604329340332, guid: 7748a25a612514042aae80918e684478, type: 3}
   podiumSceneName: PodiumScene
@@ -2678,7 +2676,7 @@ MonoBehaviour:
   - {fileID: 1946683617}
   - {fileID: 1946683616}
   - {fileID: 1946683615}
-  gunPrefab: {fileID: 4340789650257965158, guid: b13f0d1d8cf4f5b40aebc2616173db83, type: 3}
+  gunPrefab: {fileID: -7821772223912598258, guid: cba504502e4bc8947b1c7ade7cfcbf3b, type: 3}
 --- !u!1 &378378103
 GameObject:
   m_ObjectHideFlags: 0

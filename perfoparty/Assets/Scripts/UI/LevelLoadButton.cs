@@ -10,11 +10,13 @@ public class LevelLoadButton : EventButton
     [SerializeField] string loadLevelName;
     private PauseManager pauseManager;
     private LevelManager levelManager;
+    private GameModeManager gameModeManager;
 
     public override void FindPrivateObjects()
     {
         base.FindPrivateObjects();
         pauseManager = FindObjectOfType<PauseManager>();
+        gameModeManager = FindObjectOfType<GameModeManager>();
     }
 
     private void OnEnable()
@@ -26,6 +28,7 @@ public class LevelLoadButton : EventButton
     public override void OnClick()
     {
         base.OnClick();
+        if (gameModeManager) gameModeManager.StartEndMiniGame();
         pauseManager?.UnpauseGame();
         if (!levelManager) return;
         if (LevelLoadType.nextLevel == loadType)

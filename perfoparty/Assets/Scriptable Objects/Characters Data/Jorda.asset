@@ -15,4 +15,4 @@ MonoBehaviour:
   meshPrefab: {fileID: 3829744944695987413, guid: d876672d6fa2646479710d1a35d89bbf, type: 3}
   playerColor: {r: 1, g: 0.67569816, b: 0, a: 1}
   playerWinningVideo: {fileID: 3855665927386063971, guid: e6f1f430a037f334d9b63ddf1dd11894, type: 3}
-  playerIcon: {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}
+  playerIcon: {fileID: 21300000, guid: bc1ec5da012f40642bba9d58884c14ee, type: 3}

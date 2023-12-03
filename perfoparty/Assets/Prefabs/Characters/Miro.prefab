@@ -97,4 +97,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5f21c905fdd11ff4797acc05ffebe488, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  animationHoldingPoint: {fileID: 0}
+  animationHoldingPoint: {fileID: 5787668344264505747}
+--- !u!4 &5787668344264505747 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 1852576806548013000, guid: 70fefb693a065014590c211485778698, type: 3}
+  m_PrefabInstance: {fileID: 5324452658424268379}
+  m_PrefabAsset: {fileID: 0}
