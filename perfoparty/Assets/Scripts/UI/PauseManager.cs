@@ -12,6 +12,12 @@ public class PauseManager : MonoBehaviour
 
 
     private void Awake() => FindPrivateObjects();
+
+    private void OnLevelWasLoaded(int level)
+    {
+        FindPrivateObjects();
+    }
+
     private void Start()
     {
         UnpauseGame();
@@ -45,7 +51,7 @@ public class PauseManager : MonoBehaviour
     {
         if (playerConfig != null) playerConfig.inputHandler.GetPlayerPauseMenu.gameObject.SetActive(isGamePaused ? true : false);
 
-        soundManager.PlaySound(isGamePaused ? pauseSound : unpauseSound);
+        if (soundManager) soundManager.PlaySound(isGamePaused ? pauseSound : unpauseSound);
         Time.timeScale = isGamePaused ? 0f : 1f;
 
         foreach (var player in PlayerConfigurationManager.Instance.GetPlayerConfigs())

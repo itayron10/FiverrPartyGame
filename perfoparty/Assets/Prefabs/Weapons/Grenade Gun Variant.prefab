@@ -29,6 +29,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4316480551750253086, guid: c00bb5eab6c24f1438bb4b9994187e72, type: 3}
+      propertyPath: projectile
+      value: 
+      objectReference: {fileID: 6965240141894221381, guid: 107debc60b0d0124c83f89c948187c2e, type: 3}
+    - target: {fileID: 4316480551750253086, guid: c00bb5eab6c24f1438bb4b9994187e72, type: 3}
       propertyPath: clipCapacity
       value: 5
       objectReference: {fileID: 0}

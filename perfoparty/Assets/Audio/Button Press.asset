@@ -1,0 +1,21 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a96d50e3a6ca7324e8de4071c31b0845, type: 3}
+  m_Name: Button Press
+  m_EditorClassIdentifier: 
+  audioClips:
+  - {fileID: 8300000, guid: 2343733f5901f5149bfc2c91d08966a2, type: 3}
+  volume: {x: 0.3, y: 0.5}
+  pitch: {x: 0.9, y: 1.1}
+  soundSourceID: 0
+  soundType: 0
+  playOrder: 0

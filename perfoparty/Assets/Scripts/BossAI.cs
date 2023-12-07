@@ -73,9 +73,12 @@ public class BossAI : MonoBehaviour
         isAttacking = true;
         animator.SetBool(attackingBoolParam, true);
         yield return new WaitForSeconds(animationDelay);
-        // PUNCH
-        Rigidbody targetRb = currentTarget.GetComponent<Rigidbody>();
-        PunchController.ApplyPunchKnockback(targetRb.position, targetRb, punchKnockback, transform.forward);
+        if (Vector3.Distance(currentTarget.position, transform.position) <= punchRange)
+        {
+            // PUNCH
+            Rigidbody targetRb = currentTarget.GetComponent<Rigidbody>();
+            PunchController.ApplyPunchKnockback(targetRb.position, targetRb, punchKnockback, transform.forward);
+        }
 
         yield return new WaitForSeconds(animator.GetCurrentAnimatorStateInfo(0).length - animationDelay);
         

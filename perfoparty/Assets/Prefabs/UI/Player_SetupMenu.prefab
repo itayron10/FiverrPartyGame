@@ -959,6 +959,7 @@ MonoBehaviour:
   previewImage: {fileID: 4177122044733106820}
   menuPanel: {fileID: 6156045822463237025}
   readyButton: {fileID: 1106802156904694160}
+  clickSound: {fileID: 11400000, guid: 1959503a0ff857d4f82c30df358b295c, type: 2}
 --- !u!1 &7922977853818992090
 GameObject:
   m_ObjectHideFlags: 0

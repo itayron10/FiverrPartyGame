@@ -4,13 +4,21 @@ using UnityEngine;
 
 public class TNTMiniGameManager : GameModeManager
 {
+    [SerializeField] float newPlayerKnockBack;
     private TNTManager tntManager;
 
     protected override void InitializeManager()
     {
         tntManager = FindObjectOfType<TNTManager>();
         base.InitializeManager();
+        for (int i = 0; i < playersToEnterGameMode.Count; i++)
+        {
+            PunchController punchController = playersToEnterGameMode[i].inputHandler.GetComponent<PunchController>();
+            punchController.SetKnockBack(newPlayerKnockBack);
+        }
     }
+
+
 
     public override void StartNewRound()
     {
@@ -34,6 +42,20 @@ public class TNTMiniGameManager : GameModeManager
     {
         base.StartEndMiniGame();
         tntManager.DestroyCurrentTnt();
+    }
+
+    protected override void KickPlayer(PlayerConfiguration player)
+    {
+        base.KickPlayer(player);
+        if (GetPlayersCurrentlyInGameMode.Count > 1)
+        {
+            if (player.inputHandler.GetComponent<TntHolder>().GetTnt != null)
+            {
+                tntManager.DestroyCurrentTnt();
+                tntManager.SpawnNewTnt();
+            }
+        }
+
     }
 
     protected override bool IsPlayerKickedOut(GameObject player)

@@ -4,8 +4,8 @@ using UnityEngine;
 
 public class TNTManager : MonoBehaviour
 {
-    [SerializeField] TNT currentTntInMap;
     [SerializeField] TNT tntPrefab;
+    private TNT currentTntInMap;
     private GameModeManager miniGameManager;
 
 

@@ -24,15 +24,9 @@ public class LevelManager : MonoBehaviour
         loadingScreen.SetActive(loadingScreenActiveOnStart);
     }
 
-    private void UpdateFullScreen(bool fullScreenActive)
-    {
-        Screen.fullScreen = fullScreenActive;
-    }
-
     private IEnumerator LoadLevel(AsyncOperation loadingOperation)
     {
-        loadingScreen.SetActive(true);
-        if (loadingBar !=null)
+        if (loadingBar != null)
         {
             SetLoadingBarAmount(0);
             while (!loadingOperation.isDone)
@@ -45,26 +39,54 @@ public class LevelManager : MonoBehaviour
 
     public void LoadNextLevel()
     {
-        AsyncOperation loadingOperation = SceneManager.LoadSceneAsync(SceneManager.GetActiveScene().buildIndex + 1);
-        StartCoroutine(LoadLevel(loadingOperation));
+        StartCoroutine(Load());
+
+        IEnumerator Load()
+        {
+            loadingScreen.SetActive(true);
+            yield return new WaitForSeconds(3f);
+            AsyncOperation loadingOperation = SceneManager.LoadSceneAsync(SceneManager.GetActiveScene().buildIndex + 1);
+            StartCoroutine(LoadLevel(loadingOperation));
+        }
     }
 
     public void LoadCurrentLevel()
     {
-        AsyncOperation loadingOperation = SceneManager.LoadSceneAsync(SceneManager.GetActiveScene().buildIndex);
-        StartCoroutine(LoadLevel(loadingOperation));
+        StartCoroutine(Load());
+
+        IEnumerator Load()
+        {
+            loadingScreen.SetActive(true);
+            yield return new WaitForSeconds(3f);
+            AsyncOperation loadingOperation = SceneManager.LoadSceneAsync(SceneManager.GetActiveScene().buildIndex);
+            StartCoroutine(LoadLevel(loadingOperation));
+        }
     }
 
     public void LoadLevelByIndex(int levelIndex)
     {
-        AsyncOperation loadingOperation = SceneManager.LoadSceneAsync(levelIndex);
-        StartCoroutine(LoadLevel(loadingOperation));
+        StartCoroutine(Load());
+
+        IEnumerator Load()
+        {
+            loadingScreen.SetActive(true);
+            yield return new WaitForSeconds(3f);
+            AsyncOperation loadingOperation = SceneManager.LoadSceneAsync(levelIndex);
+            StartCoroutine(LoadLevel(loadingOperation));
+        }
     }
 
     public void LoadLevelByString(string levelName)
     {
-        AsyncOperation loadingOperation = SceneManager.LoadSceneAsync(levelName);
-        StartCoroutine(LoadLevel(loadingOperation));
+        StartCoroutine(Load());
+
+        IEnumerator Load()
+        {
+            loadingScreen.SetActive(true);
+            yield return new WaitForSeconds(3f);
+            AsyncOperation loadingOperation = SceneManager.LoadSceneAsync(levelName);
+            StartCoroutine(LoadLevel(loadingOperation));
+        }
     }
 
     public static void ExitGame() => Application.Quit();

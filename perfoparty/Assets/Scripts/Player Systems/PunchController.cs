@@ -11,22 +11,49 @@ public class PunchController : MonoBehaviour
     [SerializeField] LayerMask punchLayer;
     [SerializeField] Vector3 punchOriginOffset;
     [SerializeField] ScreenShakeSettingsSO punchShake;
+    [SerializeField] float punchCoolDown;
+    [SerializeField] SoundScriptableObject punchSound;
     private PlayerMovement playerMovement;
     private Animator animator;
+    private SoundManager soundManager;
     private TntHolder tntHolder;
     private WeaponManager weaponManager;
+    private bool canPunch = true;
+
+    public float GetKnockBack => punchKnockBack;
+    public void SetKnockBack(float knockBack) => punchKnockBack = knockBack;
+
+
+    private void Awake()
+    {
+        PlayerConfigurationManager.Instance.originalPlayerKnockBack = punchKnockBack;
+    }
 
     private void Start()
     {
         playerMovement = GetComponent<PlayerMovement>();
         tntHolder = GetComponent<TntHolder>();
         weaponManager = GetComponent<WeaponManager>();
+        soundManager = FindObjectOfType<SoundManager>();
         animator = playerMovement.animator;
+        canPunch = true;
+    }
+
+
+    private void OnLevelWasLoaded(int level)
+    {
+        soundManager = FindObjectOfType<SoundManager>();
     }
 
     public void Punch()
     {
         if (weaponManager.GetCurrentWeapon != null) return;
+        if (!canPunch) return;
+        HandlePunch();
+    }
+
+    private void HandlePunch()
+    {
         animator.SetTrigger(punchAnimatorTrigger);
         Collider[] colliders = Physics.OverlapSphere(transform.position + transform.TransformVector(punchOriginOffset), punchRange, punchLayer);
         foreach (Collider collider in colliders)
@@ -36,11 +63,12 @@ public class PunchController : MonoBehaviour
             Vector3 hitPos = collider.ClosestPoint(transform.position + punchOriginOffset);
 
             if (collider.TryGetComponent<BasicHealth>(out BasicHealth health)) health.TakeDamage(punchDamage, hitPos);
-            
+
             if (collider.TryGetComponent<Rigidbody>(out Rigidbody rb))
             {
                 ApplyPunchKnockback(hitPos, rb, punchKnockBack, transform.forward);
                 CinemachineShake.instance.Shake(punchShake);
+                soundManager.PlaySound(punchSound);
             }
 
             if (collider.TryGetComponent<TntHolder>(out TntHolder tntHolder))
@@ -52,6 +80,15 @@ public class PunchController : MonoBehaviour
                 }
             }
         }
+        StartCoroutine(ActivePunchCooldown());
+    }
+
+    private IEnumerator ActivePunchCooldown()
+    {
+        canPunch = false;
+        yield return new WaitForSeconds(punchCoolDown);
+        canPunch = true;
+
     }
 
     public static void ApplyPunchKnockback(Vector3 hitPos, Rigidbody rb, float punchKnockbackForce, Vector3 direction)

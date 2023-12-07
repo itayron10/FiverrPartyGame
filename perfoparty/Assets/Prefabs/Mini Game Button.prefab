@@ -308,7 +308,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 64ae13d13ba34d142b1702506c3f8ce2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  onInteractionSound: {fileID: 11400000, guid: d2eca23ced1d2234a9e660e916ca920c, type: 2}
+  onInteractionSound: {fileID: 11400000, guid: 1959503a0ff857d4f82c30df358b295c, type: 2}
   interacterLayer:
     serializedVersion: 2
     m_Bits: 128

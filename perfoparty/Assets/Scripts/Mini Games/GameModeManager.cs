@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class GameModeManager : MonoBehaviour
 {
+    public List<PlayerConfiguration> GetPlayersCurrentlyInGameMode => playersCurrentlyInGameMode;
     [SerializeField] Transform[] startPoints;
     [SerializeField] float minYPositionForPlayers;
     [SerializeField] GameObject countingCanvas;
@@ -13,28 +14,30 @@ public class GameModeManager : MonoBehaviour
     [SerializeField] int scoreAddedByWinningRound = 5;
     [SerializeField] float timeToStartNewRound = 4f;
     protected List<PlayerConfiguration> playersToEnterGameMode = new List<PlayerConfiguration>();
-    private List<PlayerConfiguration> playersCurrentlyInGameMode = new List<PlayerConfiguration>();
-    public List<PlayerConfiguration> GetPlayersCurrentlyInGameMode => playersCurrentlyInGameMode;
-    private int roundCount = 0;
-    private LevelManager levelManager;
     protected bool miniGameRunning, roundRunning;
+    private List<PlayerConfiguration> playersCurrentlyInGameMode = new List<PlayerConfiguration>();
+    private int roundCount = 0;
+    private bool initializedManager;
+    private LevelManager levelManager;
+    private ExplanationManager explanationManager;
     public bool IsGameRunning => miniGameRunning;
 
-
-    private void Start()
+    private IEnumerator Start()
     {
-        InitializeManager();
+        explanationManager = FindObjectOfType<ExplanationManager>();
+        SetPlayers();
+        yield return new WaitForEndOfFrame();
+        PlayerConfigurationManager.Instance.SetPlayerInputs(false);
     }
 
     private void Update()
     {
+        if (!initializedManager && !explanationManager.isDialougeRunning) InitializeManager();
         if (miniGameRunning) UpdateMiniGame();
     }
 
-    protected virtual void InitializeManager()
+    private void SetPlayers()
     {
-        miniGameRunning = true;
-        levelManager = FindObjectOfType<LevelManager>();
         foreach (PlayerConfiguration playerConfig in PlayerConfigurationManager.Instance.GetPlayerConfigs())
         {
             playersToEnterGameMode.Add(playerConfig);
@@ -42,6 +45,13 @@ public class GameModeManager : MonoBehaviour
 
             SetPlayerPos(playerConfig.inputHandler.gameObject, startPoints[playerConfig.PlayerIndex].position);
         }
+    }
+
+    protected virtual void InitializeManager()
+    {
+        miniGameRunning = initializedManager = true;
+        levelManager = FindObjectOfType<LevelManager>();
+
         if (playersToEnterGameMode.Count > 1)
         {
             StartNewRound();
@@ -56,21 +66,36 @@ public class GameModeManager : MonoBehaviour
             GameObject player = playersCurrentlyInGameMode[i].inputHandler.gameObject;
             if (IsPlayerKickedOut(player) && roundRunning)
             {
-                playersCurrentlyInGameMode.Remove(playersCurrentlyInGameMode[i]);
-                player.SetActive(false);
-                if (playersCurrentlyInGameMode.Count <= 1)
-                {
-                    roundRunning = false;
-                    playersCurrentlyInGameMode[0].AddPlayerScore(scoreAddedByWinningRound);
-                    if (roundCount >= 3)
-                        EndMiniGame();
-                    else
-                        StartNewRound();
-                }
+                KickPlayer(playersCurrentlyInGameMode[i]);
             }
 
         }
     }
+
+    protected virtual void KickPlayer(PlayerConfiguration player)
+    {
+        playersCurrentlyInGameMode.Remove(player);
+        player.inputHandler.gameObject.SetActive(false);
+        if (playersCurrentlyInGameMode.Count <= 1)
+        {
+            StartCoroutine(EndRound(playersCurrentlyInGameMode[0]));
+        }
+    }
+
+    private IEnumerator EndRound(PlayerConfiguration playerConfig)
+    {
+        roundRunning = false;
+        playersCurrentlyInGameMode[0].AddPlayerScore(scoreAddedByWinningRound);
+        PlayerConfigurationManager.Instance.SetPlayerInputs(false);
+        PlayerConfigurationManager.Instance.PlayWinnerVideo(playerConfig);
+        yield return new WaitForSeconds(8.5f); // 8.5 the time it takes to play each of the winners' videos
+        if (roundCount >= 3)
+            EndMiniGame();
+        else
+            StartNewRound();
+    }
+
+
 
     private void SetActiveAllPlayers(bool active)
     {
@@ -95,7 +120,6 @@ public class GameModeManager : MonoBehaviour
         }
 
         ParticleManager.InstanciateParticleEffect(countingCanvas, transform.position, Quaternion.identity, timeToStartNewRound);
-        StopCoroutine(nameof(ActiveNewRound));
         StartCoroutine(ActiveNewRound());
     }
 
@@ -120,7 +144,7 @@ public class GameModeManager : MonoBehaviour
 
     public virtual void EndMiniGame()
     {
-        StartCoroutine(EndingMiniGame());
+        EndingMiniGame();
         StartEndMiniGame();
     }
 
@@ -129,7 +153,7 @@ public class GameModeManager : MonoBehaviour
         /// for deleting stuff when mini game is over
     }
 
-    private IEnumerator EndingMiniGame()
+    private void EndingMiniGame()
     {
         miniGameRunning = false;
         for (int i = 0; i < playersToEnterGameMode.Count; i++)
@@ -138,8 +162,6 @@ public class GameModeManager : MonoBehaviour
             player.SetActive(false);
         }
 
-        PlayerConfigurationManager.Instance.PlayWinnerVideo();
-        yield return new WaitForSeconds(8.5f); // 8.5 the time it takes to play each of the winners' videos
         if (PlayerConfigurationManager.Instance.strikeMode)
         {
             SetActiveAllPlayers(true);

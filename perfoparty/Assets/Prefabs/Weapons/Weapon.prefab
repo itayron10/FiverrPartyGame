@@ -74,12 +74,12 @@ MonoBehaviour:
   clipCapacity: 10
   reloadDuration: 1
   shootingCooldown: 0.13
-  projectile: {fileID: 9024129605048730506, guid: 1be94899aaafb9045896561f91dfee1c, type: 3}
+  projectile: {fileID: 5473375056257693719, guid: ca44784a615a75c439943a6a9aca598f, type: 3}
   shootingPoint: {fileID: 6385291748905275809}
   shootingEffect: {fileID: 1569246640813692, guid: 43ab0ca5d42daf04a99c67697d0e9414, type: 3}
   automatic: 1
   shootingSound: {fileID: 0}
-  reloadingSound: {fileID: 0}
+  reloadingSound: {fileID: 11400000, guid: 4729de1603cf90b4c8e878e6f760a690, type: 2}
   shootingShake: {fileID: 11400000, guid: f3fd68779e91dbf4e87ba0e3897dab11, type: 2}
   rbCollider: {fileID: -2341102839600317501}
 --- !u!114 &9159672927996595714

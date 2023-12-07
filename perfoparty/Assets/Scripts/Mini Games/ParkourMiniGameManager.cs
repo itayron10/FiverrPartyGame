@@ -7,10 +7,17 @@ public class ParkourMiniGameManager : GameModeManager
     [SerializeField] ParkourPlatform[] parkourPlatforms;
     [SerializeField] float platformFallingCooldown, pickingRaisingCooldown;
     [SerializeField] MeshRenderer selectedPlatformDisplay;
+    [SerializeField] SoundScriptableObject selectingPlatformSound;
     private bool pickedPlatform = false;
     private ParkourPlatform currentFallingPlatform;
-    private Coroutine fallingPlatformCoroutine;
+    private SoundManager soundManager;
 
+
+    protected override void InitializeManager()
+    {
+        base.InitializeManager();
+        soundManager = FindObjectOfType<SoundManager>();
+    }
 
     public override void StartNewRound()
     {
@@ -21,13 +28,13 @@ public class ParkourMiniGameManager : GameModeManager
     protected override void UpdateMiniGame()
     {
         base.UpdateMiniGame();
-        if (!pickedPlatform) StartFallingPlatform();
+        if (!pickedPlatform && roundRunning) StartFallingPlatform();
 
     }
 
     private void StartFallingPlatform()
     {
-        fallingPlatformCoroutine = StartCoroutine(PlatformFalling());
+        StartCoroutine(PlatformFalling());
     }
 
     private void ResetAllPlatforms()
@@ -48,6 +55,7 @@ public class ParkourMiniGameManager : GameModeManager
 
     private ParkourPlatform PickRandomPlatform()
     {
+        soundManager.PlaySound(selectingPlatformSound);
         ParkourPlatform parkourPlatform = parkourPlatforms[Random.Range(0, parkourPlatforms.Length)];
         pickedPlatform = true;
         selectedPlatformDisplay.material.SetColor("_Color", parkourPlatform.GetColor);

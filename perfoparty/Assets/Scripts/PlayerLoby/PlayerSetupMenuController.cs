@@ -12,8 +12,20 @@ public class PlayerSetupMenuController : MonoBehaviour
     [SerializeField] RawImage previewImage;
     [SerializeField] GameObject menuPanel;
     [SerializeField] Button readyButton;
+    [SerializeField] SoundScriptableObject clickSound;
+    private SoundManager soundManager;
     private int playerIndex;
 
+
+    private void Start()
+    {
+        soundManager = FindObjectOfType<SoundManager>();
+    }
+
+    private void OnLevelWasLoaded(int level)
+    {
+        soundManager = FindObjectOfType<SoundManager>();
+    }
 
     public void setPlayerIndex(int pi)
     {
@@ -25,6 +37,7 @@ public class PlayerSetupMenuController : MonoBehaviour
 
     public void IncreaseIndex()
     {
+        soundManager.PlaySound(clickSound);
         PlayerConfigurationManager.Instance.IncreaseCharacterSelectIndex(playerIndex);
         Debug.Log($"Texture Number: {playerIndex}");
         previewImage.texture = renderTextures[PlayerConfigurationManager.Instance.GetPlayerCharacterIndex(playerIndex)];
@@ -32,12 +45,14 @@ public class PlayerSetupMenuController : MonoBehaviour
 
     public void DecreaseIndex()
     {
+        soundManager.PlaySound(clickSound);
         PlayerConfigurationManager.Instance.DecreaseCharacterSelectIndex(playerIndex);
         previewImage.texture = renderTextures[PlayerConfigurationManager.Instance.GetPlayerCharacterIndex(playerIndex)];
     }
 
     public void ReadyPlayer()
     {
+        soundManager.PlaySound(clickSound);
         PlayerConfigurationManager.Instance.ReadyPlayer(playerIndex);
         Destroy(gameObject);
         /*menuPanel.gameObject.SetActive(false);

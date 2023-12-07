@@ -1,17 +1,32 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System.Linq;
 
 public class Podium : MonoBehaviour
 {
-    [SerializeField] Transform firstPodium, secondPodium, thirdPodium;
+    [SerializeField] Transform[] poduimSpots;
+       
 
-    private void Start()
+    private IEnumerator Start()
     {
+        List<PlayerConfiguration> sortedPlayers = PlayerConfigurationManager.Instance.GetPlayerConfigs().OrderByDescending(player => player.playerScore).ToList();
+        
+        PlayerConfigurationManager.Instance.SetPlayerInputs(false);
+        
         PlayerConfigurationManager playerConfigurationManager = PlayerConfigurationManager.Instance;
-        (PlayerConfiguration highestScore, PlayerConfiguration secondHighestScore, PlayerConfiguration thirdHighestScore) = playerConfigurationManager.GetThreeHighestScorePlayers();
-        playerConfigurationManager.SetPlayerToPosition(highestScore, firstPodium.position);
-        playerConfigurationManager.SetPlayerToPosition(secondHighestScore, secondPodium.position);
-        playerConfigurationManager.SetPlayerToPosition(thirdHighestScore, thirdPodium.position);
+        for (int i = 0; i < sortedPlayers.Count; i++)
+        {
+            playerConfigurationManager.SetPlayerToPosition(sortedPlayers[i], poduimSpots[i].position);
+            sortedPlayers[i].inputHandler.GetComponent<PlayerMovement>().Dance();
+            sortedPlayers[i].inputHandler.transform.localEulerAngles = new Vector3(0, 180, 0);
+        }
+
+        yield return new WaitForSeconds(10f);
+        PlayerConfigurationManager.Instance.SetPlayerInputs(true);
+        FindObjectOfType<LevelManager>().LoadLevelByIndex(0);
     }
+
+
+
 }

@@ -100,10 +100,11 @@ public class Weapon : MonoBehaviour
     }
     private IEnumerator ReloadWeapon()
     {
+        Debug.Log("Playing Reload Sound");
+        soundManager.PlaySound(shootingSound);  
         canShoot = false;
         yield return new WaitForSeconds(reloadDuration);
         currentClipAmount = clipCapacity;
-        soundManager.PlaySound(shootingSound);  
         canShoot = true;
     }    
 

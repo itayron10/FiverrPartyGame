@@ -9,8 +9,9 @@ using UnityEngine.SceneManagement;
 
 public class PlayerConfigurationManager : MonoBehaviour
 {
-    public bool strikeMode;
     [SerializeField] PlayerCharacterSO[] playerCharacters;
+    public bool strikeMode;
+    public float originalPlayerKnockBack;
     private List<PlayerConfiguration> playerConfigs;
     private PlayerInitializer playerInitializer;
 
@@ -41,7 +42,19 @@ public class PlayerConfigurationManager : MonoBehaviour
     {
         //PlayerInitializer.instance.InitializePlayers();
         yield return new WaitForEndOfFrame();
-        if (levelIndex == 0) SetPlayersToPositions();
+        if (levelIndex == 0)
+        {
+            SetPlayersToPositionsAndKnockbacks();
+            SetPlayerInputs();
+        }
+    }
+
+    public void SetPlayerInputs()
+    {
+        for (int i = 0; i < playerConfigs.Count; i++)
+        {
+            playerConfigs[i].AddPlayerScore(-playerConfigs[i].playerScore);
+        }
     }
 
     public void SetPlayerInputs(bool active)
@@ -58,10 +71,10 @@ public class PlayerConfigurationManager : MonoBehaviour
     }
 
 
-    public void PlayWinnerVideo()
+    public void PlayWinnerVideo(PlayerConfiguration player)
     {
         /// Make this function play the video of the character who won teh mini game
-        Instantiate(GetPlayerWithHighestScore().playerCharacter.playerWinningVideo, Vector3.zero, Quaternion.identity);
+        Instantiate(player.playerCharacter.playerWinningVideo, Vector3.zero, Quaternion.identity);
     }
 
     public PlayerConfiguration GetPlayerWithHighestScore()
@@ -86,9 +99,9 @@ public class PlayerConfigurationManager : MonoBehaviour
         PlayerConfiguration playerWithHighestScore = new PlayerConfiguration(null);
         PlayerConfiguration playerWithSecondHighestScore = new PlayerConfiguration(null);
         PlayerConfiguration playerWithThirdHighestScore = new PlayerConfiguration(null);
-        int highestScore = -1;
-        int secondHighestScore = -1;
-        int thirdHighestScore = -1;
+        int highestScore = -10;
+        int secondHighestScore = -10;
+        int thirdHighestScore = -10;
 
         foreach (var playerConfig in playerConfigs)
         {
@@ -131,17 +144,21 @@ public class PlayerConfigurationManager : MonoBehaviour
     }
 
 
-    public void SetPlayersToPositions()
+    public void SetPlayersToPositionsAndKnockbacks()
     {
         for (int i = 0; i < playerConfigs.Count; i++)
         {
             SetPlayerToPosition(playerConfigs[i], playerInitializer.GetPlayerSpawnPoints[i].position);
+            playerConfigs[i].inputHandler.GetComponent<PunchController>().SetKnockBack(originalPlayerKnockBack);
         }
     }
 
     public void SetPlayerToPosition(PlayerConfiguration player, Vector3 pos)
     {
-        player.inputHandler.GetComponent<Rigidbody>().MovePosition(pos);
+        Rigidbody rb = player.inputHandler.GetComponent<Rigidbody>();
+
+        rb.velocity = Vector3.zero;
+        rb.MovePosition(pos);
     }
 
     public void SetAllPlayersUiInput(InputSystemUIInputModule inputSystemUIInputModule)

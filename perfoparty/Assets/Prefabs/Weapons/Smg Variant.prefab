@@ -8,6 +8,22 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: -2341102839600317501, guid: c00bb5eab6c24f1438bb4b9994187e72, type: 3}
+      propertyPath: m_Size.z
+      value: 0.8730511
+      objectReference: {fileID: 0}
+    - target: {fileID: -2341102839600317501, guid: c00bb5eab6c24f1438bb4b9994187e72, type: 3}
+      propertyPath: m_Center.y
+      value: 0.030000001
+      objectReference: {fileID: 0}
+    - target: {fileID: -2341102839600317501, guid: c00bb5eab6c24f1438bb4b9994187e72, type: 3}
+      propertyPath: m_Center.z
+      value: 0.19152561
+      objectReference: {fileID: 0}
+    - target: {fileID: 4316480551750253086, guid: c00bb5eab6c24f1438bb4b9994187e72, type: 3}
+      propertyPath: projectile
+      value: 
+      objectReference: {fileID: 3563035476516497719, guid: b6a69a64989c69f4781182a0efc3c853, type: 3}
     - target: {fileID: 4316480551750253086, guid: c00bb5eab6c24f1438bb4b9994187e72, type: 3}
       propertyPath: clipCapacity
       value: 20
@@ -15,6 +31,18 @@ PrefabInstance:
     - target: {fileID: 4316480551750253086, guid: c00bb5eab6c24f1438bb4b9994187e72, type: 3}
       propertyPath: shootingCooldown
       value: 0.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7017313499598029776, guid: c00bb5eab6c24f1438bb4b9994187e72, type: 3}
+      propertyPath: m_Size.z
+      value: 1.1241422
+      objectReference: {fileID: 0}
+    - target: {fileID: 7017313499598029776, guid: c00bb5eab6c24f1438bb4b9994187e72, type: 3}
+      propertyPath: m_Center.y
+      value: 0.030000001
+      objectReference: {fileID: 0}
+    - target: {fileID: 7017313499598029776, guid: c00bb5eab6c24f1438bb4b9994187e72, type: 3}
+      propertyPath: m_Center.z
+      value: 0.21207115
       objectReference: {fileID: 0}
     - target: {fileID: 7253001988190511198, guid: c00bb5eab6c24f1438bb4b9994187e72, type: 3}
       propertyPath: m_Name

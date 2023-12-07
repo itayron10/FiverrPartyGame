@@ -14,6 +14,7 @@ public class Projectile : MonoBehaviour
     [SerializeField] bool destroyOutOfRange; // if true the projectile is destroyed once he leaves the range
     [Tooltip("if the projectile hit something before traveling in that range he will ignore the hit")]
     [SerializeField] float minHitRange = 1f;
+    [SerializeField] GameObject destroyEffect;
     
     [Header("References")]
     private Rigidbody rb;
@@ -53,6 +54,7 @@ public class Projectile : MonoBehaviour
 
         Debug.Log($"Destroyed By {other.gameObject.name}");
         Debug.Log(Vector3.Distance(startPos, transform.position));
+        if (destroyEffect) ParticleManager.InstanciateParticleEffect(destroyEffect, transform.position, transform.rotation);
         Destroy(gameObject);
     }
 

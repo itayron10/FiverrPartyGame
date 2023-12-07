@@ -6,7 +6,18 @@ public class FFAMiniGameManager : GameModeManager
 {
     [SerializeField] Transform[] randomSpawnPoints;
     [SerializeField] Weapon[] weaponPrefabsToSpawn;
+    [SerializeField] float newPlayerKnockBack;
     private List<Weapon> weaponInstances = new List<Weapon>();
+
+    protected override void InitializeManager()
+    {
+        base.InitializeManager();
+        for (int i = 0; i < playersToEnterGameMode.Count; i++)
+        {
+            PunchController punchController = playersToEnterGameMode[i].inputHandler.GetComponent<PunchController>();
+            punchController.SetKnockBack(newPlayerKnockBack);
+        }
+    }
 
     public override void StartNewRound()
     {

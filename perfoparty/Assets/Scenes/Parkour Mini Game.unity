@@ -268,6 +268,63 @@ PrefabInstance:
       addedObject: {fileID: 210156339}
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: cdcd2e9a841dd22488513a0999230a94, type: 3}
+--- !u!1001 &96336537
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 391716365072311347, guid: aeee513a8be9db14fa619db71fca2223, type: 3}
+      propertyPath: m_Name
+      value: Game Mode Explanation Manager
+      objectReference: {fileID: 0}
+    - target: {fileID: 8338728590762479390, guid: aeee513a8be9db14fa619db71fca2223, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8338728590762479390, guid: aeee513a8be9db14fa619db71fca2223, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8338728590762479390, guid: aeee513a8be9db14fa619db71fca2223, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8338728590762479390, guid: aeee513a8be9db14fa619db71fca2223, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8338728590762479390, guid: aeee513a8be9db14fa619db71fca2223, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8338728590762479390, guid: aeee513a8be9db14fa619db71fca2223, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8338728590762479390, guid: aeee513a8be9db14fa619db71fca2223, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8338728590762479390, guid: aeee513a8be9db14fa619db71fca2223, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8338728590762479390, guid: aeee513a8be9db14fa619db71fca2223, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8338728590762479390, guid: aeee513a8be9db14fa619db71fca2223, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: aeee513a8be9db14fa619db71fca2223, type: 3}
 --- !u!1 &177780903
 GameObject:
   m_ObjectHideFlags: 0
@@ -1465,11 +1522,73 @@ MonoBehaviour:
   fallingPos: {x: -0.3166995, y: -5.2, z: -5.75}
   platformFallingShake: {fileID: 11400000, guid: 0b7c0bf9d8c1df24785fd520e95b2fe2, type: 2}
   speed: 6
+  fallingSound: {fileID: 11400000, guid: 7168193ea983cf04ebd14ae7ec43b0e6, type: 2}
 --- !u!4 &960293725 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: cdcd2e9a841dd22488513a0999230a94, type: 3}
   m_PrefabInstance: {fileID: 1281922324}
   m_PrefabAsset: {fileID: 0}
+--- !u!1001 &1039708635
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 3823235324943633073, guid: 75df70ed4d614f74d8a5ad16c9428513, type: 3}
+      propertyPath: m_Name
+      value: Music
+      objectReference: {fileID: 0}
+    - target: {fileID: 5485306496577673521, guid: 75df70ed4d614f74d8a5ad16c9428513, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5485306496577673521, guid: 75df70ed4d614f74d8a5ad16c9428513, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5485306496577673521, guid: 75df70ed4d614f74d8a5ad16c9428513, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5485306496577673521, guid: 75df70ed4d614f74d8a5ad16c9428513, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5485306496577673521, guid: 75df70ed4d614f74d8a5ad16c9428513, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5485306496577673521, guid: 75df70ed4d614f74d8a5ad16c9428513, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5485306496577673521, guid: 75df70ed4d614f74d8a5ad16c9428513, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5485306496577673521, guid: 75df70ed4d614f74d8a5ad16c9428513, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5485306496577673521, guid: 75df70ed4d614f74d8a5ad16c9428513, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5485306496577673521, guid: 75df70ed4d614f74d8a5ad16c9428513, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9153713663503704902, guid: 75df70ed4d614f74d8a5ad16c9428513, type: 3}
+      propertyPath: m_audioClip
+      value: 
+      objectReference: {fileID: 8300000, guid: 1d400e11ff96b214abeeeb6be01cec58, type: 3}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 75df70ed4d614f74d8a5ad16c9428513, type: 3}
 --- !u!1001 &1126608495
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1661,6 +1780,7 @@ MonoBehaviour:
   fallingPos: {x: -4.3299994, y: -5.2, z: 1.1999002}
   platformFallingShake: {fileID: 11400000, guid: 0b7c0bf9d8c1df24785fd520e95b2fe2, type: 2}
   speed: 6
+  fallingSound: {fileID: 11400000, guid: 7168193ea983cf04ebd14ae7ec43b0e6, type: 2}
 --- !u!23 &1337258036 stripped
 MeshRenderer:
   m_CorrespondingSourceObject: {fileID: 7648973668265453872, guid: cdcd2e9a841dd22488513a0999230a94, type: 3}
@@ -1806,9 +1926,10 @@ MonoBehaviour:
   - {fileID: 2142903801}
   - {fileID: 1963177678}
   - {fileID: 1694418752}
-  platformFallingCooldown: 5
-  pickingRaisingCooldown: 3
+  platformFallingCooldown: 1
+  pickingRaisingCooldown: 1
   selectedPlatformDisplay: {fileID: 1337258036}
+  selectingPlatformSound: {fileID: 11400000, guid: 8740f586987f0334b8c7544d44c95b50, type: 2}
 --- !u!1001 &1472607396
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2185,6 +2306,7 @@ MonoBehaviour:
   fallingPos: {x: 3.7600002, y: -5.2, z: -3.4816}
   platformFallingShake: {fileID: 11400000, guid: 0b7c0bf9d8c1df24785fd520e95b2fe2, type: 2}
   speed: 6
+  fallingSound: {fileID: 11400000, guid: 7168193ea983cf04ebd14ae7ec43b0e6, type: 2}
 --- !u!4 &1807935817 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: cdcd2e9a841dd22488513a0999230a94, type: 3}
@@ -2206,6 +2328,7 @@ MonoBehaviour:
   fallingPos: {x: -4.3299994, y: -5.2, z: -3.49}
   platformFallingShake: {fileID: 11400000, guid: 0b7c0bf9d8c1df24785fd520e95b2fe2, type: 2}
   speed: 6
+  fallingSound: {fileID: 11400000, guid: 7168193ea983cf04ebd14ae7ec43b0e6, type: 2}
 --- !u!1001 &1963177676
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2322,6 +2445,7 @@ MonoBehaviour:
   fallingPos: {x: -0.3166995, y: -5.2, z: -1.1185699}
   platformFallingShake: {fileID: 11400000, guid: 0b7c0bf9d8c1df24785fd520e95b2fe2, type: 2}
   speed: 6
+  fallingSound: {fileID: 11400000, guid: 7168193ea983cf04ebd14ae7ec43b0e6, type: 2}
 --- !u!4 &2057648096 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: cdcd2e9a841dd22488513a0999230a94, type: 3}
@@ -2348,6 +2472,7 @@ MonoBehaviour:
   fallingPos: {x: 3.7600002, y: -5.2, z: 1.1799002}
   platformFallingShake: {fileID: 11400000, guid: 0b7c0bf9d8c1df24785fd520e95b2fe2, type: 2}
   speed: 6
+  fallingSound: {fileID: 11400000, guid: 7168193ea983cf04ebd14ae7ec43b0e6, type: 2}
 --- !u!1001 &2142903799
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2460,6 +2585,7 @@ MonoBehaviour:
   fallingPos: {x: -0.3099996, y: -5.2, z: 3.6500003}
   platformFallingShake: {fileID: 11400000, guid: 0b7c0bf9d8c1df24785fd520e95b2fe2, type: 2}
   speed: 6
+  fallingSound: {fileID: 11400000, guid: 7168193ea983cf04ebd14ae7ec43b0e6, type: 2}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
@@ -2470,3 +2596,5 @@ SceneRoots:
   - {fileID: 746497391}
   - {fileID: 1472607396}
   - {fileID: 38374921}
+  - {fileID: 96336537}
+  - {fileID: 1039708635}

@@ -126,6 +126,7 @@ MonoBehaviour:
   automatic: 0
   shootingSound: {fileID: 0}
   reloadingSound: {fileID: 0}
+  shootingShake: {fileID: 0}
   rbCollider: {fileID: 4744077982127405000}
 --- !u!1001 &8451547917133190326
 PrefabInstance:
