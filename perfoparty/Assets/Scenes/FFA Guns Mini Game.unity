@@ -9427,11 +9427,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1674885527406828731, guid: 8c1052529004e2f4e92b2dc848532e02, type: 3}
       propertyPath: m_Lens.FieldOfView
-      value: 11.69766
+      value: 42
       objectReference: {fileID: 0}
     - target: {fileID: 3041151928201063546, guid: 8c1052529004e2f4e92b2dc848532e02, type: 3}
       propertyPath: field of view
-      value: 11.69766
+      value: 42
       objectReference: {fileID: 0}
     - target: {fileID: 6513788974009382766, guid: 8c1052529004e2f4e92b2dc848532e02, type: 3}
       propertyPath: m_Materials.Array.data[0]

@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class GunMiniGame : GameModeManager
 {
-    [SerializeField] Transform[] gunSpawnPositions;
+    [SerializeField] Transform gunSpawnPos;
     [SerializeField] Weapon gunPrefab;
     private Weapon gunInstance;
 
@@ -22,7 +22,7 @@ public class GunMiniGame : GameModeManager
 
         DeleteGun();
 
-        gunInstance = Instantiate(gunPrefab.gameObject, gunSpawnPositions[Random.Range(0, gunSpawnPositions.Length)].position, Quaternion.identity).GetComponent<Weapon>();
+        gunInstance = Instantiate(gunPrefab.gameObject, gunSpawnPos.position, Quaternion.identity).GetComponent<Weapon>();
         Debug.Log("Spawning the gun");
 
     }
@@ -40,6 +40,10 @@ public class GunMiniGame : GameModeManager
     {
         base.StartEndMiniGame();
         DeleteGun();
+        foreach (PlayerConfiguration player in playersToEnterGameMode)
+        {
+            player.inputHandler.GetComponent<WeaponManager>().equipCoolDown = 1;
+        }
     }
 
     protected override bool IsPlayerKickedOut(GameObject player)

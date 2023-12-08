@@ -117,7 +117,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 769387b932b6a904f977021529acab76, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  clipCapacity: 1
+  clipCapacity: 5
   reloadDuration: 1
   shootingCooldown: 0.3
   projectile: {fileID: 9053560053974356178, guid: f1749a996145e1e4dbc6907051af90c7, type: 3}
@@ -125,8 +125,8 @@ MonoBehaviour:
   shootingEffect: {fileID: 1569246640813692, guid: 43ab0ca5d42daf04a99c67697d0e9414, type: 3}
   automatic: 0
   shootingSound: {fileID: 0}
-  reloadingSound: {fileID: 0}
-  shootingShake: {fileID: 0}
+  reloadingSound: {fileID: 11400000, guid: 4729de1603cf90b4c8e878e6f760a690, type: 2}
+  shootingShake: {fileID: 11400000, guid: f3fd68779e91dbf4e87ba0e3897dab11, type: 2}
   rbCollider: {fileID: 4744077982127405000}
 --- !u!1001 &8451547917133190326
 PrefabInstance:

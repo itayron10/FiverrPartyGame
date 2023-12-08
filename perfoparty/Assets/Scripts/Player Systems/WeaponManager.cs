@@ -11,8 +11,9 @@ public class WeaponManager : MonoBehaviour
     public Weapon GetCurrentWeapon => currentWeapon;
     private PlayerMovement playerMovement;
     private Animator animator;
-    private bool canEquip = true;
+    public bool canEquip = true;
     private Coroutine shootingCoroutine;
+    public float equipCoolDown = 1;
 
 
 
@@ -54,10 +55,10 @@ public class WeaponManager : MonoBehaviour
         if (gameObject.activeInHierarchy) StartCoroutine(EquipingCooldown());
     }
 
-    private IEnumerator EquipingCooldown()
+    protected IEnumerator EquipingCooldown()
     {
         canEquip = false;
-        yield return new WaitForSeconds(1f);
+        yield return new WaitForSeconds(equipCoolDown);
         canEquip = true;
     }
 

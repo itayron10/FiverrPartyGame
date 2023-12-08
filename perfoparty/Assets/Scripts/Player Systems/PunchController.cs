@@ -19,6 +19,7 @@ public class PunchController : MonoBehaviour
     private TntHolder tntHolder;
     private WeaponManager weaponManager;
     private bool canPunch = true;
+    public bool hasPunchAbility = true;
 
     public float GetKnockBack => punchKnockBack;
     public void SetKnockBack(float knockBack) => punchKnockBack = knockBack;
@@ -43,11 +44,13 @@ public class PunchController : MonoBehaviour
     private void OnLevelWasLoaded(int level)
     {
         soundManager = FindObjectOfType<SoundManager>();
+        hasPunchAbility = true;
     }
 
     public void Punch()
     {
         if (weaponManager.GetCurrentWeapon != null) return;
+        if (!hasPunchAbility) return;
         if (!canPunch) return;
         HandlePunch();
     }
@@ -69,6 +72,11 @@ public class PunchController : MonoBehaviour
                 ApplyPunchKnockback(hitPos, rb, punchKnockBack, transform.forward);
                 CinemachineShake.instance.Shake(punchShake);
                 soundManager.PlaySound(punchSound);
+            }
+
+            if (collider.TryGetComponent<BossHealth>(out BossHealth boss))
+            {
+                boss.PralysisPlayers(this.gameObject);
             }
 
             if (collider.TryGetComponent<TntHolder>(out TntHolder tntHolder))

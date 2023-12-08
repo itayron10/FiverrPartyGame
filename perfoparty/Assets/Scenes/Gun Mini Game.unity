@@ -2726,17 +2726,11 @@ MonoBehaviour:
   minYPositionForPlayers: -2
   countingCanvas: {fileID: 5331982604329340332, guid: 7748a25a612514042aae80918e684478, type: 3}
   podiumSceneName: PodiumScene
-  reloadGameMenu: {fileID: 0}
+  reloadGameMenu: {fileID: 1946683614}
   lastGameMode: 0
   scoreAddedByWinningRound: 5
   timeToStartNewRound: 4
-  gunSpawnPositions:
-  - {fileID: 1946683620}
-  - {fileID: 1946683619}
-  - {fileID: 1946683618}
-  - {fileID: 1946683617}
-  - {fileID: 1946683616}
-  - {fileID: 1946683615}
+  gunSpawnPos: {fileID: 0}
   gunPrefab: {fileID: -7821772223912598258, guid: cba504502e4bc8947b1c7ade7cfcbf3b, type: 3}
 --- !u!1 &378378103
 GameObject:
@@ -17864,7 +17858,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7853699224778863783, guid: 2a5fa4a088f85a3458fe84bde5fc2d0a, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: 0.21
       objectReference: {fileID: 0}
     - target: {fileID: 7853699224778863783, guid: 2a5fa4a088f85a3458fe84bde5fc2d0a, type: 3}
       propertyPath: m_LocalPosition.z

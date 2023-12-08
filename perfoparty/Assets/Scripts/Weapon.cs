@@ -19,7 +19,7 @@ public class Weapon : MonoBehaviour
     private SoundManager soundManager;
     private CinemachineShake cinemachineShake;
     private Rigidbody rb;
-    private WeaponManager weaponManager;
+    protected WeaponManager weaponManager;
     private Coroutine shootingCoroutine;
     private bool equiped;
 
@@ -39,7 +39,7 @@ public class Weapon : MonoBehaviour
     }
 
 
-    public void Equip(Transform holdingPoint, WeaponManager weaponManager)
+    public virtual void Equip(Transform holdingPoint, WeaponManager weaponManager)
     {
         this.weaponManager = weaponManager;
         transform.SetParent(holdingPoint);

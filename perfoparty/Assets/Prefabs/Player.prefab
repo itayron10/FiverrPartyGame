@@ -760,11 +760,12 @@ MonoBehaviour:
   punchKnockBack: 5
   punchLayer:
     serializedVersion: 2
-    m_Bits: 128
+    m_Bits: 640
   punchOriginOffset: {x: 0, y: 1.26, z: 1.13}
   punchShake: {fileID: 11400000, guid: 25775e8e63ddf0c44b1fbb04277e2c65, type: 2}
   punchCoolDown: 0.5
   punchSound: {fileID: 11400000, guid: 18c7d05424fa96f4aab0c75e9f946707, type: 2}
+  hasPunchAbility: 1
 --- !u!114 &9008007228405198074
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -831,6 +832,8 @@ MonoBehaviour:
   weaponHoldingLocalPos: {x: -0.028, y: 0.111, z: 0.053}
   weaponHoldingLocalEuler: {x: 333.0472, y: 58.44067, z: 56.56739}
   weaponHoldingShootingLocalEuler: {x: 296.91208, y: 183.49681, z: 286.6966}
+  canEquip: 1
+  equipCoolDown: 1
 --- !u!114 &-5101406053275135453
 MonoBehaviour:
   m_ObjectHideFlags: 0

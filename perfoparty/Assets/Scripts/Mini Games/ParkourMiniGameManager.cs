@@ -7,6 +7,7 @@ public class ParkourMiniGameManager : GameModeManager
     [SerializeField] ParkourPlatform[] parkourPlatforms;
     [SerializeField] float platformFallingCooldown, pickingRaisingCooldown;
     [SerializeField] MeshRenderer selectedPlatformDisplay;
+    [SerializeField] PunchGiver punchObjectPrefab;
     [SerializeField] SoundScriptableObject selectingPlatformSound;
     private bool pickedPlatform = false;
     private ParkourPlatform currentFallingPlatform;
@@ -23,6 +24,10 @@ public class ParkourMiniGameManager : GameModeManager
     {
         base.StartNewRound();
         ResetAllPlatforms();
+        foreach (var player in playersToEnterGameMode)
+        {
+            player.inputHandler.GetComponent<PunchController>().hasPunchAbility = false;
+        }
     }
 
     protected override void UpdateMiniGame()
@@ -55,6 +60,13 @@ public class ParkourMiniGameManager : GameModeManager
 
     private ParkourPlatform PickRandomPlatform()
     {
+        float random = Random.value;
+        Debug.Log(random);
+        if (random > 0.7f)
+        {
+            ParkourPlatform giverPlatform = parkourPlatforms[Random.Range(0, parkourPlatforms.Length)];
+            Instantiate(punchObjectPrefab.gameObject, giverPlatform.transform.position + Vector3.up, Quaternion.identity, giverPlatform.transform);
+        }
         soundManager.PlaySound(selectingPlatformSound);
         ParkourPlatform parkourPlatform = parkourPlatforms[Random.Range(0, parkourPlatforms.Length)];
         pickedPlatform = true;

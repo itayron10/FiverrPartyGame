@@ -49,7 +49,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   timeToExplode: 15
   explosionSound: {fileID: 0}
-  explosionEffect: {fileID: 0}
+  explosionEffect: {fileID: 1849819198618100, guid: 7bb4d6c8fb5bf05418ddfd932c1c2d35, type: 3}
   displayText: {fileID: 4839166985727637780}
 --- !u!114 &4620113424894440670
 MonoBehaviour:

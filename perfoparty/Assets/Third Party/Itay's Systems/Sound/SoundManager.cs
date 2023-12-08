@@ -24,6 +24,11 @@ public class SoundManager : MonoBehaviour
         PlayAudioSource(sound, audioSource);
     }
 
+    public void StopSound(AudioSource audioSource)
+    {
+        audioSource.Stop();
+    }
+
 
     public static void PlaySoundAtPosition(SoundScriptableObject sound, Vector3 playPosition, float spatialBlend = 1f) 
     {

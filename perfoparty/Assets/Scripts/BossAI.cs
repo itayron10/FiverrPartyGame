@@ -77,7 +77,7 @@ public class BossAI : MonoBehaviour
         {
             // PUNCH
             Rigidbody targetRb = currentTarget.GetComponent<Rigidbody>();
-            PunchController.ApplyPunchKnockback(targetRb.position, targetRb, punchKnockback, transform.forward);
+            if (targetRb != null) PunchController.ApplyPunchKnockback(targetRb.position, targetRb, punchKnockback, transform.forward);
         }
 
         yield return new WaitForSeconds(animator.GetCurrentAnimatorStateInfo(0).length - animationDelay);

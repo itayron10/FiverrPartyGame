@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Parkour
   m_EditorClassIdentifier: 
   letterWritingSpeed: 0.02
-  delayBetweenSentences: 2
+  delayBetweenSentences: 3
   sentences:
   - 'TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST '
   - '2. TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST '

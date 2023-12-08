@@ -1929,6 +1929,7 @@ MonoBehaviour:
   platformFallingCooldown: 1
   pickingRaisingCooldown: 1
   selectedPlatformDisplay: {fileID: 1337258036}
+  punchObjectPrefab: {fileID: 7792684247528515927, guid: c1783625f2d5b154da6251bfaa6106c9, type: 3}
   selectingPlatformSound: {fileID: 11400000, guid: 8740f586987f0334b8c7544d44c95b50, type: 2}
 --- !u!1001 &1472607396
 PrefabInstance:

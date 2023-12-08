@@ -9,11 +9,16 @@ public class ExplanationManager : MonoBehaviour
     [SerializeField] TextMeshProUGUI dialougeText;
     [SerializeField] DialougeSO dialougeSO;
     [SerializeField] Animator dialougeAnimator;
+    [SerializeField] SoundScriptableObject explainingSound;
+    [SerializeField] AudioSource audioSource;
     [SerializeField] string dialougeRunningName;
     public bool isDialougeRunning = true;
+    private SoundManager soundManager;
+    
 
     private void Awake()
     {
+        soundManager = FindObjectOfType<SoundManager>();
         StartCoroutine(WriteDialouge(dialougeSO));
     }
 
@@ -21,7 +26,8 @@ public class ExplanationManager : MonoBehaviour
     {
         isDialougeRunning = true;
         dialougeAnimator.SetBool(dialougeRunningName, isDialougeRunning);
-        
+        soundManager.PlaySound(explainingSound, audioSource);
+
         foreach (string sentence in dialouge.GetSentences)
         {
             StartCoroutine(WriteSentence(sentence, dialouge.GetLetterWritingSpeed));
@@ -29,6 +35,7 @@ public class ExplanationManager : MonoBehaviour
             yield return new WaitForSeconds(dialouge.GetDelayBetweenSentences);
         }
 
+        soundManager.StopSound(audioSource);
         isDialougeRunning = false;
         dialougeAnimator.SetBool(dialougeRunningName, isDialougeRunning);
     }
