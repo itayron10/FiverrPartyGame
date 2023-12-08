@@ -12,12 +12,14 @@ public class ExplanationManager : MonoBehaviour
     [SerializeField] SoundScriptableObject explainingSound;
     [SerializeField] AudioSource audioSource;
     [SerializeField] string dialougeRunningName;
-    public bool isDialougeRunning = true;
+    [SerializeField] float delay;
+    [HideInInspector] public bool isDialougeRunning = true;
     private SoundManager soundManager;
     
 
-    private void Awake()
+    private IEnumerator Start()
     {
+        yield return new WaitForSeconds(delay);
         soundManager = FindObjectOfType<SoundManager>();
         StartCoroutine(WriteDialouge(dialougeSO));
     }

@@ -14,6 +14,7 @@ public class PunchController : MonoBehaviour
     [SerializeField] float punchCoolDown;
     [SerializeField] SoundScriptableObject punchSound;
     [SerializeField] GameObject stunEffect;
+    private List<BasicHealth> playerPunchedPralysis = new List<BasicHealth>();
     private PlayerMovement playerMovement;
     private Animator animator;
     private SoundManager soundManager;
@@ -74,9 +75,11 @@ public class PunchController : MonoBehaviour
 
             if (collider.TryGetComponent<BasicHealth>(out BasicHealth health))
             {
+                if (playerPunchedPralysis.Contains(health)) return;
                 health.TakeDamage(punchDamage, hitPos);
-                if (finalBoss) StartCoroutine(StunPlayer(health.GetComponent<InputHandler>().playerConfig));
+                if (finalBoss) StartCoroutine(StunPlayer(health.GetComponent<InputHandler>().playerConfig, health));
             }
+
 
             if (collider.TryGetComponent<Rigidbody>(out Rigidbody rb))
             {
@@ -105,12 +108,14 @@ public class PunchController : MonoBehaviour
 
     }
 
-    private IEnumerator StunPlayer(PlayerConfiguration player)
+    private IEnumerator StunPlayer(PlayerConfiguration player, BasicHealth health)
     {
+        playerPunchedPralysis.Add(health);
         player.Input.DeactivateInput();
         ParticleManager.InstanciateParticleEffect(stunEffect, player.inputHandler.transform.position, Quaternion.identity, 3, player.inputHandler.transform);
         yield return new WaitForSeconds(3f);
         player.Input.ActivateInput();
+        playerPunchedPralysis.Remove(health);
     }
 
     public static void ApplyPunchKnockback(Vector3 hitPos, Rigidbody rb, float punchKnockbackForce, Vector3 direction)
