@@ -765,6 +765,7 @@ MonoBehaviour:
   punchShake: {fileID: 11400000, guid: 25775e8e63ddf0c44b1fbb04277e2c65, type: 2}
   punchCoolDown: 0.5
   punchSound: {fileID: 11400000, guid: 18c7d05424fa96f4aab0c75e9f946707, type: 2}
+  stunEffect: {fileID: 2822416271846388961, guid: 8bda60e7607355245a7452d83c8684b5, type: 3}
   hasPunchAbility: 1
 --- !u!114 &9008007228405198074
 MonoBehaviour:

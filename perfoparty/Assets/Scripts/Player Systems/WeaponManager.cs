@@ -96,7 +96,7 @@ public class WeaponManager : MonoBehaviour
 
     private void SetWeaponToDefault()
     {
-        currentWeapon.StopShoot();
+        if (currentWeapon) currentWeapon.StopShoot();
         weaponHoldingPoint.localEulerAngles = weaponHoldingLocalEuler;
         animator.SetBool(shootAnimatorBool, false);
         Debug.Log("To Normal Rotation");

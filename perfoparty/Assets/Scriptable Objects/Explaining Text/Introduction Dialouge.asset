@@ -10,12 +10,13 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 08a5bb05f4bf69146ab758c5029a3070, type: 3}
-  m_Name: TNT Tag
+  m_Name: Introduction Dialouge
   m_EditorClassIdentifier: 
   letterWritingSpeed: 0.02
   delayBetweenSentences: 3
   sentences:
-  - "Vigileu perque alg\xFA de vosaltres tindr\xE0 una bomba que petar\xE0 en 15
-    segons."
-  - Pegant a un altre jugador es passa la bomba.
-  - Vigileu perque fa un bon petardo!
+  - "Que pasa mamarrachus? Em presento em dic Anselmo, soc la fusi\xF3 entre el drarek
+    i el gispi per un error de textura del Sr.Medina."
+  - Avui us he portat a la Puigcerver per fer un torneig de minijocs i veure qui
+    surt guanyador.
+  - "El primer pas ser\xE0 escollir personatge!"

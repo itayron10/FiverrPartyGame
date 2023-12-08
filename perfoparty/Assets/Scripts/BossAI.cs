@@ -5,7 +5,6 @@ using UnityEngine.AI;
 
 public class BossAI : MonoBehaviour
 {
-    [SerializeField] float speed;
     [SerializeField] float punchRange, chaseRange;
     [SerializeField] LayerMask playerLayer;
     [SerializeField] float punchKnockback;

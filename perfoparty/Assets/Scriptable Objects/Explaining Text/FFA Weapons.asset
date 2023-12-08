@@ -15,6 +15,6 @@ MonoBehaviour:
   letterWritingSpeed: 0.02
   delayBetweenSentences: 3
   sentences:
-  - 'TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST '
-  - '2. TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST '
-  - '3. TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST '
+  - Ara tots estareu en igualtat de condicions perque hi han armes per tots!
+  - Cada arma es diferent i la cambieu al caminar per damunt de una.
+  - Si voleu tirar-la doneu-li al triangle.

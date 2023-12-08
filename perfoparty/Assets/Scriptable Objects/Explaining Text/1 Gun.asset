@@ -15,6 +15,6 @@ MonoBehaviour:
   letterWritingSpeed: 0.02
   delayBetweenSentences: 3
   sentences:
-  - 'TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST '
-  - '2. TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST '
-  - '3. TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST '
+  - En aquest minijoc es pot aconseguir una arma, pero nomes hi ha una!
+  - Amb la arma es mata a jugadors amb una sola bala.
+  - Pero cuidado perque nomes en tens 5 i te la poden pendre!

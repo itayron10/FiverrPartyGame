@@ -46,6 +46,7 @@ public class Weapon : MonoBehaviour
         transform.localPosition = Vector3.zero;
         transform.localRotation = Quaternion.identity;
         rb.isKinematic = equiped = true;
+        rb.interpolation = RigidbodyInterpolation.None;
         rbCollider.enabled = false;
     }
 
@@ -55,6 +56,7 @@ public class Weapon : MonoBehaviour
         weaponManager.HandleUnequipAnimator();
         rb.isKinematic = equiped = false;
         rbCollider.enabled = true;
+        rb.interpolation = RigidbodyInterpolation.Interpolate;
         transform.SetParent(null);
         weaponManager = null;
     }

@@ -15,6 +15,6 @@ MonoBehaviour:
   letterWritingSpeed: 0.02
   delayBetweenSentences: 3
   sentences:
-  - 'TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST '
-  - '2. TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST '
-  - '3. TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST '
+  - "Ja m\u2019he cansat de veureus jugar, jo tamb\xE9 vull!"
+  - "A qui li pegui l\u2019enviar\xE9 a pendre pel cul sense miraments."
+  - "Si us pegueu podreu paralitzar-vos i em ser\xE0 m\xE9s f\xE0cil agafar-vos!"

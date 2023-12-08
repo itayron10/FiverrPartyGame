@@ -22,6 +22,6 @@ public class SoundButton : EventButton
 
         float volume = Mathf.Log10(percentage / 100f) * 20f;
 
-        audioMixer.SetFloat("MasterVol", volume);
+        audioMixer.SetFloat("MusicVol", volume);
     }
 }
