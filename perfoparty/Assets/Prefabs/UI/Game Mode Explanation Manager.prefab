@@ -49,11 +49,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dialougeParant: {fileID: 3722322417968092616}
   dialougeText: {fileID: 3390862035675097700}
-  dialougeSO: {fileID: 11400000, guid: 94dc0fae602754649839fb68091739c2, type: 2}
+  dialougeSO: {fileID: 11400000, guid: 33c3a4a30a1cbae4b88ed81d8bd02f67, type: 2}
   dialougeAnimator: {fileID: 4566145885221728011}
   explainingSound: {fileID: 11400000, guid: 26393a9273cf0224a9757c65fbaf9813, type: 2}
   audioSource: {fileID: 1444679995319093869}
   dialougeRunningName: DialougeRunning
+  delay: 50
   isDialougeRunning: 0
 --- !u!82 &1444679995319093869
 AudioSource:

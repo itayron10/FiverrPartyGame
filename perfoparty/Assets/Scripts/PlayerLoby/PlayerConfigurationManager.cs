@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
+using UnityEngine.Video;
 using UnityEngine.InputSystem;
 using UnityEngine.InputSystem.UI;
 using UnityEngine.SceneManagement;
@@ -10,10 +11,15 @@ using UnityEngine.SceneManagement;
 public class PlayerConfigurationManager : MonoBehaviour
 {
     [SerializeField] PlayerCharacterSO[] playerCharacters;
+    [SerializeField] GameObject startingVideo, startingExplanation;
+    [SerializeField] AudioSource music;
+    [SerializeField] bool playVideo; 
     public bool strikeMode;
     public float originalPlayerKnockBack;
     private List<PlayerConfiguration> playerConfigs;
     private PlayerInitializer playerInitializer;
+    private bool playedVideo;
+    private PlayerInputManager inputManager;
 
 
     public static PlayerConfigurationManager Instance { get; private set; }
@@ -36,6 +42,24 @@ public class PlayerConfigurationManager : MonoBehaviour
     private void Start()
     {
         playerInitializer = GetComponent<PlayerInitializer>();
+        inputManager = GetComponent<PlayerInputManager>();
+        if (!playedVideo)
+        {
+            if (playVideo) StartCoroutine(PlayVideo());
+            else inputManager.enabled = true;
+        }
+    }
+
+    private IEnumerator PlayVideo()
+    {
+        music.Stop();
+        inputManager.enabled = false;
+        Instantiate(startingVideo).GetComponent<VideoPlayer>().targetCamera = Camera.main;
+        Instantiate(startingExplanation);
+        playedVideo = true;
+        yield return new WaitForSeconds(50);
+        inputManager.enabled = true;
+        music.Play();
     }
 
     private IEnumerator OnLevelWasLoaded(int levelIndex)

@@ -280,6 +280,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: Game Mode Explanation Manager
       objectReference: {fileID: 0}
+    - target: {fileID: 8242380878379025918, guid: aeee513a8be9db14fa619db71fca2223, type: 3}
+      propertyPath: delay
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8242380878379025918, guid: aeee513a8be9db14fa619db71fca2223, type: 3}
+      propertyPath: dialougeSO
+      value: 
+      objectReference: {fileID: 11400000, guid: e3dc4334991eda64bb4aee98de17d9d5, type: 2}
     - target: {fileID: 8338728590762479390, guid: aeee513a8be9db14fa619db71fca2223, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -1589,6 +1597,11 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 75df70ed4d614f74d8a5ad16c9428513, type: 3}
+--- !u!82 &1039708636 stripped
+AudioSource:
+  m_CorrespondingSourceObject: {fileID: 9153713663503704902, guid: 75df70ed4d614f74d8a5ad16c9428513, type: 3}
+  m_PrefabInstance: {fileID: 1039708635}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1126608495
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1914,10 +1927,10 @@ MonoBehaviour:
   minYPositionForPlayers: -2
   countingCanvas: {fileID: 5331982604329340332, guid: 7748a25a612514042aae80918e684478, type: 3}
   podiumSceneName: PodiumScene
-  reloadGameMenu: {fileID: 0}
   lastGameMode: 0
   scoreAddedByWinningRound: 5
   timeToStartNewRound: 4
+  music: {fileID: 1039708636}
   parkourPlatforms:
   - {fileID: 1807935818}
   - {fileID: 920650847}

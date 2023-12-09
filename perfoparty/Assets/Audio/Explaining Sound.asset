@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   audioClips:
   - {fileID: 8300000, guid: f948e9657af5d494d8c613188c4bc9e4, type: 3}
-  volume: {x: 0.1, y: 0.3}
+  volume: {x: 0.05, y: 0.15}
   pitch: {x: 0.9, y: 1.1}
   soundSourceID: 0
   soundType: 0

@@ -19,6 +19,7 @@ public class ExplanationManager : MonoBehaviour
 
     private IEnumerator Start()
     {
+        isDialougeRunning = true;
         yield return new WaitForSeconds(delay);
         soundManager = FindObjectOfType<SoundManager>();
         StartCoroutine(WriteDialouge(dialougeSO));
@@ -26,7 +27,6 @@ public class ExplanationManager : MonoBehaviour
 
     public IEnumerator WriteDialouge(DialougeSO dialouge)
     {
-        isDialougeRunning = true;
         dialougeAnimator.SetBool(dialougeRunningName, isDialougeRunning);
         soundManager.PlaySound(explainingSound, audioSource);
 

@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class FFAMiniGameManager : GameModeManager
 {
-    [SerializeField] Transform[] randomSpawnPoints;
+    [SerializeField] Transform[] weaponSpawnPoints;
     [SerializeField] Weapon[] weaponPrefabsToSpawn;
     [SerializeField] float newPlayerKnockBack;
     private List<Weapon> weaponInstances = new List<Weapon>();
@@ -35,7 +35,7 @@ public class FFAMiniGameManager : GameModeManager
 
         for (int i = 0; i < weaponPrefabsToSpawn.Length; i++)
         {
-            Weapon weaponInstance = Instantiate(weaponPrefabsToSpawn[i].gameObject, randomSpawnPoints[Random.Range(0, randomSpawnPoints.Length)].position, Quaternion.identity).GetComponent<Weapon>();
+            Weapon weaponInstance = Instantiate(weaponPrefabsToSpawn[i].gameObject, weaponSpawnPoints[i].position, Quaternion.identity).GetComponent<Weapon>();
             weaponInstances.Add(weaponInstance);
             Debug.Log("Creating This: " + weaponInstance.name);
         }

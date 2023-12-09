@@ -3149,6 +3149,11 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 75df70ed4d614f74d8a5ad16c9428513, type: 3}
+--- !u!82 &1061064480 stripped
+AudioSource:
+  m_CorrespondingSourceObject: {fileID: 9153713663503704902, guid: 75df70ed4d614f74d8a5ad16c9428513, type: 3}
+  m_PrefabInstance: {fileID: 1061064479}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1063184045
 GameObject:
   m_ObjectHideFlags: 0
@@ -3350,6 +3355,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: Game Mode Explanation Manager
       objectReference: {fileID: 0}
+    - target: {fileID: 8242380878379025918, guid: aeee513a8be9db14fa619db71fca2223, type: 3}
+      propertyPath: delay
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8242380878379025918, guid: aeee513a8be9db14fa619db71fca2223, type: 3}
+      propertyPath: dialougeSO
+      value: 
+      objectReference: {fileID: 11400000, guid: 94dc0fae602754649839fb68091739c2, type: 2}
     - target: {fileID: 8242380878379025918, guid: aeee513a8be9db14fa619db71fca2223, type: 3}
       propertyPath: isDialougeRunning
       value: 1
@@ -6646,6 +6659,10 @@ PrefabInstance:
       propertyPath: m_LocalPosition.z
       value: 5.16
       objectReference: {fileID: 0}
+    - target: {fileID: 3586052788654485354, guid: 2a5fa4a088f85a3458fe84bde5fc2d0a, type: 3}
+      propertyPath: music
+      value: 
+      objectReference: {fileID: 1061064480}
     - target: {fileID: 7853699224778863783, guid: 2a5fa4a088f85a3458fe84bde5fc2d0a, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0

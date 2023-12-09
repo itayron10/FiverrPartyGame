@@ -9,10 +9,10 @@ public class GameModeManager : MonoBehaviour
     [SerializeField] float minYPositionForPlayers;
     [SerializeField] GameObject countingCanvas;
     [SerializeField] string podiumSceneName;
-    [SerializeField] GameObject reloadGameMenu;
     [SerializeField] bool lastGameMode;
     [SerializeField] int scoreAddedByWinningRound = 5;
     [SerializeField] float timeToStartNewRound = 4f;
+    [SerializeField] AudioSource music;
     protected List<PlayerConfiguration> playersToEnterGameMode = new List<PlayerConfiguration>();
     protected bool miniGameRunning, roundRunning;
     private List<PlayerConfiguration> playersCurrentlyInGameMode = new List<PlayerConfiguration>();
@@ -68,7 +68,6 @@ public class GameModeManager : MonoBehaviour
             {
                 KickPlayer(playersCurrentlyInGameMode[i]);
             }
-
         }
     }
 
@@ -88,7 +87,9 @@ public class GameModeManager : MonoBehaviour
         playersCurrentlyInGameMode[0].AddPlayerScore(scoreAddedByWinningRound);
         PlayerConfigurationManager.Instance.SetPlayerInputs(false);
         PlayerConfigurationManager.Instance.PlayWinnerVideo(playerConfig);
+        music.Stop();
         yield return new WaitForSeconds(8.5f); // 8.5 the time it takes to play each of the winners' videos
+        music.Play();
         if (roundCount >= 3)
             EndMiniGame();
         else

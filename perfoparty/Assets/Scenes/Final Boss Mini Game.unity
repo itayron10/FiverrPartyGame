@@ -939,6 +939,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: Game Mode Explanation Manager
       objectReference: {fileID: 0}
+    - target: {fileID: 8242380878379025918, guid: aeee513a8be9db14fa619db71fca2223, type: 3}
+      propertyPath: delay
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8242380878379025918, guid: aeee513a8be9db14fa619db71fca2223, type: 3}
+      propertyPath: dialougeSO
+      value: 
+      objectReference: {fileID: 11400000, guid: fe2ed89776a0c8f40bc059ef00f25303, type: 2}
     - target: {fileID: 8338728590762479390, guid: aeee513a8be9db14fa619db71fca2223, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -7054,10 +7062,10 @@ MonoBehaviour:
   minYPositionForPlayers: -2
   countingCanvas: {fileID: 5331982604329340332, guid: 7748a25a612514042aae80918e684478, type: 3}
   podiumSceneName: PodiumScene
-  reloadGameMenu: {fileID: 0}
   lastGameMode: 1
   scoreAddedByWinningRound: 5
   timeToStartNewRound: 4
+  music: {fileID: 781773638}
 --- !u!1 &753590476
 GameObject:
   m_ObjectHideFlags: 0
@@ -7362,12 +7370,17 @@ PrefabInstance:
     - target: {fileID: 9153713663503704902, guid: 75df70ed4d614f74d8a5ad16c9428513, type: 3}
       propertyPath: m_audioClip
       value: 
-      objectReference: {fileID: 8300000, guid: 64f61b5e248436c4faf25cd67c85f46a, type: 3}
+      objectReference: {fileID: 8300000, guid: 1f35bd0afc2820648948e20c13138cbf, type: 3}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 75df70ed4d614f74d8a5ad16c9428513, type: 3}
+--- !u!82 &781773638 stripped
+AudioSource:
+  m_CorrespondingSourceObject: {fileID: 9153713663503704902, guid: 75df70ed4d614f74d8a5ad16c9428513, type: 3}
+  m_PrefabInstance: {fileID: 781773637}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &781995619
 GameObject:
   m_ObjectHideFlags: 0
