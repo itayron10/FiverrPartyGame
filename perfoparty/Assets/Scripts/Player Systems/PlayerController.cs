@@ -12,7 +12,7 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] float rotationVelocity = 0.0f; // Velocidad de rotación gradual
     [SerializeField] float groundCheckLength;
     [SerializeField] float fallMultiplier = 2.5f, lowJumpMultiplier = 2f;
-    [SerializeField] string isGroundedAnimatorBool, jumpingAnimatorBool, danceAnimatorBool;
+    [SerializeField] string isGroundedAnimatorBool, jumpingAnimatorBool, danceAnimatorBool, electroBool;
     [SerializeField] LayerMask groundLayer;
     [SerializeField] ParticleSystem puffParticleEffect;
     [SerializeField] ScreenShakeSettingsSO landShake;
@@ -77,6 +77,11 @@ public class PlayerMovement : MonoBehaviour
             CinemachineShake.instance.Shake(landShake);
             hasLanded = true;
         }
+    }
+
+    public void SetElectro(bool active)
+    {
+        animator.SetBool(electroBool, active);
     }
 
 

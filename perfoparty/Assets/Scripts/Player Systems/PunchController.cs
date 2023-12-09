@@ -111,10 +111,12 @@ public class PunchController : MonoBehaviour
     private IEnumerator StunPlayer(PlayerConfiguration player, BasicHealth health)
     {
         playerPunchedPralysis.Add(health);
+        player.inputHandler.GetComponent<PlayerMovement>().SetElectro(true);
         player.Input.DeactivateInput();
         ParticleManager.InstanciateParticleEffect(stunEffect, player.inputHandler.transform.position, Quaternion.identity, 3, player.inputHandler.transform);
         yield return new WaitForSeconds(3f);
         player.Input.ActivateInput();
+        player.inputHandler.GetComponent<PlayerMovement>().SetElectro(false);
         playerPunchedPralysis.Remove(health);
     }
 

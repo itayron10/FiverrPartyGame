@@ -717,6 +717,7 @@ MonoBehaviour:
   isGroundedAnimatorBool: IsGrounded
   jumpingAnimatorBool: Jumping
   danceAnimatorBool: Dancing
+  electroBool: Electro
   groundLayer:
     serializedVersion: 2
     m_Bits: 64
