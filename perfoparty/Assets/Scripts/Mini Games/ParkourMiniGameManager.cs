@@ -27,6 +27,8 @@ public class ParkourMiniGameManager : GameModeManager
         foreach (var player in playersToEnterGameMode)
         {
             player.inputHandler.GetComponent<PunchController>().hasPunchAbility = false;
+            player.inputHandler.GetComponent<PunchController>().SetKnockBack(5);
+            player.inputHandler.GetComponent<BasicHealth>().SetCurrentHealth(100);
         }
     }
 

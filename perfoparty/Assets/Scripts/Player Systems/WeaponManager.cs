@@ -52,7 +52,7 @@ public class WeaponManager : MonoBehaviour
         SetWeaponToDefault();
         currentWeapon = null;
         if (shootingCoroutine != null) StopCoroutine(shootingCoroutine);
-        if (gameObject.activeInHierarchy) StartCoroutine(EquipingCooldown());
+        if (gameObject.activeInHierarchy) PlayerConfigurationManager.Instance.StartCoroutine(EquipingCooldown());
     }
 
     protected IEnumerator EquipingCooldown()

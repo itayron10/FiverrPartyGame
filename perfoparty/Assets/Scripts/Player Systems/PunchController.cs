@@ -75,7 +75,7 @@ public class PunchController : MonoBehaviour
 
             if (collider.TryGetComponent<BasicHealth>(out BasicHealth health))
             {
-                if (playerPunchedPralysis.Contains(health)) return;
+                if (finalBoss) if (playerPunchedPralysis.Contains(health)) return;
                 health.TakeDamage(punchDamage, hitPos);
                 if (finalBoss) StartCoroutine(StunPlayer(health.GetComponent<InputHandler>().playerConfig, health));
             }
@@ -97,7 +97,7 @@ public class PunchController : MonoBehaviour
                 }
             }
         }
-        StartCoroutine(ActivePunchCooldown());
+        PlayerConfigurationManager.Instance.StartCoroutine(ActivePunchCooldown());
     }
 
     private IEnumerator ActivePunchCooldown()
