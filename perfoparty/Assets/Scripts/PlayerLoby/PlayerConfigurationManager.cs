@@ -41,7 +41,7 @@ public class PlayerConfigurationManager : MonoBehaviour
 
     private void Start()
     {
-        /*Application.targetFrameRate = 10;*/
+        Screen.SetResolution(1920, 1080, true);
         playerInitializer = GetComponent<PlayerInitializer>();
         inputManager = GetComponent<PlayerInputManager>();
         if (!playedVideo)
