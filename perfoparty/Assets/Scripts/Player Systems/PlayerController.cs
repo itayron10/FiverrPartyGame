@@ -56,6 +56,7 @@ public class PlayerMovement : MonoBehaviour
 
     private void FixedUpdate()
     {
+        rb.angularVelocity = Vector3.zero;
         Vector3 movementVector = moveDirection * movementSpeed;
         rb.MovePosition(Vector3.Lerp(transform.position, transform.position + movementVector, Time.deltaTime * 2f));
 
@@ -105,13 +106,11 @@ public class PlayerMovement : MonoBehaviour
 
     private void ResetAnimatorTransform()
     {
-        animator.transform.localRotation = Quaternion.identity;
-        animator.transform.localPosition = Vector3.zero;
+        animator.transform.SetLocalPositionAndRotation(Vector3.zero, Quaternion.identity);
     }
 
     private void HandleRotation()
     {
-        rb.angularVelocity = Vector3.zero;
         if (moveDirection.magnitude <= 0f) { return; }
 
         animator.SetBool(danceAnimatorBool, false);

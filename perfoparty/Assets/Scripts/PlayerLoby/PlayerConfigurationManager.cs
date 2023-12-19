@@ -41,6 +41,7 @@ public class PlayerConfigurationManager : MonoBehaviour
 
     private void Start()
     {
+        /*Application.targetFrameRate = 10;*/
         playerInitializer = GetComponent<PlayerInitializer>();
         inputManager = GetComponent<PlayerInputManager>();
         if (!playedVideo)

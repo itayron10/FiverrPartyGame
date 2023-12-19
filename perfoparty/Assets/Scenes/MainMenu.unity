@@ -974,7 +974,7 @@ PrefabInstance:
       objectReference: {fileID: 564564736}
     - target: {fileID: 6741938426324961643, guid: dc6e6b4c8bfb8784092f816829281f70, type: 3}
       propertyPath: playVideo
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6741938426324961643, guid: dc6e6b4c8bfb8784092f816829281f70, type: 3}
       propertyPath: startingVideo
