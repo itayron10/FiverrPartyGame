@@ -43,13 +43,6 @@ public class PlayerMovement : MonoBehaviour
 
     void Update()
     {
-
-        /*        if (rb.velocity.magnitude > maxVelocity)
-                    rb.AddForce(-movmentVector, ForceMode.Force);*//*
-                if (movmentVector.magnitude <= 0 && isGrounded) rb.drag = stoppingDrag;
-                else rb.drag = 1.5f;*/
-
-        HandleRotation();
         animator.SetFloat("VelX", Mathf.Lerp(animator.GetFloat("VelX"), moveDirection.x, Time.deltaTime * animationInterpelationSpeed));
         animator.SetFloat("VelY", Mathf.Lerp(animator.GetFloat("VelY"), moveDirection.z, Time.deltaTime * animationInterpelationSpeed));
     }
@@ -57,6 +50,7 @@ public class PlayerMovement : MonoBehaviour
     private void FixedUpdate()
     {
         rb.angularVelocity = Vector3.zero;
+        HandleRotation();
         Vector3 movementVector = moveDirection * movementSpeed;
         rb.MovePosition(Vector3.Lerp(transform.position, transform.position + movementVector, Time.deltaTime * 2f));
 
